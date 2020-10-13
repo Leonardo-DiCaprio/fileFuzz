@@ -1,0 +1,32 @@
+0000 struct {
+    0000 File       = 0000 struct {
+        0000 Header     = 0000 struct {
+            0000 Signature  = UChar[3] ('.  ')
+            0003 Version    = UChar(32 [20])
+        }
+        0004 Tag        = SWFTAG[3]
+            0004 Tag[0] = 0004 struct {
+                    0004 Header     = 0004 struct {
+                        0004 TagType    = UShort(128 [0080]):10
+                        0006 TagLength  = UShort(32 [0020]):6
+                    }
+                    0006 Data       = UChar[32] ('     \x10\x00j\x12\x8c7+7+\x0f\x00\x13\x8c7+')
+                }
+            0026 Tag[1] = 0026 struct {
+                    0026 Header     = 0026 struct {
+                        0026 TagType    = UShort(128 [0080]):10
+                        0028 TagLength  = UShort(32 [0020]):6
+                    }
+                    0028 Data       = UChar[32] ('   \x10\x00j\x12\x8c7+7+\x00\x00\x13\x8c7+\x00\x00')
+                }
+            0048 Tag[2] = 0048 struct {
+                    0048 Header     = 0048 struct {
+                        0048 TagType    = UShort(1023 [03ff]):10
+                        004a TagLength  = UShort(63 [003f]):6
+                        004a Length     = Int(2080378879 [7c000fff])
+                    }
+                    004e Data       = UChar[2080378879] ('\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\xff\xff\xff\xff\x01s')
+                    29684 Padding    = UChar[2080209353] ('')
+                }
+    }
+}

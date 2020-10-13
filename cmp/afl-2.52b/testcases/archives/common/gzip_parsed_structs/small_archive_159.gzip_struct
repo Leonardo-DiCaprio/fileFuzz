@@ -1,0 +1,23 @@
+0000 struct {
+    0000 gzip_file  = 0000 struct {
+        0000 header     = 0000 struct {
+            0000 magic_bytes = UChar[2] ('\x1f\x8b')
+            0002 compression_method = Enum<UChar>(8 [08])(DEFLATE)
+            0003 flags      = 0003 struct {
+                0003 FLAG_ASCII_TEXT = Char(0 [00]):1
+                0004 FLAG_CONTINUATION = Char(0 [00]):1
+                0004 FLAG_EXTRA = Char(0 [00]):1
+                0004 FLAG_NAME  = Char(0 [00]):1
+                0004 FLAG_COMMENT = Char(0 [00]):1
+                0004 FLAG_ENCRYPTED = Char(0 [00]):1
+                0004 FLAG_RESERVED = Char[2] ('')
+            }
+            0004 modification_time = UInt(1415337774 [545c572e])
+            0008 extra_flags = UChar(2 [02])
+            0009 operating_system = Enum<Char>(3 [03])(UNIX)
+        }
+        000a compressed = Char[141] ('\x15\x8d1\x0e\xc20\x10\x04{\xbfbEC\x83x\x07\xa1F\xa2\xbe')
+        0097 CRC32      = UInt(4039200569L [f0c14f39])
+        009b uncompressed_sized = UInt(191 [000000bf])
+    }
+}

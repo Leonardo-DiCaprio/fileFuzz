@@ -1,0 +1,22 @@
+0000 struct {
+    0000 bmfh       = 0000 struct {
+        0000 bfType     = Char[2] ('BM')
+        0002 bfSize     = UInt(152238 [000252ae])
+        0006 bfReserved1 = UShort(0 [0000])
+        0008 bfReserved2 = UShort(0 [0000])
+        000a bfOffBits  = UInt(138 [0000008a])
+    }
+    000e bmih       = 000e struct {
+        000e biSize     = UInt(124 [0000007c])
+        0012 biWidth    = Int(225 [000000e1])
+        0016 biHeight   = Int(225 [000000e1])
+        001a biPlanes   = UShort(1 [0001])
+        001c biBitCount = UShort(24 [0018])
+        001e biCompression = UInt(0 [00000000])
+        0022 biSizeImage = UInt(152100 [00025224])
+        0026 biXPelsPerMeter = Int(0 [00000000])
+        002a biYPelsPerMeter = Int(0 [00000000])
+        002e biClrUsed  = UInt(0 [00000000])
+        0032 biClrImportant = UInt(0 [00000000])
+    }
+}

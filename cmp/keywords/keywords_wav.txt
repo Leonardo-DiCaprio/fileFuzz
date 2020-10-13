@@ -1,0 +1,17 @@
+header:groupID -> 52494646
+format:chunkID -> 666d74
+fact:chunkID -> 66616374
+data:chunkID -> 64617461
+
+header:size
+header:riffType
+format:chunkSize
+format:wFormatTag
+format:wChannels
+format:dwSamplesPerSec
+format:dwAvgBytesPerSec
+format:wBlockAlign
+format:wBitsPerSample
+fact:chunkSize
+fact:uncompressedSize
+data:chunkSize

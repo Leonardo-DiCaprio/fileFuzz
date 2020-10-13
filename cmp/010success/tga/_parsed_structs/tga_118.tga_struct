@@ -1,0 +1,186 @@
+0000 struct {
+    0000 TGAfh      = 0000 struct {
+        0000 IDLength   = UChar(0 [00])
+        0001 ColorMapType = UChar(0 [00])
+        0002 ImageType  = UChar(2 [02])
+        0003 CMSpecification = 0003 struct {
+            0003 FirstIndexEntry = UShort(0 [0000])
+            0005 ColorMapLength = UShort(0 [0000])
+            0007 ColorMapEntrySize = UChar(0 [00])
+        }
+        0008 ISpecification = 0008 struct {
+            0008 XOrigin    = UShort(0 [0000])
+            000a YOrigin    = UShort(0 [0000])
+            000c Width      = UShort(5 [0005])
+            000e Height     = UShort(5 [0005])
+            0010 PixelDepth = UChar(32 [20])
+            0011 ImageDescriptor = UChar(8 [08])
+        }
+    }
+    0012 TGALines   = struct[5]
+        0012 TGALines[0] = 0012 struct {
+                0012 Pixel      = ARGB8888[5]
+                    0012 Pixel[0] = 0012 struct {
+                            0012 B          = UChar(255 [ff])
+                            0013 G          = UChar(43 [2b])
+                            0014 R          = UChar(61 [3d])
+                            0015 A          = UChar(255 [ff])
+                        }
+                    0016 Pixel[1] = 0016 struct {
+                            0016 B          = UChar(255 [ff])
+                            0017 G          = UChar(165 [a5])
+                            0018 R          = UChar(173 [ad])
+                            0019 A          = UChar(255 [ff])
+                        }
+                    001a Pixel[2] = 001a struct {
+                            001a B          = UChar(255 [ff])
+                            001b G          = UChar(232 [e8])
+                            001c R          = UChar(234 [ea])
+                            001d A          = UChar(255 [ff])
+                        }
+                    001e Pixel[3] = 001e struct {
+                            001e B          = UChar(255 [ff])
+                            001f G          = UChar(223 [df])
+                            0020 R          = UChar(226 [e2])
+                            0021 A          = UChar(255 [ff])
+                        }
+                    0022 Pixel[4] = 0022 struct {
+                            0022 B          = UChar(255 [ff])
+                            0023 G          = UChar(254 [fe])
+                            0024 R          = UChar(254 [fe])
+                            0025 A          = UChar(255 [ff])
+                        }
+            }
+        0026 TGALines[1] = 0026 struct {
+                0026 Pixel      = ARGB8888[5]
+                    0026 Pixel[0] = 0026 struct {
+                            0026 B          = UChar(255 [ff])
+                            0027 G          = UChar(202 [ca])
+                            0028 R          = UChar(207 [cf])
+                            0029 A          = UChar(255 [ff])
+                        }
+                    002a Pixel[1] = 002a struct {
+                            002a B          = UChar(241 [f1])
+                            002b G          = UChar(60 [3c])
+                            002c R          = UChar(75 [4b])
+                            002d A          = UChar(255 [ff])
+                        }
+                    002e Pixel[2] = 002e struct {
+                            002e B          = UChar(228 [e4])
+                            002f G          = UChar(79 [4f])
+                            0030 R          = UChar(91 [5b])
+                            0031 A          = UChar(255 [ff])
+                        }
+                    0032 Pixel[3] = 0032 struct {
+                            0032 B          = UChar(254 [fe])
+                            0033 G          = UChar(40 [28])
+                            0034 R          = UChar(59 [3b])
+                            0035 A          = UChar(255 [ff])
+                        }
+                    0036 Pixel[4] = 0036 struct {
+                            0036 B          = UChar(253 [fd])
+                            0037 G          = UChar(222 [de])
+                            0038 R          = UChar(227 [e3])
+                            0039 A          = UChar(255 [ff])
+                        }
+            }
+        003a TGALines[2] = 003a struct {
+                003a Pixel      = ARGB8888[5]
+                    003a Pixel[0] = 003a struct {
+                            003a B          = UChar(254 [fe])
+                            003b G          = UChar(253 [fd])
+                            003c R          = UChar(254 [fe])
+                            003d A          = UChar(255 [ff])
+                        }
+                    003e Pixel[1] = 003e struct {
+                            003e B          = UChar(201 [c9])
+                            003f G          = UChar(161 [a1])
+                            0040 R          = UChar(184 [b8])
+                            0041 A          = UChar(255 [ff])
+                        }
+                    0042 Pixel[2] = 0042 struct {
+                            0042 B          = UChar(214 [d6])
+                            0043 G          = UChar(92 [5c])
+                            0044 R          = UChar(112 [70])
+                            0045 A          = UChar(255 [ff])
+                        }
+                    0046 Pixel[3] = 0046 struct {
+                            0046 B          = UChar(236 [ec])
+                            0047 G          = UChar(191 [bf])
+                            0048 R          = UChar(211 [d3])
+                            0049 A          = UChar(255 [ff])
+                        }
+                    004a Pixel[4] = 004a struct {
+                            004a B          = UChar(233 [e9])
+                            004b G          = UChar(232 [e8])
+                            004c R          = UChar(251 [fb])
+                            004d A          = UChar(255 [ff])
+                        }
+            }
+        004e TGALines[3] = 004e struct {
+                004e Pixel      = ARGB8888[5]
+                    004e Pixel[0] = 004e struct {
+                            004e B          = UChar(228 [e4])
+                            004f G          = UChar(228 [e4])
+                            0050 R          = UChar(251 [fb])
+                            0051 A          = UChar(255 [ff])
+                        }
+                    0052 Pixel[1] = 0052 struct {
+                            0052 B          = UChar(115 [73])
+                            0053 G          = UChar(115 [73])
+                            0054 R          = UChar(235 [eb])
+                            0055 A          = UChar(255 [ff])
+                        }
+                    0056 Pixel[2] = 0056 struct {
+                            0056 B          = UChar(144 [90])
+                            0057 G          = UChar(129 [81])
+                            0058 R          = UChar(225 [e1])
+                            0059 A          = UChar(255 [ff])
+                        }
+                    005a Pixel[3] = 005a struct {
+                            005a B          = UChar(184 [b8])
+                            005b G          = UChar(184 [b8])
+                            005c R          = UChar(245 [f5])
+                            005d A          = UChar(255 [ff])
+                        }
+                    005e Pixel[4] = 005e struct {
+                            005e B          = UChar(195 [c3])
+                            005f G          = UChar(195 [c3])
+                            0060 R          = UChar(246 [f6])
+                            0061 A          = UChar(255 [ff])
+                        }
+            }
+        0062 TGALines[4] = 0062 struct {
+                0062 Pixel      = ARGB8888[5]
+                    0062 Pixel[0] = 0062 struct {
+                            0062 B          = UChar(254 [fe])
+                            0063 G          = UChar(254 [fe])
+                            0064 R          = UChar(255 [ff])
+                            0065 A          = UChar(255 [ff])
+                        }
+                    0066 Pixel[1] = 0066 struct {
+                            0066 B          = UChar(220 [dc])
+                            0067 G          = UChar(220 [dc])
+                            0068 R          = UChar(250 [fa])
+                            0069 A          = UChar(255 [ff])
+                        }
+                    006a Pixel[2] = 006a struct {
+                            006a B          = UChar(177 [b1])
+                            006b G          = UChar(177 [b1])
+                            006c R          = UChar(244 [f4])
+                            006d A          = UChar(255 [ff])
+                        }
+                    006e Pixel[3] = 006e struct {
+                            006e B          = UChar(238 [ee])
+                            006f G          = UChar(238 [ee])
+                            0070 R          = UChar(253 [fd])
+                            0071 A          = UChar(255 [ff])
+                        }
+                    0072 Pixel[4] = 0072 struct {
+                            0072 B          = UChar(247 [f7])
+                            0073 G          = UChar(247 [f7])
+                            0074 R          = UChar(254 [fe])
+                            0075 A          = UChar(255 [ff])
+                        }
+            }
+}

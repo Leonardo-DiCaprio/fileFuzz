@@ -1,0 +1,9 @@
+page:CapturePattern -> 4f6767530000,4f6767530001,4f6767530002,4f6767530003,4f6767530004,4f6767530005,4f6767530006,4f6767530007
+
+page:Version
+page:HeaderType
+page:GranulePosition
+page:BitstreamSerial
+page:PageSequenceNumber
+page:Checksum
+page:PageSegments

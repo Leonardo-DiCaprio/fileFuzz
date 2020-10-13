@@ -1,0 +1,88 @@
+0000 struct {
+    0000 sig        = 0000 struct {
+        0000 btPngSignature = UShort[4]
+    }
+    0008 chunk      = PNG_CHUNK[5]
+        0008 chunk[0] = 0008 struct {
+                0008 length     = UInt(13 [0000000d])
+                000c type       = 000c union {
+                    000c ctype      = UInt(1229472850 [49484452])
+                    000c cname      = Char[4] ('IHDR')
+                }
+                0010 ihdr       = 0010 struct {
+                    0010 width      = UInt(32 [00000020])
+                    0014 height     = UInt(32 [00000020])
+                    0018 bits       = UChar(8 [08])
+                    0019 color_type = Enum<Char>(3 [03])(Indexed)
+                    001a compr_method = Enum<Char>(0 [00])(Deflate)
+                    001b filter_method = Enum<Char>(0 [00])(AdaptiveFiltering)
+                    001c interlace_method = Enum<Char>(0 [00])(NoInterlace)
+                }
+                001d crc        = UInt(1151634118 [44a48ac6])
+            }
+        0021 chunk[1] = 0021 struct {
+                0021 length     = UInt(25 [00000019])
+                0025 type       = 0025 union {
+                    0025 ctype      = UInt(1950701684 [74455874])
+                    0025 cname      = Char[4] ('tEXt')
+                }
+                0029 text       = 0029 struct {
+                    0029 label      = String('Software')
+                    0032 data       = Char[16] ('Adobe ImageReady')
+                }
+                0042 crc        = UInt(1909024060 [71c9653c])
+            }
+        0046 chunk[2] = 0046 struct {
+                0046 length     = UInt(15 [0000000f])
+                004a type       = 004a union {
+                    004a ctype      = UInt(1347179589 [504c5445])
+                    004a cname      = Char[4] ('PLTE')
+                }
+                004e plte       = 004e struct {
+                    004e plteChunkData = PNG_PALETTE_PIXEL[5]
+                        004e plteChunkData[0] = 004e struct {
+                                004e btRed      = Char(102 [66])
+                                004f btGreen    = Char(-52 [-34])
+                                0050 btBlue     = Char(-52 [-34])
+                            }
+                        0051 plteChunkData[1] = 0051 struct {
+                                0051 btRed      = Char(-1 [-1])
+                                0052 btGreen    = Char(-1 [-1])
+                                0053 btBlue     = Char(-1 [-1])
+                            }
+                        0054 plteChunkData[2] = 0054 struct {
+                                0054 btRed      = Char(0 [00])
+                                0055 btGreen    = Char(0 [00])
+                                0056 btBlue     = Char(0 [00])
+                            }
+                        0057 plteChunkData[3] = 0057 struct {
+                                0057 btRed      = Char(51 [33])
+                                0058 btGreen    = Char(-103 [-67])
+                                0059 btBlue     = Char(102 [66])
+                            }
+                        005a plteChunkData[4] = 005a struct {
+                                005a btRed      = Char(-103 [-67])
+                                005b btGreen    = Char(-1 [-1])
+                                005c btBlue     = Char(-52 [-34])
+                            }
+                }
+                005d crc        = UInt(1045212949 [3e4caf15])
+            }
+        0061 chunk[3] = 0061 struct {
+                0061 length     = UInt(97 [00000061])
+                0065 type       = 0065 union {
+                    0065 ctype      = UInt(1229209940 [49444154])
+                    0065 cname      = Char[4] ('IDAT')
+                }
+                0069 data       = UChar[97] ('x\xda\xdc\x931\x0e\xc0 \x0c\x03\x93\x98\xff\xbf\xb94\x14\t\xd4:')
+                00ca crc        = UInt(2966932378 [b0d7cb9a])
+            }
+        00ce chunk[4] = 00ce struct {
+                00ce length     = UInt(0 [00000000])
+                00d2 type       = 00d2 union {
+                    00d2 ctype      = UInt(1229278788 [49454e44])
+                    00d2 cname      = Char[4] ('IEND')
+                }
+                00d6 crc        = UInt(2923585666 [ae426082])
+            }
+}

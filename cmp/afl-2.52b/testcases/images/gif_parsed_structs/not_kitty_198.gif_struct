@@ -1,0 +1,106 @@
+0000 struct {
+    0000 GifHeader  = 0000 struct {
+        0000 Signature  = Char[3] ('GIF')
+        0003 Version    = Char[3] ('89a')
+    }
+    0006 LogicalScreenDescriptor = 0006 struct {
+        0006 Width      = UShort(32 [0020])
+        0008 Height     = UShort(32 [0020])
+        000a PackedFields = 000a struct {
+            000a GlobalColorTableFlag = UChar(1 [01]):1
+            000b ColorResolution = UChar(7 [07]):3
+            000b SortFlag   = UChar(0 [00]):1
+            000b SizeOfGlobalColorTable = UChar(2 [02]):3
+        }
+        000b BackgroundColorIndex = UChar(1 [01])
+        000c PixelAspectRatio = UChar(0 [00])
+    }
+    000d GlobalColorTable = 000d struct {
+        000d rgb        = RGB[8]
+            000d rgb[0] = 000d struct {
+                    000d R          = UChar(102 [66])
+                    000e G          = UChar(204 [cc])
+                    000f B          = UChar(204 [cc])
+                }
+            0010 rgb[1] = 0010 struct {
+                    0010 R          = UChar(255 [ff])
+                    0011 G          = UChar(255 [ff])
+                    0012 B          = UChar(255 [ff])
+                }
+            0013 rgb[2] = 0013 struct {
+                    0013 R          = UChar(0 [00])
+                    0014 G          = UChar(0 [00])
+                    0015 B          = UChar(0 [00])
+                }
+            0016 rgb[3] = 0016 struct {
+                    0016 R          = UChar(51 [33])
+                    0017 G          = UChar(153 [99])
+                    0018 B          = UChar(102 [66])
+                }
+            0019 rgb[4] = 0019 struct {
+                    0019 R          = UChar(153 [99])
+                    001a G          = UChar(255 [ff])
+                    001b B          = UChar(204 [cc])
+                }
+            001c rgb[5] = 001c struct {
+                    001c R          = UChar(0 [00])
+                    001d G          = UChar(0 [00])
+                    001e B          = UChar(0 [00])
+                }
+            001f rgb[6] = 001f struct {
+                    001f R          = UChar(0 [00])
+                    0020 G          = UChar(0 [00])
+                    0021 B          = UChar(0 [00])
+                }
+            0022 rgb[7] = 0022 struct {
+                    0022 R          = UChar(0 [00])
+                    0023 G          = UChar(0 [00])
+                    0024 B          = UChar(0 [00])
+                }
+    }
+    0025 Data       = 0025 struct {
+        0025 GraphicControlExtension = 0025 struct {
+            0025 ExtensionIntroducer = UChar(33 [21])
+            0026 GraphicControlLabel = UChar(249 [f9])
+            0027 GraphicControlSubBlock = 0027 struct {
+                0027 BlockSize  = UChar(4 [04])
+                0028 PackedFields = 0028 struct {
+                    0028 Reserved   = UChar(0 [00]):3
+                    0029 DisposalMethod = UChar(0 [00]):3
+                    0029 UserInputFlag = UChar(0 [00]):1
+                    0029 TransparentColorFlag = UChar(0 [00]):1
+                }
+                0029 DelayTime  = UShort(0 [0000])
+                002b TransparentColorIndex = UChar(0 [00])
+            }
+            002c BlockTerminator = UChar(0 [00])
+        }
+        002d ImageDescriptor = 002d struct {
+            002d ImageSeperator = UChar(44 [2c])
+            002e ImageLeftPosition = UShort(0 [0000])
+            0030 ImageTopPosition = UShort(0 [0000])
+            0032 ImageWidth = UShort(32 [0020])
+            0034 ImageHeight = UShort(32 [0020])
+            0036 PackedFields = 0036 struct {
+                0036 LocalColorTableFlag = UChar(0 [00]):1
+                0037 InterlaceFlag = UChar(0 [00]):1
+                0037 SortFlag   = UChar(0 [00]):1
+                0037 Reserved   = UChar(0 [00]):2
+                0037 SizeOfLocalColorTable = UChar(0 [00]):3
+            }
+        }
+        0037 ImageData  = 0037 struct {
+            0037 LZWMinimumCodeSize = UChar(3 [03])
+            0038 DataSubBlocks = 0038 struct {
+                0038 DataSubBlock = 0038 struct {
+                    0038 Size       = UChar(139 [8b])
+                    0039 Data       = Char[139] ('\x18\xba\xdc\xfeN\xc8I\xab\xbdK\x90\xcd\xbb\xff\x1f (\x1a`\x9e')
+                }
+                00c4 BlockTerminator = UChar(0 [00])
+            }
+        }
+    }
+    00c5 Trailer    = 00c5 struct {
+        00c5 GIFTrailer = UChar(59 [3b])
+    }
+}

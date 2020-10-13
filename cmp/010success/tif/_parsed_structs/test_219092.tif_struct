@@ -1,0 +1,157 @@
+0000 struct {
+    0000 ifh        = 0000 struct {
+        0000 bom        = Char[2] ('II')
+        0002 magic      = UShort(42 [002a])
+        0004 offset     = UInt(218894 [0003570e])
+    }
+    0000 _skipped   = Char[218886] ('\xfd\x10\xff\x80\xfd\x10\xff\x80\xfd\x10\xff\x80\xfd\x10\xff\x80\xfd\x10\xff\x80')
+    3570e ifd        = 3570e struct {
+        3570e numentries = UShort(16 [0010])
+        35710 dir        = ENT[16]
+            35710 dir[0] = 35710 struct {
+                    35710 tag        = Enum<UShort>(254 [00fe])(NewSubFileType)
+                    35712 typ        = Enum<UShort>(4 [0004])(eLONG)
+                    35714 count      = UInt(1 [00000001])
+                    35718 value      = UInt(0 [00000000])
+                }
+            3571c dir[1] = 3571c struct {
+                    3571c tag        = Enum<UShort>(256 [0100])(ImageWidth)
+                    3571e typ        = Enum<UShort>(4 [0004])(eLONG)
+                    35720 count      = UInt(1 [00000001])
+                    35724 value      = UInt(450 [000001c2])
+                }
+            35728 dir[2] = 35728 struct {
+                    35728 tag        = Enum<UShort>(257 [0101])(ImageLength)
+                    3572a typ        = Enum<UShort>(4 [0004])(eLONG)
+                    3572c count      = UInt(1 [00000001])
+                    35730 value      = UInt(338 [00000152])
+                }
+            35734 dir[3] = 35734 struct {
+                    35734 tag        = Enum<UShort>(258 [0102])(BitsPerSample)
+                    35736 typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    35738 count      = UInt(3 [00000003])
+                    3573c offset     = UInt(218578 [000355d2])
+                    355d2 value      = UShort[3]
+                    0000 _skipped   = Char[360] ('\x08\x00\x00\x00\xbe\x1d\x00\x00\xd09\x00\x00\x96V\x00\x00\xf1t\x00\x00')
+                }
+            35740 dir[4] = 35740 struct {
+                    35740 tag        = Enum<UShort>(259 [0103])(Compression)
+                    35742 typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    35744 count      = UInt(1 [00000001])
+                    35748 value      = Enum<UShort>(32773 [8005])(PackBits)
+                    3574a padding    = UShort(0 [0000])
+                }
+            3574c dir[5] = 3574c struct {
+                    3574c tag        = Enum<UShort>(262 [0106])(PhotometricInterpretation)
+                    3574e typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    35750 count      = UInt(1 [00000001])
+                    35754 value      = Enum<UShort>(6 [0006])(YCbCr)
+                    35756 padding    = UShort(0 [0000])
+                }
+            35758 dir[6] = 35758 struct {
+                    35758 tag        = Enum<UShort>(273 [0111])(StripOffsets)
+                    3575a typ        = Enum<UShort>(4 [0004])(eLONG)
+                    3575c count      = UInt(29 [0000001d])
+                    35760 offset     = UInt(218584 [000355d8])
+                    355d8 value      = UInt[29]
+                    0000 _skipped   = Char[280] ('\xb6\x1d\x00\x00\x12\x1c\x00\x00\xc6\x1c\x00\x00[\x1e\x00\x00\x80\x1c\x00\x00')
+                }
+            35764 dir[7] = 35764 struct {
+                    35764 tag        = Enum<UShort>(277 [0115])(SamplesPerPixel)
+                    35766 typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    35768 count      = UInt(1 [00000001])
+                    3576c value      = UShort(3 [0003])
+                    3576e padding    = UShort(0 [0000])
+                }
+            35770 dir[8] = 35770 struct {
+                    35770 tag        = Enum<UShort>(278 [0116])(RowsPerStrip)
+                    35772 typ        = Enum<UShort>(4 [0004])(eLONG)
+                    35774 count      = UInt(1 [00000001])
+                    35778 value      = UInt(12 [0000000c])
+                }
+            3577c dir[9] = 3577c struct {
+                    3577c tag        = Enum<UShort>(279 [0117])(StripByteCounts)
+                    3577e typ        = Enum<UShort>(4 [0004])(eLONG)
+                    35780 count      = UInt(29 [0000001d])
+                    35784 offset     = UInt(218700 [0003564c])
+                    3564c value      = UInt[29]
+                    0000 _skipped   = Char[200] ('H\x00\x00\x00\x01\x00\x00\x00H\x00\x00\x00\x01\x00\x00\x00Lavc')
+                }
+            35788 dir[10] = 35788 struct {
+                    35788 tag        = Enum<UShort>(282 [011a])(XResolution)
+                    3578a typ        = Enum<UShort>(5 [0005])(eRATIONAL)
+                    3578c count      = UInt(1 [00000001])
+                    35790 offset     = UInt(218816 [000356c0])
+                    356c0 value      = 356c0 struct {
+                        356c0 num        = UInt(72 [00000048])
+                        356c4 dom        = UInt(1 [00000001])
+                    }
+                    0000 _skipped   = Char[204] ('H\x00\x00\x00\x01\x00\x00\x00Lavc56.60.10')
+                }
+            35794 dir[11] = 35794 struct {
+                    35794 tag        = Enum<UShort>(283 [011b])(YResolution)
+                    35796 typ        = Enum<UShort>(5 [0005])(eRATIONAL)
+                    35798 count      = UInt(1 [00000001])
+                    3579c offset     = UInt(218824 [000356c8])
+                    356c8 value      = 356c8 struct {
+                        356c8 num        = UInt(72 [00000048])
+                        356cc dom        = UInt(1 [00000001])
+                    }
+                    0000 _skipped   = Char[208] ('Lavc56.60.100\x00\x0f\x00\x00\x00\x01\x00')
+                }
+            357a0 dir[12] = 357a0 struct {
+                    357a0 tag        = Enum<UShort>(296 [0128])(ResolutionUnit)
+                    357a2 typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    357a4 count      = UInt(1 [00000001])
+                    357a8 value      = Enum<UShort>(2 [0002])(Inch)
+                    357aa padding    = UShort(0 [0000])
+                }
+            357ac dir[13] = 357ac struct {
+                    357ac tag        = Enum<UShort>(305 [0131])(Software)
+                    357ae typ        = Enum<UShort>(2 [0002])(eASCII)
+                    357b0 count      = UInt(14 [0000000e])
+                    357b4 offset     = UInt(218832 [000356d0])
+                    356d0 data       = Char[14] ('Lavc56.60.100\x00')
+                    0000 _skipped   = Char[218] ('\x0f\x00\x00\x00\x01\x00\x00\x00\xeb\x00\x00\x00\x01\x00\x00\x00\x80\x00\x00\x00')
+                }
+            357b8 dir[14] = 357b8 struct {
+                    357b8 tag        = Enum<UShort>(530 [0212])(YCbCrSubsampling)
+                    357ba typ        = Enum<UShort>(3 [0003])(eSHORT)
+                    357bc count      = UInt(2 [00000002])
+                    357c0 value      = UShort[2]
+                }
+            357c4 dir[15] = 357c4 struct {
+                    357c4 tag        = Enum<UShort>(532 [0214])(ReferenceBlackWhite)
+                    357c6 typ        = Enum<UShort>(5 [0005])(eRATIONAL)
+                    357c8 count      = UInt(6 [00000006])
+                    357cc offset     = UInt(218846 [000356de])
+                    356de value      = RATIONAL[6]
+                        356de value[0] = 356de struct {
+                                356de num        = UInt(15 [0000000f])
+                                356e2 dom        = UInt(1 [00000001])
+                            }
+                        356e6 value[1] = 356e6 struct {
+                                356e6 num        = UInt(235 [000000eb])
+                                356ea dom        = UInt(1 [00000001])
+                            }
+                        356ee value[2] = 356ee struct {
+                                356ee num        = UInt(128 [00000080])
+                                356f2 dom        = UInt(1 [00000001])
+                            }
+                        356f6 value[3] = 356f6 struct {
+                                356f6 num        = UInt(240 [000000f0])
+                                356fa dom        = UInt(1 [00000001])
+                            }
+                        356fe value[4] = 356fe struct {
+                                356fe num        = UInt(128 [00000080])
+                                35702 dom        = UInt(1 [00000001])
+                            }
+                        35706 value[5] = 35706 struct {
+                                35706 num        = UInt(240 [000000f0])
+                                3570a dom        = UInt(1 [00000001])
+                            }
+                    0000 _skipped   = Char[194] ('\x10\x00\xfe\x00\x04\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x04\x00\x01\x00')
+                }
+        357d0 offset     = UInt(0 [00000000])
+    }
+}

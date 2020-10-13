@@ -1,0 +1,80 @@
+0000 struct {
+    0000 page       = PAGE[3]
+        0000 page[0] = 0000 struct {
+                0000 CapturePattern = Char[4] ('OggS')
+                0004 Version    = Char(0 [00])
+                0005 HeaderType = Char(2 [02])
+                0006 GranulePosition = Int64(0 [0000000000000000])
+                000e BitstreamSerial = UInt(1859899029 [6edbce95])
+                0012 PageSequenceNumber = UInt(0 [00000000])
+                0016 Checksum   = UInt(3882913292 [e7708e0c])
+                001a PageSegments = UChar(1 [01])
+                001b SegmentLen = UChar[1] ('\x1e')
+                001c Segment    = 001c struct {
+                    001c Data       = Char[30] ('\x01vorbis\x00\x00\x00\x00\x01@\x1f\x00\x00\x00\x00\x00\x00')
+                }
+            }
+        003a page[1] = 003a struct {
+                003a CapturePattern = Char[4] ('OggS')
+                003e Version    = Char(0 [00])
+                003f HeaderType = Char(0 [00])
+                0040 GranulePosition = Int64(0 [0000000000000000])
+                0048 BitstreamSerial = UInt(1859899029 [6edbce95])
+                004c PageSequenceNumber = UInt(1 [00000001])
+                0050 Checksum   = UInt(299661033 [11dc76e9])
+                0054 PageSegments = UChar(11 [0b])
+                0055 SegmentLen = UChar[11] ('<\xff\xff\xff\xff\xff\xff\xff\xff\xff\xb5')
+                0060 Segment    = struct[11]
+                    0060 Segment[0] = 0060 struct {
+                            0060 Data       = Char[60] ('\x03vorbis,\x00\x00\x00Xiph.Org ')
+                        }
+                    009c Segment[1] = 009c struct {
+                            009c Data       = Char[255] ('\x05vorbis\x12BCV\x01\x00\x00\x01\x00\x0cR\x14!')
+                        }
+                    019b Segment[2] = 019b struct {
+                            019b Data       = Char[255] ('\xfb\xae.\xeb\xae\xed\xea\xba\x0e\x84\x86\xac\x04\x00\xc8\x00\x00\x18\x86!')
+                        }
+                    029a Segment[3] = 029a struct {
+                            029a Data       = Char[255] ('\xaa\xa6\xaa\xba\xae\xa9\xaa\xaely\x9eiz\xa6\xa8\xaa\x9e)\xaa\xaa')
+                        }
+                    0399 Segment[4] = 0399 struct {
+                            0399 Data       = Char[255] ('7]W\xd7M\xd7\xd5}[\xd7}a\xb6m\xdf\x17]W\xd7U')
+                        }
+                    0498 Segment[5] = 0498 struct {
+                            0498 Data       = Char[255] ('Rj-\xa6\xd4Z\x0c\xa1\xb4\x14Ji\xad\x94\xd2Zj)\xb6\xd4')
+                        }
+                    0597 Segment[6] = 0597 struct {
+                            0597 Data       = Char[255] ('k\r%\xb4\x16Ji\xad\x94\xd2ZJ\xad\xc5\xd6Z\xad\xa1\x94\xd6')
+                        }
+                    0696 Segment[7] = 0696 struct {
+                            0696 Data       = Char[255] ("\x11\x84LJ'\xa5\x91\x12Z\x0b)e\x96J\x8a%\xc6\xccZ\x89")
+                        }
+                    0795 Segment[8] = 0795 struct {
+                            0795 Data       = Char[255] (' \xa4\x14c\x8c9\x87\x94b\x8c1\xe7\x9cCJ1\xc6\x98s\xce')
+                        }
+                    0894 Segment[9] = 0894 struct {
+                            0894 Data       = Char[255] (".4d%\x00\x10\x0e\x00\x00\x18\xc3\x18\x84\x8c9'%\xa5\x861")
+                        }
+                    0993 Segment[10] = 0993 struct {
+                            0993 Data       = Char[181] ('\x94RJ)!\x84\x10J)\xa5\x94RJ)%\x84\x10B(\xa5')
+                        }
+            }
+        0a48 page[2] = 0a48 struct {
+                0a48 CapturePattern = Char[4] ('OggS')
+                0a4c Version    = Char(0 [00])
+                0a4d HeaderType = Char(4 [04])
+                0a4e GranulePosition = Int64(1 [0000000000000001])
+                0a56 BitstreamSerial = UInt(1859899029 [6edbce95])
+                0a5a PageSequenceNumber = UInt(2 [00000002])
+                0a5e Checksum   = UInt(2269740364 [87497d4c])
+                0a62 PageSegments = UChar(2 [02])
+                0a63 SegmentLen = UChar[2] ('d\x06')
+                0a65 Segment    = struct[2]
+                    0a65 Segment[0] = 0a65 struct {
+                            0a65 Data       = Char[100] ('\xa2+\x80ZQd\x8f\xe2G\xf1\xa3\xf8Q\xfc(~\x14?\x8a\x1f')
+                        }
+                    0ac9 Segment[1] = 0ac9 struct {
+                            0ac9 Data       = Char[6] ('z\x06\xf75\x00\x00')
+                        }
+            }
+}

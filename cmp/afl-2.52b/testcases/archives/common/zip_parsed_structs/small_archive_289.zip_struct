@@ -1,0 +1,65 @@
+0000 struct {
+    0000 record     = 0000 struct {
+        0000 frSignature = Char[4] ('PK\x03\x04')
+        0004 frVersion  = UShort(20 [0014])
+        0006 frFlags    = UShort(2 [0002])
+        0008 frCompression = Enum<Short>(8 [0008])(COMP_DEFLATE)
+        000a frFileTime = 000a struct {
+            000a second     = UShort(28 [001c]):5
+            000c minute     = UShort(22 [0016]):6
+            000c hour       = UShort(6 [0006]):5
+        }
+        000c frFileDate = 000c struct {
+            000c day        = UShort(7 [0007]):5
+            000e month      = UShort(11 [000b]):4
+            000e year       = UShort(34 [0022]):7
+        }
+        000e frCrc      = UInt(4039200569L [f0c14f39])
+        0012 frCompressedSize = UInt(141 [0000008d])
+        0016 frUncompressedSize = UInt(191 [000000bf])
+        001a frFileNameLength = UShort(8 [0008])
+        001c frExtraFieldLength = UShort(21 [0015])
+        001e frFileName = Char[8] ('limerick')
+        0026 frExtraField = UChar[21] ('UT\t\x00\x030W\\Tz.`TUx\x04\x00\xf4\x01\xf4')
+        003b frData     = UChar[141] ('\x15\x8d1\x0e\xc20\x10\x04{\xbfbEC\x83x\x07\xa1F\xa2\xbe')
+    }
+    00c8 dirEntry   = 00c8 struct {
+        00c8 deSignature = Char[4] ('PK\x01\x02')
+        00cc deVersionMadeBy = UShort(791 [0317])
+        00ce deVersionToExtract = UShort(20 [0014])
+        00d0 deFlags    = UShort(2 [0002])
+        00d2 deCompression = Enum<Short>(8 [0008])(COMP_DEFLATE)
+        00d4 deFileTime = 00d4 struct {
+            00d4 second     = UShort(28 [001c]):5
+            00d6 minute     = UShort(22 [0016]):6
+            00d6 hour       = UShort(6 [0006]):5
+        }
+        00d6 deFileDate = 00d6 struct {
+            00d6 day        = UShort(7 [0007]):5
+            00d8 month      = UShort(11 [000b]):4
+            00d8 year       = UShort(34 [0022]):7
+        }
+        00d8 deCrc      = UInt(4039200569L [f0c14f39])
+        00dc deCompressedSize = UInt(141 [0000008d])
+        00e0 deUncompressedSize = UInt(191 [000000bf])
+        00e4 deFileNameLength = UShort(8 [0008])
+        00e6 deExtraFieldLength = UShort(13 [000d])
+        00e8 deFileCommentLength = UShort(0 [0000])
+        00ea deDiskNumberStart = UShort(0 [0000])
+        00ec deInternalAttributes = UShort(1 [0001])
+        00ee deExternalAttributes = UInt(2174746624L [81a00000])
+        00f2 deHeaderOffset = UInt(0 [00000000])
+        00f6 deFileName = Char[8] ('limerick')
+        00fe deExtraField = UChar[13] ('UT\x05\x00\x030W\\TUx\x00\x00')
+    }
+    010b endLocator = 010b struct {
+        010b elSignature = Char[4] ('PK\x05\x06')
+        010f elDiskNumber = UShort(0 [0000])
+        0111 elStartDiskNumber = UShort(0 [0000])
+        0113 elEntriesOnDisk = UShort(1 [0001])
+        0115 elEntriesInDirectory = UShort(1 [0001])
+        0117 elDirectorySize = UInt(67 [00000043])
+        011b elDirectoryOffset = UInt(200 [000000c8])
+        011f elCommentLength = UShort(0 [0000])
+    }
+}

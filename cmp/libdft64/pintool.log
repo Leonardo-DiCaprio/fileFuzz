@@ -1,0 +1,59 @@
+Pin: pin-3.7-97619-0d0c92f4f
+Copyright (c) 2003-2018, Intel Corporation. All rights reserved.
+ In open
+ in_dtracker_whitelist /etc/ld.so.cache
+ Info ignoring fd 3
+ In mmap 3 0
+ close 3
+ In open
+ in_dtracker_whitelist /lib/x86_64-linux-gnu/libselinux.so.1
+ Info ignoring fd 3
+ In mmap -1 0
+ In mmap 3 0
+ In mmap 3 122880
+ In mmap -1 0
+ close 3
+ In open
+ in_dtracker_whitelist /lib/x86_64-linux-gnu/libc-2.23.so
+ Info ignoring fd 3
+ In mmap 3 0
+ In mmap 3 1835008
+ In mmap -1 0
+ close 3
+ In open
+ in_dtracker_whitelist /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+ Info ignoring fd 3
+ In mmap 3 0
+ In mmap 3 450560
+ close 3
+ In open
+ in_dtracker_whitelist /lib/x86_64-linux-gnu/libdl-2.23.so
+ Info ignoring fd 3
+ In mmap -1 0
+ In mmap 3 0
+ In mmap 3 8192
+ close 3
+ In open
+ in_dtracker_whitelist /lib/x86_64-linux-gnu/libpthread-2.23.so
+ Info ignoring fd 3
+ In mmap 3 0
+ In mmap 3 94208
+ In mmap -1 0
+ close 3
+ In mmap -1 0
+ In mmap -1 0
+ In open
+ in_dtracker_whitelist /proc/filesystems
+ Info ignoring fd 3
+ close 3
+ In open
+ in_dtracker_whitelist /usr/lib/locale/locale-archive
+ Info ignoring fd 3
+ In mmap 3 0
+ close 3
+ In open
+ in_dtracker_whitelist /home/wws/Music/VUZZER-fuzz/vuzzer64-master/libdft64
+ Info ignoring fd 3
+ close 3
+ close 1
+ close 2

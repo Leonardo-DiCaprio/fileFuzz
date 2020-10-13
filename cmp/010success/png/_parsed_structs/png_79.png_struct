@@ -1,0 +1,39 @@
+0000 struct {
+    0000 pngid      = UInt64(9894494448401390090L [89504e470d0a1a0a])
+    0008 chunk      = CHUNK[3]
+        0008 chunk[0] = 0008 struct {
+                0008 length     = UInt(13 [0000000d])
+                000c type       = 000c union {
+                    000c ctype      = UInt(1229472850 [49484452])
+                    000c cname      = Char[4] ('IHDR')
+                }
+                0010 ihdr       = 0010 struct {
+                    0010 width      = UInt(2 [00000002])
+                    0014 height     = UInt(2 [00000002])
+                    0018 bits       = UChar(8 [08])
+                    0019 color_type = UChar(2 [02])
+                    001a compression = UChar(0 [00])
+                    001b filter     = UChar(0 [00])
+                    001c interlace  = UChar(0 [00])
+                }
+                001d crc        = UInt(4258568819 [fdd49a73])
+            }
+        0021 chunk[1] = 0021 struct {
+                0021 length     = UInt(22 [00000016])
+                0025 type       = 0025 union {
+                    0025 ctype      = UInt(1229209940 [49444154])
+                    0025 cname      = Char[4] ('IDAT')
+                }
+                0029 data       = UChar[22] ('x\x01c8fe\xa5|[\x8aA\xca\xe06\x03\x03\x03\x00\x1e+')
+                003f crc        = UInt(4024804065 [efe5a2e1])
+            }
+        0043 chunk[2] = 0043 struct {
+                0043 length     = UInt(0 [00000000])
+                0047 type       = 0047 union {
+                    0047 ctype      = UInt(1229278788 [49454e44])
+                    0047 cname      = Char[4] ('IEND')
+                }
+                004b data       = UChar[0] ('')
+                004b crc        = UInt(2923585666 [ae426082])
+            }
+}

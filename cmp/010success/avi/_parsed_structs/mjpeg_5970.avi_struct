@@ -1,0 +1,7 @@
+0000 struct {
+    0000 root       = 0000 struct {
+        0000 id         = Char[4] ('RIFF')
+        0004 datalen    = UInt(5962 [0000174a])
+        0008 form       = Char[4] ('AVI ')
+    }
+}

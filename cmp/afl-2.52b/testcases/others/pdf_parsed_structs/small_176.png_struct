@@ -1,0 +1,5 @@
+0000 struct {
+    0000 sig        = 0000 struct {
+        0000 btPngSignature = UShort[4]
+    }
+}

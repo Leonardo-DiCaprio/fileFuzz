@@ -1,0 +1,1007 @@
+0000 struct {
+    0000 jpgfile    = 0000 struct {
+        0000 garbage_0  = Char[205] ('GIF87a,\x01,\x01\xf6')
+        0000 _skipped   = Char[2] ('\xff\xff')
+        00cf unknownSection_0 = 00cf struct {
+            00cf UnknownMarker = Enum<UShort>(65296 [ff10])(?? UNK_ENUM ??)
+            00d1 szSection  = UShort(3855 [0f0f])
+            00d3 unknown    = UChar[3853] ('  \x1f\x9f\xa0\x9f\xef\xf0\xf0?@@opp\xe0\xe0\xdf\xef\xee')
+        }
+        0fe0 garbage_1  = Char(-30 [-1e])
+        0fe1 garbage_2  = Char(33 [21])
+        0fe2 garbage_3  = Char(-114 [-72])
+        0fe3 garbage_4  = Char(54 [36])
+        0fe4 garbage_5  = Char(97 [61])
+        0fe5 garbage_6  = Char(87 [57])
+        0fe6 garbage_7  = Char(107 [6b])
+        0fe7 garbage_8  = Char(-42 [-2a])
+        0fe8 garbage_9  = Char(51 [33])
+        0fe9 garbage_10 = Char(32 [20])
+        0fea garbage_11 = Char(33 [21])
+        0feb garbage_12 = Char(55 [37])
+        0fec garbage_13 = Char(20 [14])
+        0fed garbage_14 = Char(-128 [-80])
+        0fee garbage_15 = Char(3 [03])
+        0fef garbage_16 = Char(51 [33])
+        0ff0 garbage_17 = Char(41 [29])
+        0ff1 garbage_18 = Char(19 [13])
+        0ff2 garbage_19 = Char(53 [35])
+        0ff3 garbage_20 = Char(32 [20])
+        0ff4 garbage_21 = Char(42 [2a])
+        0ff5 garbage_22 = Char(82 [52])
+        0ff6 garbage_23 = Char(-96 [-60])
+        0ff7 garbage_24 = Char(-109 [-6d])
+        0ff8 garbage_25 = Char(97 [61])
+        0ff9 garbage_26 = Char(65 [41])
+        0ffa garbage_27 = Char(0 [00])
+        0ffb garbage_28 = Char(52 [34])
+        0ffc garbage_29 = Char(68 [44])
+        0ffd garbage_30 = Char(32 [20])
+        0ffe garbage_31 = Char(0 [00])
+        0fff garbage_32 = Char(32 [20])
+        1000 garbage_33 = Char(127 [7f])
+        1001 garbage_34 = Char(112 [70])
+        1002 garbage_35 = Char(-79 [-4f])
+        1003 garbage_36 = Char(46 [2e])
+        1004 garbage_37 = Char(-103 [-67])
+        1005 garbage_38 = Char(-29 [-1d])
+        1006 garbage_39 = Char(28 [1c])
+        1007 garbage_40 = Char(32 [20])
+        1008 garbage_41 = Char(-7 [-7])
+        1009 garbage_42 = Char(97 [61])
+        100a garbage_43 = Char(1 [01])
+        100b garbage_44 = Char(96 [60])
+        100c garbage_45 = Char(0 [00])
+        100d garbage_46 = Char(46 [2e])
+        100e garbage_47 = Char(48 [30])
+        100f garbage_48 = Char(38 [26])
+        1010 garbage_49 = Char(126 [7e])
+        1011 garbage_50 = Char(2 [02])
+        1012 garbage_51 = Char(21 [15])
+        1013 garbage_52 = Char(15 [0f])
+        1014 garbage_53 = Char(104 [68])
+        1015 garbage_54 = Char(127 [7f])
+        1016 garbage_55 = Char(105 [69])
+        1017 garbage_56 = Char(97 [61])
+        1018 garbage_57 = Char(-119 [-77])
+        1019 garbage_58 = Char(37 [25])
+        101a garbage_59 = Char(-72 [-48])
+        101b garbage_60 = Char(0 [00])
+        101c garbage_61 = Char(75 [4b])
+        101d garbage_62 = Char(105 [69])
+        101e garbage_63 = Char(77 [4d])
+        101f garbage_64 = Char(26 [1a])
+        1020 garbage_65 = Char(98 [62])
+        1021 garbage_66 = Char(27 [1b])
+        1022 garbage_67 = Char(41 [29])
+        1023 garbage_68 = Char(48 [30])
+        1024 garbage_69 = Char(-114 [-72])
+        1025 garbage_70 = Char(50 [32])
+        1026 garbage_71 = Char(100 [64])
+        1027 garbage_72 = Char(2 [02])
+        1028 garbage_73 = Char(87 [57])
+        1029 garbage_74 = Char(-43 [-2b])
+        102a garbage_75 = Char(121 [79])
+        102b garbage_76 = Char(77 [4d])
+        102c garbage_77 = Char(-95 [-5f])
+        102d garbage_78 = Char(69 [45])
+        102e garbage_79 = Char(13 [0d])
+        102f garbage_80 = Char(-104 [-68])
+        1030 garbage_81 = Char(22 [16])
+        1031 garbage_82 = Char(-44 [-2c])
+        1032 garbage_83 = Char(-73 [-49])
+        1033 garbage_84 = Char(77 [4d])
+        1034 garbage_85 = Char(-19 [-13])
+        1035 garbage_86 = Char(-43 [-2b])
+        1036 garbage_87 = Char(70 [46])
+        1037 garbage_88 = Char(-60 [-3c])
+        1038 garbage_89 = Char(113 [71])
+        1039 garbage_90 = Char(-109 [-6d])
+        103a garbage_91 = Char(8 [08])
+        103b garbage_92 = Char(18 [12])
+        103c garbage_93 = Char(-105 [-69])
+        103d garbage_94 = Char(-21 [-15])
+        103e garbage_95 = Char(98 [62])
+        103f garbage_96 = Char(17 [11])
+        1040 garbage_97 = Char(69 [45])
+        1041 garbage_98 = Char(-112 [-70])
+        1042 garbage_99 = Char(53 [35])
+        1043 garbage_100 = Char(23 [17])
+        1044 garbage_101 = Char(112 [70])
+        1045 garbage_102 = Char(-105 [-69])
+        1046 garbage_103 = Char(78 [4e])
+        1047 garbage_104 = Char(-63 [-3f])
+        1048 garbage_105 = Char(45 [2d])
+        1049 garbage_106 = Char(-74 [-4a])
+        104a garbage_107 = Char(3 [03])
+        104b garbage_108 = Char(78 [4e])
+        104c garbage_109 = Char(104 [68])
+        104d garbage_110 = Char(-31 [-1f])
+        104e garbage_111 = Char(73 [49])
+        104f garbage_112 = Char(-43 [-2b])
+        1050 garbage_113 = Char(51 [33])
+        1051 garbage_114 = Char(19 [13])
+        1052 garbage_115 = Char(-72 [-48])
+        1053 garbage_116 = Char(-110 [-6e])
+        1054 garbage_117 = Char(2 [02])
+        1055 garbage_118 = Char(-95 [-5f])
+        1056 garbage_119 = Char(-62 [-3e])
+        1057 garbage_120 = Char(0 [00])
+        1058 garbage_121 = Char(25 [19])
+        1059 garbage_122 = Char(80 [50])
+        105a garbage_123 = Char(-124 [-7c])
+        105b garbage_124 = Char(-96 [-60])
+        105c garbage_125 = Char(103 [67])
+        105d garbage_126 = Char(0 [00])
+        105e garbage_127 = Char(8 [08])
+        105f garbage_128 = Char(-96 [-60])
+        1060 garbage_129 = Char(0 [00])
+        1061 garbage_130 = Char(13 [0d])
+        1062 garbage_131 = Char(-32 [-20])
+        1063 garbage_132 = Char(0 [00])
+        1064 garbage_133 = Char(50 [32])
+        1065 garbage_134 = Char(-24 [-18])
+        1066 garbage_135 = Char(124 [7c])
+        1067 garbage_136 = Char(-13 [-d])
+        1068 garbage_137 = Char(116 [74])
+        1069 garbage_138 = Char(16 [10])
+        106a garbage_139 = Char(-105 [-69])
+        106b garbage_140 = Char(57 [39])
+        106c garbage_141 = Char(97 [61])
+        106d garbage_142 = Char(9 [09])
+        106e garbage_143 = Char(89 [59])
+        106f garbage_144 = Char(20 [14])
+        1070 garbage_145 = Char(-40 [-28])
+        1071 garbage_146 = Char(-13 [-d])
+        1072 garbage_147 = Char(105 [69])
+        1073 garbage_148 = Char(20 [14])
+        1074 garbage_149 = Char(89 [59])
+        1075 garbage_150 = Char(22 [16])
+        1076 garbage_151 = Char(-66 [-42])
+        1077 garbage_152 = Char(-91 [-5b])
+        1078 garbage_153 = Char(53 [35])
+        1079 garbage_154 = Char(-82 [-52])
+        107a garbage_155 = Char(8 [08])
+        107b garbage_156 = Char(19 [13])
+        107c garbage_157 = Char(-29 [-1d])
+        107d garbage_158 = Char(-46 [-2e])
+        107e garbage_159 = Char(87 [57])
+        107f garbage_160 = Char(-82 [-52])
+        1080 garbage_161 = Char(65 [41])
+        1081 garbage_162 = Char(43 [2b])
+        1082 garbage_163 = Char(54 [36])
+        1083 garbage_164 = Char(-12 [-c])
+        1084 garbage_165 = Char(89 [59])
+        1085 garbage_166 = Char(46 [2e])
+        1086 garbage_167 = Char(118 [76])
+        1087 garbage_168 = Char(86 [56])
+        1088 garbage_169 = Char(59 [3b])
+        1089 garbage_170 = Char(112 [70])
+        108a garbage_171 = Char(86 [56])
+        108b garbage_172 = Char(-108 [-6c])
+        108c garbage_173 = Char(117 [75])
+        108d garbage_174 = Char(87 [57])
+        108e garbage_175 = Char(-93 [-5d])
+        108f garbage_176 = Char(-72 [-48])
+        1090 garbage_177 = Char(16 [10])
+        1091 garbage_178 = Char(59 [3b])
+        1092 garbage_179 = Char(48 [30])
+        1093 garbage_180 = Char(63 [3f])
+        1094 garbage_181 = Char(-84 [-54])
+        1095 garbage_182 = Char(97 [61])
+        1096 garbage_183 = Char(1 [01])
+        1097 garbage_184 = Char(127 [7f])
+        1098 garbage_185 = Char(89 [59])
+        1099 garbage_186 = Char(20 [14])
+        109a garbage_187 = Char(30 [1e])
+        109b garbage_188 = Char(105 [69])
+        109c garbage_189 = Char(-106 [-6a])
+        109d garbage_190 = Char(93 [5d])
+        109e garbage_191 = Char(-47 [-2f])
+        109f garbage_192 = Char(48 [30])
+        10a0 garbage_193 = Char(69 [45])
+        10a1 garbage_194 = Char(82 [52])
+        10a2 garbage_195 = Char(-124 [-7c])
+        10a3 garbage_196 = Char(41 [29])
+        10a4 garbage_197 = Char(97 [61])
+        10a5 garbage_198 = Char(95 [5f])
+        10a6 garbage_199 = Char(41 [29])
+        10a7 garbage_200 = Char(-112 [-70])
+        10a8 garbage_201 = Char(24 [18])
+        10a9 garbage_202 = Char(20 [14])
+        10aa garbage_203 = Char(-48 [-30])
+        10ab garbage_204 = Char(-121 [-79])
+        10ac garbage_205 = Char(127 [7f])
+        10ad garbage_206 = Char(-30 [-1e])
+        10ae garbage_207 = Char(117 [75])
+        10af garbage_208 = Char(57 [39])
+        10b0 garbage_209 = Char(-75 [-4b])
+        10b1 garbage_210 = Char(3 [03])
+        10b2 garbage_211 = Char(72 [48])
+        10b3 unknownSection_1 = 10b3 struct {
+            10b3 UnknownMarker = Enum<UShort>(65376 [ff60])(?? UNK_ENUM ??)
+            10b5 szSection  = UShort(9 [0009])
+            10b7 unknown    = UChar[7] (' \x87[\xb5H\xb2u')
+        }
+        10be garbage_212 = Char(28 [1c])
+        10bf garbage_213 = Char(-110 [-6e])
+        10c0 garbage_214 = Char(-10 [-a])
+        10c1 garbage_215 = Char(76 [4c])
+        10c2 garbage_216 = Char(105 [69])
+        10c3 garbage_217 = Char(85 [55])
+        10c4 garbage_218 = Char(72 [48])
+        10c5 garbage_219 = Char(4 [04])
+        10c6 garbage_220 = Char(-112 [-70])
+        10c7 garbage_221 = Char(4 [04])
+        10c8 garbage_222 = Char(-119 [-77])
+        10c9 garbage_223 = Char(-60 [-3c])
+        10ca garbage_224 = Char(2 [02])
+        10cb garbage_225 = Char(47 [2f])
+        10cc garbage_226 = Char(48 [30])
+        10cd garbage_227 = Char(55 [37])
+        10ce garbage_228 = Char(-43 [-2b])
+        10cf garbage_229 = Char(99 [63])
+        10d0 garbage_230 = Char(105 [69])
+        10d1 garbage_231 = Char(69 [45])
+        10d2 garbage_232 = Char(-111 [-6f])
+        10d3 garbage_233 = Char(-105 [-69])
+        10d4 garbage_234 = Char(28 [1c])
+        10d5 garbage_235 = Char(89 [59])
+        10d6 garbage_236 = Char(22 [16])
+        10d7 garbage_237 = Char(16 [10])
+        10d8 garbage_238 = Char(9 [09])
+        10d9 garbage_239 = Char(64 [40])
+        10da garbage_240 = Char(-47 [-2f])
+        10db garbage_241 = Char(89 [59])
+        10dc garbage_242 = Char(18 [12])
+        10dd garbage_243 = Char(3 [03])
+        10de garbage_244 = Char(48 [30])
+        10df garbage_245 = Char(115 [73])
+        10e0 garbage_246 = Char(-15 [-f])
+        10e1 garbage_247 = Char(121 [79])
+        10e2 garbage_248 = Char(25 [19])
+        10e3 garbage_249 = Char(-4 [-4])
+        10e4 garbage_250 = Char(81 [51])
+        10e5 garbage_251 = Char(4 [04])
+        10e6 garbage_252 = Char(-5 [-5])
+        10e7 garbage_253 = Char(71 [47])
+        10e8 garbage_254 = Char(52 [34])
+        10e9 garbage_255 = Char(-47 [-2f])
+        10ea garbage_256 = Char(-79 [-4f])
+        10eb garbage_257 = Char(85 [55])
+        10ec garbage_258 = Char(-116 [-74])
+        10ed garbage_259 = Char(-106 [-6a])
+        10ee garbage_260 = Char(24 [18])
+        10ef garbage_261 = Char(-108 [-6c])
+        10f0 garbage_262 = Char(-46 [-2e])
+        10f1 garbage_263 = Char(24 [18])
+        10f2 garbage_264 = Char(-105 [-69])
+        10f3 garbage_265 = Char(23 [17])
+        10f4 garbage_266 = Char(25 [19])
+        10f5 garbage_267 = Char(-49 [-31])
+        10f6 garbage_268 = Char(-31 [-1f])
+        10f7 garbage_269 = Char(2 [02])
+        10f8 garbage_270 = Char(77 [4d])
+        10f9 garbage_271 = Char(-128 [-80])
+        10fa garbage_272 = Char(3 [03])
+        10fb garbage_273 = Char(-103 [-67])
+        10fc garbage_274 = Char(-47 [-2f])
+        10fd garbage_275 = Char(-108 [-6c])
+        10fe garbage_276 = Char(20 [14])
+        10ff garbage_277 = Char(-32 [-20])
+        1100 garbage_278 = Char(3 [03])
+        1101 garbage_279 = Char(38 [26])
+        1102 garbage_280 = Char(-128 [-80])
+        1103 garbage_281 = Char(5 [05])
+        1104 garbage_282 = Char(-9 [-9])
+        1105 garbage_283 = Char(-10 [-a])
+        1106 garbage_284 = Char(91 [5b])
+        1107 garbage_285 = Char(36 [24])
+        1108 garbage_286 = Char(-80 [-50])
+        1109 garbage_287 = Char(3 [03])
+        110a garbage_288 = Char(15 [0f])
+        110b garbage_289 = Char(-80 [-50])
+        110c garbage_290 = Char(92 [5c])
+        110d garbage_291 = Char(-54 [-36])
+        110e garbage_292 = Char(21 [15])
+        110f garbage_293 = Char(0 [00])
+        1110 garbage_294 = Char(-97 [-61])
+        1111 garbage_295 = Char(23 [17])
+        1112 garbage_296 = Char(20 [14])
+        1113 garbage_297 = Char(-118 [-76])
+        1114 garbage_298 = Char(41 [29])
+        1115 garbage_299 = Char(125 [7d])
+        1116 garbage_300 = Char(102 [66])
+        1117 garbage_301 = Char(49 [31])
+        1118 garbage_302 = Char(-120 [-78])
+        1119 garbage_303 = Char(-73 [-49])
+        111a garbage_304 = Char(3 [03])
+        111b garbage_305 = Char(19 [13])
+        111c garbage_306 = Char(-126 [-7e])
+        111d garbage_307 = Char(113 [71])
+        111e garbage_308 = Char(4 [04])
+        111f garbage_309 = Char(116 [74])
+        1120 garbage_310 = Char(-104 [-68])
+        1121 garbage_311 = Char(34 [22])
+        1122 garbage_312 = Char(9 [09])
+        1123 garbage_313 = Char(-96 [-60])
+        1124 garbage_314 = Char(49 [31])
+        1125 garbage_315 = Char(-84 [-54])
+        1126 garbage_316 = Char(33 [21])
+        1127 garbage_317 = Char(5 [05])
+        1128 garbage_318 = Char(-68 [-44])
+        1129 garbage_319 = Char(65 [41])
+        112a garbage_320 = Char(122 [7a])
+        112b garbage_321 = Char(-72 [-48])
+        112c garbage_322 = Char(-72 [-48])
+        112d garbage_323 = Char(43 [2b])
+        112e garbage_324 = Char(9 [09])
+        112f garbage_325 = Char(-58 [-3a])
+        1130 garbage_326 = Char(24 [18])
+        1131 garbage_327 = Char(-108 [-6c])
+        1132 garbage_328 = Char(-79 [-4f])
+        1133 garbage_329 = Char(49 [31])
+        1134 garbage_330 = Char(11 [0b])
+        1135 garbage_331 = Char(-32 [-20])
+        1136 garbage_332 = Char(71 [47])
+        1137 garbage_333 = Char(76 [4c])
+        1138 garbage_334 = Char(-27 [-1b])
+        1139 garbage_335 = Char(34 [22])
+        113a garbage_336 = Char(-22 [-16])
+        113b garbage_337 = Char(39 [27])
+        113c garbage_338 = Char(126 [7e])
+        113d garbage_339 = Char(-97 [-61])
+        113e garbage_340 = Char(-79 [-4f])
+        113f garbage_341 = Char(100 [64])
+        1140 garbage_342 = Char(43 [2b])
+        1141 garbage_343 = Char(22 [16])
+        1142 garbage_344 = Char(-106 [-6a])
+        1143 garbage_345 = Char(32 [20])
+        1144 garbage_346 = Char(1 [01])
+        1145 garbage_347 = Char(-108 [-6c])
+        1146 garbage_348 = Char(-74 [-4a])
+        1147 garbage_349 = Char(81 [51])
+        1148 garbage_350 = Char(-101 [-65])
+        1149 garbage_351 = Char(-61 [-3d])
+        114a garbage_352 = Char(-120 [-78])
+        114b garbage_353 = Char(60 [3c])
+        114c garbage_354 = Char(83 [53])
+        114d garbage_355 = Char(-45 [-2d])
+        114e garbage_356 = Char(-97 [-61])
+        114f garbage_357 = Char(-122 [-7a])
+        1150 garbage_358 = Char(72 [48])
+        1151 garbage_359 = Char(28 [1c])
+        1152 garbage_360 = Char(-65 [-41])
+        1153 garbage_361 = Char(6 [06])
+        1154 garbage_362 = Char(-119 [-77])
+        1155 garbage_363 = Char(76 [4c])
+        1156 garbage_364 = Char(-75 [-4b])
+        1157 garbage_365 = Char(80 [50])
+        1158 garbage_366 = Char(13 [0d])
+        1159 garbage_367 = Char(69 [45])
+        115a garbage_368 = Char(84 [54])
+        115b garbage_369 = Char(-104 [-68])
+        115c garbage_370 = Char(50 [32])
+        115d garbage_371 = Char(99 [63])
+        115e garbage_372 = Char(45 [2d])
+        115f garbage_373 = Char(-60 [-3c])
+        1160 garbage_374 = Char(4 [04])
+        1161 garbage_375 = Char(-63 [-3f])
+        1162 garbage_376 = Char(-9 [-9])
+        1163 garbage_377 = Char(41 [29])
+        1164 garbage_378 = Char(41 [29])
+        1165 garbage_379 = Char(-128 [-80])
+        1166 garbage_380 = Char(52 [34])
+        1167 garbage_381 = Char(-37 [-25])
+        1168 garbage_382 = Char(-9 [-9])
+        1169 garbage_383 = Char(54 [36])
+        116a garbage_384 = Char(118 [76])
+        116b garbage_385 = Char(-88 [-58])
+        116c garbage_386 = Char(0 [00])
+        116d garbage_387 = Char(-85 [-55])
+        116e garbage_388 = Char(25 [19])
+        116f garbage_389 = Char(-92 [-5c])
+        1170 garbage_390 = Char(63 [3f])
+        1171 garbage_391 = Char(-79 [-4f])
+        1172 garbage_392 = Char(-128 [-80])
+        1173 garbage_393 = Char(-97 [-61])
+        1174 garbage_394 = Char(118 [76])
+        1175 garbage_395 = Char(-113 [-71])
+        1176 garbage_396 = Char(101 [65])
+        1177 garbage_397 = Char(97 [61])
+        1178 garbage_398 = Char(-99 [-63])
+        1179 garbage_399 = Char(-112 [-70])
+        117a garbage_400 = Char(-127 [-7f])
+        117b garbage_401 = Char(-99 [-63])
+        117c garbage_402 = Char(18 [12])
+        117d garbage_403 = Char(104 [68])
+        117e garbage_404 = Char(23 [17])
+        117f garbage_405 = Char(92 [5c])
+        1180 garbage_406 = Char(-38 [-26])
+        1181 garbage_407 = Char(57 [39])
+        1182 garbage_408 = Char(-120 [-78])
+        1183 garbage_409 = Char(24 [18])
+        1184 garbage_410 = Char(105 [69])
+        1185 garbage_411 = Char(58 [3a])
+        1186 garbage_412 = Char(-26 [-1a])
+        1187 garbage_413 = Char(-127 [-7f])
+        1188 garbage_414 = Char(84 [54])
+        1189 garbage_415 = Char(-86 [-56])
+        118a garbage_416 = Char(123 [7b])
+        118b garbage_417 = Char(87 [57])
+        118c garbage_418 = Char(74 [4a])
+        118d garbage_419 = Char(16 [10])
+        118e garbage_420 = Char(13 [0d])
+        118f garbage_421 = Char(48 [30])
+        1190 garbage_422 = Char(92 [5c])
+        1191 garbage_423 = Char(0 [00])
+        1192 garbage_424 = Char(0 [00])
+        1193 garbage_425 = Char(-93 [-5d])
+        1194 garbage_426 = Char(48 [30])
+        1195 garbage_427 = Char(-92 [-5c])
+        1196 garbage_428 = Char(35 [23])
+        1197 garbage_429 = Char(117 [75])
+        1198 garbage_430 = Char(-15 [-f])
+        1199 garbage_431 = Char(-91 [-5b])
+        119a garbage_432 = Char(7 [07])
+        119b garbage_433 = Char(7 [07])
+        119c garbage_434 = Char(20 [14])
+        119d garbage_435 = Char(-67 [-43])
+        119e garbage_436 = Char(20 [14])
+        119f garbage_437 = Char(113 [71])
+        11a0 garbage_438 = Char(9 [09])
+        11a1 garbage_439 = Char(96 [60])
+        11a2 garbage_440 = Char(22 [16])
+        11a3 garbage_441 = Char(-69 [-45])
+        11a4 garbage_442 = Char(-23 [-17])
+        11a5 garbage_443 = Char(24 [18])
+        11a6 garbage_444 = Char(-57 [-39])
+        11a7 garbage_445 = Char(71 [47])
+        11a8 garbage_446 = Char(-99 [-63])
+        11a9 garbage_447 = Char(37 [25])
+        11aa garbage_448 = Char(-127 [-7f])
+        11ab garbage_449 = Char(92 [5c])
+        11ac garbage_450 = Char(13 [0d])
+        11ad garbage_451 = Char(-63 [-3f])
+        11ae garbage_452 = Char(88 [58])
+        11af garbage_453 = Char(115 [73])
+        11b0 garbage_454 = Char(119 [77])
+        11b1 garbage_455 = Char(96 [60])
+        11b2 garbage_456 = Char(113 [71])
+        11b3 scanStart  = 11b3 struct {
+            11b3 marker     = Enum<UShort>(65498 [ffda])(M_SOS)
+            11b5 szSection  = UShort(14234 [379a])
+            11b7 nr_comp    = UChar(105 [69])
+            11b8 comp       = struct[105]
+                11b8 comp[0] = 11b8 struct {
+                        11b8 compId     = UChar(16 [10])
+                        11b9 AC         = UChar(7 [07]):4
+                        11ba DC         = UChar(4 [04]):4
+                    }
+                11ba comp[1] = 11ba struct {
+                        11ba compId     = UChar(201 [c9])
+                        11bb AC         = UChar(4 [04]):4
+                        11bc DC         = UChar(12 [0c]):4
+                    }
+                11bc comp[2] = 11bc struct {
+                        11bc compId     = UChar(72 [48])
+                        11bd AC         = UChar(7 [07]):4
+                        11be DC         = UChar(2 [02]):4
+                    }
+                11be comp[3] = 11be struct {
+                        11be compId     = UChar(129 [81])
+                        11bf AC         = UChar(11 [0b]):4
+                        11c0 DC         = UChar(6 [06]):4
+                    }
+                11c0 comp[4] = 11c0 struct {
+                        11c0 compId     = UChar(198 [c6])
+                        11c1 AC         = UChar(9 [09]):4
+                        11c2 DC         = UChar(10 [0a]):4
+                    }
+                11c2 comp[5] = 11c2 struct {
+                        11c2 compId     = UChar(38 [26])
+                        11c3 AC         = UChar(0 [00]):4
+                        11c4 DC         = UChar(7 [07]):4
+                    }
+                11c4 comp[6] = 11c4 struct {
+                        11c4 compId     = UChar(20 [14])
+                        11c5 AC         = UChar(5 [05]):4
+                        11c6 DC         = UChar(13 [0d]):4
+                    }
+                11c6 comp[7] = 11c6 struct {
+                        11c6 compId     = UChar(200 [c8])
+                        11c7 AC         = UChar(0 [00]):4
+                        11c8 DC         = UChar(0 [00]):4
+                    }
+                11c8 comp[8] = 11c8 struct {
+                        11c8 compId     = UChar(148 [94])
+                        11c9 AC         = UChar(12 [0c]):4
+                        11ca DC         = UChar(9 [09]):4
+                    }
+                11ca comp[9] = 11ca struct {
+                        11ca compId     = UChar(21 [15])
+                        11cb AC         = UChar(2 [02]):4
+                        11cc DC         = UChar(12 [0c]):4
+                    }
+                11cc comp[10] = 11cc struct {
+                        11cc compId     = UChar(105 [69])
+                        11cd AC         = UChar(3 [03]):4
+                        11ce DC         = UChar(11 [0b]):4
+                    }
+                11ce comp[11] = 11ce struct {
+                        11ce compId     = UChar(70 [46])
+                        11cf AC         = UChar(7 [07]):4
+                        11d0 DC         = UChar(10 [0a]):4
+                    }
+                11d0 comp[12] = 11d0 struct {
+                        11d0 compId     = UChar(19 [13])
+                        11d1 AC         = UChar(0 [00]):4
+                        11d2 DC         = UChar(10 [0a]):4
+                    }
+                11d2 comp[13] = 11d2 struct {
+                        11d2 compId     = UChar(96 [60])
+                        11d3 AC         = UChar(9 [09]):4
+                        11d4 DC         = UChar(8 [08]):4
+                    }
+                11d4 comp[14] = 11d4 struct {
+                        11d4 compId     = UChar(141 [8d])
+                        11d5 AC         = UChar(8 [08]):4
+                        11d6 DC         = UChar(10 [0a]):4
+                    }
+                11d6 comp[15] = 11d6 struct {
+                        11d6 compId     = UChar(101 [65])
+                        11d7 AC         = UChar(4 [04]):4
+                        11d8 DC         = UChar(8 [08]):4
+                    }
+                11d8 comp[16] = 11d8 struct {
+                        11d8 compId     = UChar(210 [d2])
+                        11d9 AC         = UChar(8 [08]):4
+                        11da DC         = UChar(7 [07]):4
+                    }
+                11da comp[17] = 11da struct {
+                        11da compId     = UChar(157 [9d])
+                        11db AC         = UChar(14 [0e]):4
+                        11dc DC         = UChar(3 [03]):4
+                    }
+                11dc comp[18] = 11dc struct {
+                        11dc compId     = UChar(23 [17])
+                        11dd AC         = UChar(7 [07]):4
+                        11de DC         = UChar(6 [06]):4
+                    }
+                11de comp[19] = 11de struct {
+                        11de compId     = UChar(69 [45])
+                        11df AC         = UChar(10 [0a]):4
+                        11e0 DC         = UChar(3 [03]):4
+                    }
+                11e0 comp[20] = 11e0 struct {
+                        11e0 compId     = UChar(183 [b7])
+                        11e1 AC         = UChar(12 [0c]):4
+                        11e2 DC         = UChar(1 [01]):4
+                    }
+                11e2 comp[21] = 11e2 struct {
+                        11e2 compId     = UChar(54 [36])
+                        11e3 AC         = UChar(1 [01]):4
+                        11e4 DC         = UChar(4 [04]):4
+                    }
+                11e4 comp[22] = 11e4 struct {
+                        11e4 compId     = UChar(82 [52])
+                        11e5 AC         = UChar(6 [06]):4
+                        11e6 DC         = UChar(15 [0f]):4
+                    }
+                11e6 comp[23] = 11e6 struct {
+                        11e6 compId     = UChar(66 [42])
+                        11e7 AC         = UChar(14 [0e]):4
+                        11e8 DC         = UChar(10 [0a]):4
+                    }
+                11e8 comp[24] = 11e8 struct {
+                        11e8 compId     = UChar(17 [11])
+                        11e9 AC         = UChar(6 [06]):4
+                        11ea DC         = UChar(8 [08]):4
+                    }
+                11ea comp[25] = 11ea struct {
+                        11ea compId     = UChar(249 [f9])
+                        11eb AC         = UChar(6 [06]):4
+                        11ec DC         = UChar(9 [09]):4
+                    }
+                11ec comp[26] = 11ec struct {
+                        11ec compId     = UChar(27 [1b])
+                        11ed AC         = UChar(7 [07]):4
+                        11ee DC         = UChar(0 [00]):4
+                    }
+                11ee comp[27] = 11ee struct {
+                        11ee compId     = UChar(22 [16])
+                        11ef AC         = UChar(11 [0b]):4
+                        11f0 DC         = UChar(3 [03]):4
+                    }
+                11f0 comp[28] = 11f0 struct {
+                        11f0 compId     = UChar(151 [97])
+                        11f1 AC         = UChar(4 [04]):4
+                        11f2 DC         = UChar(3 [03]):4
+                    }
+                11f2 comp[29] = 11f2 struct {
+                        11f2 compId     = UChar(133 [85])
+                        11f3 AC         = UChar(13 [0d]):4
+                        11f4 DC         = UChar(8 [08]):4
+                    }
+                11f4 comp[30] = 11f4 struct {
+                        11f4 compId     = UChar(19 [13])
+                        11f5 AC         = UChar(15 [0f]):4
+                        11f6 DC         = UChar(14 [0e]):4
+                    }
+                11f6 comp[31] = 11f6 struct {
+                        11f6 compId     = UChar(193 [c1])
+                        11f7 AC         = UChar(0 [00]):4
+                        11f8 DC         = UChar(2 [02]):4
+                    }
+                11f8 comp[32] = 11f8 struct {
+                        11f8 compId     = UChar(27 [1b])
+                        11f9 AC         = UChar(9 [09]):4
+                        11fa DC         = UChar(3 [03]):4
+                    }
+                11fa comp[33] = 11fa struct {
+                        11fa compId     = UChar(96 [60])
+                        11fb AC         = UChar(1 [01]):4
+                        11fc DC         = UChar(14 [0e]):4
+                    }
+                11fc comp[34] = 11fc struct {
+                        11fc compId     = UChar(144 [90])
+                        11fd AC         = UChar(6 [06]):4
+                        11fe DC         = UChar(8 [08]):4
+                    }
+                11fe comp[35] = 11fe struct {
+                        11fe compId     = UChar(38 [26])
+                        11ff AC         = UChar(15 [0f]):4
+                        1200 DC         = UChar(2 [02]):4
+                    }
+                1200 comp[36] = 1200 struct {
+                        1200 compId     = UChar(50 [32])
+                        1201 AC         = UChar(9 [09]):4
+                        1202 DC         = UChar(14 [0e]):4
+                    }
+                1202 comp[37] = 1202 struct {
+                        1202 compId     = UChar(103 [67])
+                        1203 AC         = UChar(8 [08]):4
+                        1204 DC         = UChar(6 [06]):4
+                    }
+                1204 comp[38] = 1204 struct {
+                        1204 compId     = UChar(65 [41])
+                        1205 AC         = UChar(13 [0d]):4
+                        1206 DC         = UChar(0 [00]):4
+                    }
+                1206 comp[39] = 1206 struct {
+                        1206 compId     = UChar(32 [20])
+                        1207 AC         = UChar(3 [03]):4
+                        1208 DC         = UChar(5 [05]):4
+                    }
+                1208 comp[40] = 1208 struct {
+                        1208 compId     = UChar(86 [56])
+                        1209 AC         = UChar(0 [00]):4
+                        120a DC         = UChar(3 [03]):4
+                    }
+                120a comp[41] = 120a struct {
+                        120a compId     = UChar(81 [51])
+                        120b AC         = UChar(6 [06]):4
+                        120c DC         = UChar(0 [00]):4
+                    }
+                120c comp[42] = 120c struct {
+                        120c compId     = UChar(112 [70])
+                        120d AC         = UChar(10 [0a]):4
+                        120e DC         = UChar(15 [0f]):4
+                    }
+                120e comp[43] = 120e struct {
+                        120e compId     = UChar(154 [9a])
+                        120f AC         = UChar(8 [08]):4
+                        1210 DC         = UChar(15 [0f]):4
+                    }
+                1210 comp[44] = 1210 struct {
+                        1210 compId     = UChar(8 [08])
+                        1211 AC         = UChar(11 [0b]):4
+                        1212 DC         = UChar(2 [02]):4
+                    }
+                1212 comp[45] = 1212 struct {
+                        1212 compId     = UChar(152 [98])
+                        1213 AC         = UChar(6 [06]):4
+                        1214 DC         = UChar(4 [04]):4
+                    }
+                1214 comp[46] = 1214 struct {
+                        1214 compId     = UChar(225 [e1])
+                        1215 AC         = UChar(9 [09]):4
+                        1216 DC         = UChar(1 [01]):4
+                    }
+                1216 comp[47] = 1216 struct {
+                        1216 compId     = UChar(23 [17])
+                        1217 AC         = UChar(5 [05]):4
+                        1218 DC         = UChar(3 [03]):4
+                    }
+                1218 comp[48] = 1218 struct {
+                        1218 compId     = UChar(20 [14])
+                        1219 AC         = UChar(1 [01]):4
+                        121a DC         = UChar(9 [09]):4
+                    }
+                121a comp[49] = 121a struct {
+                        121a compId     = UChar(2 [02])
+                        121b AC         = UChar(6 [06]):4
+                        121c DC         = UChar(3 [03]):4
+                    }
+                121c comp[50] = 121c struct {
+                        121c compId     = UChar(52 [34])
+                        121d AC         = UChar(2 [02]):4
+                        121e DC         = UChar(6 [06]):4
+                    }
+                121e comp[51] = 121e struct {
+                        121e compId     = UChar(25 [19])
+                        121f AC         = UChar(12 [0c]):4
+                        1220 DC         = UChar(14 [0e]):4
+                    }
+                1220 comp[52] = 1220 struct {
+                        1220 compId     = UChar(81 [51])
+                        1221 AC         = UChar(1 [01]):4
+                        1222 DC         = UChar(9 [09]):4
+                    }
+                1222 comp[53] = 1222 struct {
+                        1222 compId     = UChar(173 [ad])
+                        1223 AC         = UChar(8 [08]):4
+                        1224 DC         = UChar(10 [0a]):4
+                    }
+                1224 comp[54] = 1224 struct {
+                        1224 compId     = UChar(110 [6e])
+                        1225 AC         = UChar(5 [05]):4
+                        1226 DC         = UChar(5 [05]):4
+                    }
+                1226 comp[55] = 1226 struct {
+                        1226 compId     = UChar(6 [06])
+                        1227 AC         = UChar(10 [0a]):4
+                        1228 DC         = UChar(9 [09]):4
+                    }
+                1228 comp[56] = 1228 struct {
+                        1228 compId     = UChar(10 [0a])
+                        1229 AC         = UChar(13 [0d]):4
+                        122a DC         = UChar(4 [04]):4
+                    }
+                122a comp[57] = 122a struct {
+                        122a compId     = UChar(66 [42])
+                        122b AC         = UChar(1 [01]):4
+                        122c DC         = UChar(13 [0d]):4
+                    }
+                122c comp[58] = 122c struct {
+                        122c compId     = UChar(16 [10])
+                        122d AC         = UChar(6 [06]):4
+                        122e DC         = UChar(4 [04]):4
+                    }
+                122e comp[59] = 122e struct {
+                        122e compId     = UChar(22 [16])
+                        122f AC         = UChar(15 [0f]):4
+                        1230 DC         = UChar(7 [07]):4
+                    }
+                1230 comp[60] = 1230 struct {
+                        1230 compId     = UChar(19 [13])
+                        1231 AC         = UChar(9 [09]):4
+                        1232 DC         = UChar(9 [09]):4
+                    }
+                1232 comp[61] = 1232 struct {
+                        1232 compId     = UChar(250 [fa])
+                        1233 AC         = UChar(10 [0a]):4
+                        1234 DC         = UChar(9 [09]):4
+                    }
+                1234 comp[62] = 1234 struct {
+                        1234 compId     = UChar(89 [59])
+                        1235 AC         = UChar(4 [04]):4
+                        1236 DC         = UChar(1 [01]):4
+                    }
+                1236 comp[63] = 1236 struct {
+                        1236 compId     = UChar(148 [94])
+                        1237 AC         = UChar(11 [0b]):4
+                        1238 DC         = UChar(15 [0f]):4
+                    }
+                1238 comp[64] = 1238 struct {
+                        1238 compId     = UChar(66 [42])
+                        1239 AC         = UChar(9 [09]):4
+                        123a DC         = UChar(8 [08]):4
+                    }
+                123a comp[65] = 123a struct {
+                        123a compId     = UChar(63 [3f])
+                        123b AC         = UChar(3 [03]):4
+                        123c DC         = UChar(3 [03]):4
+                    }
+                123c comp[66] = 123c struct {
+                        123c compId     = UChar(122 [7a])
+                        123d AC         = UChar(9 [09]):4
+                        123e DC         = UChar(4 [04]):4
+                    }
+                123e comp[67] = 123e struct {
+                        123e compId     = UChar(98 [62])
+                        123f AC         = UChar(0 [00]):4
+                        1240 DC         = UChar(1 [01]):4
+                    }
+                1240 comp[68] = 1240 struct {
+                        1240 compId     = UChar(89 [59])
+                        1241 AC         = UChar(12 [0c]):4
+                        1242 DC         = UChar(0 [00]):4
+                    }
+                1242 comp[69] = 1242 struct {
+                        1242 compId     = UChar(81 [51])
+                        1243 AC         = UChar(3 [03]):4
+                        1244 DC         = UChar(7 [07]):4
+                    }
+                1244 comp[70] = 1244 struct {
+                        1244 compId     = UChar(135 [87])
+                        1245 AC         = UChar(8 [08]):4
+                        1246 DC         = UChar(4 [04]):4
+                    }
+                1246 comp[71] = 1246 struct {
+                        1246 compId     = UChar(22 [16])
+                        1247 AC         = UChar(6 [06]):4
+                        1248 DC         = UChar(1 [01]):4
+                    }
+                1248 comp[72] = 1248 struct {
+                        1248 compId     = UChar(0 [00])
+                        1249 AC         = UChar(13 [0d]):4
+                        124a DC         = UChar(11 [0b]):4
+                    }
+                124a comp[73] = 124a struct {
+                        124a compId     = UChar(122 [7a])
+                        124b AC         = UChar(1 [01]):4
+                        124c DC         = UChar(14 [0e]):4
+                    }
+                124c comp[74] = 124c struct {
+                        124c compId     = UChar(39 [27])
+                        124d AC         = UChar(2 [02]):4
+                        124e DC         = UChar(0 [00]):4
+                    }
+                124e comp[75] = 124e struct {
+                        124e compId     = UChar(126 [7e])
+                        124f AC         = UChar(13 [0d]):4
+                        1250 DC         = UChar(15 [0f]):4
+                    }
+                1250 comp[76] = 1250 struct {
+                        1250 compId     = UChar(58 [3a])
+                        1251 AC         = UChar(3 [03]):4
+                        1252 DC         = UChar(6 [06]):4
+                    }
+                1252 comp[77] = 1252 struct {
+                        1252 compId     = UChar(52 [34])
+                        1253 AC         = UChar(12 [0c]):4
+                        1254 DC         = UChar(4 [04]):4
+                    }
+                1254 comp[78] = 1254 struct {
+                        1254 compId     = UChar(0 [00])
+                        1255 AC         = UChar(6 [06]):4
+                        1256 DC         = UChar(4 [04]):4
+                    }
+                1256 comp[79] = 1256 struct {
+                        1256 compId     = UChar(58 [3a])
+                        1257 AC         = UChar(1 [01]):4
+                        1258 DC         = UChar(6 [06]):4
+                    }
+                1258 comp[80] = 1258 struct {
+                        1258 compId     = UChar(8 [08])
+                        1259 AC         = UChar(3 [03]):4
+                        125a DC         = UChar(0 [00]):4
+                    }
+                125a comp[81] = 125a struct {
+                        125a compId     = UChar(78 [4e])
+                        125b AC         = UChar(9 [09]):4
+                        125c DC         = UChar(10 [0a]):4
+                    }
+                125c comp[82] = 125c struct {
+                        125c compId     = UChar(106 [6a])
+                        125d AC         = UChar(9 [09]):4
+                        125e DC         = UChar(11 [0b]):4
+                    }
+                125e comp[83] = 125e struct {
+                        125e compId     = UChar(117 [75])
+                        125f AC         = UChar(11 [0b]):4
+                        1260 DC         = UChar(1 [01]):4
+                    }
+                1260 comp[84] = 1260 struct {
+                        1260 compId     = UChar(23 [17])
+                        1261 AC         = UChar(5 [05]):4
+                        1262 DC         = UChar(0 [00]):4
+                    }
+                1262 comp[85] = 1262 struct {
+                        1262 compId     = UChar(41 [29])
+                        1263 AC         = UChar(3 [03]):4
+                        1264 DC         = UChar(0 [00]):4
+                    }
+                1264 comp[86] = 1264 struct {
+                        1264 compId     = UChar(115 [73])
+                        1265 AC         = UChar(15 [0f]):4
+                        1266 DC         = UChar(7 [07]):4
+                    }
+                1266 comp[87] = 1266 struct {
+                        1266 compId     = UChar(46 [2e])
+                        1267 AC         = UChar(1 [01]):4
+                        1268 DC         = UChar(7 [07]):4
+                    }
+                1268 comp[88] = 1268 struct {
+                        1268 compId     = UChar(224 [e0])
+                        1269 AC         = UChar(3 [03]):4
+                        126a DC         = UChar(2 [02]):4
+                    }
+                126a comp[89] = 126a struct {
+                        126a compId     = UChar(79 [4f])
+                        126b AC         = UChar(1 [01]):4
+                        126c DC         = UChar(2 [02]):4
+                    }
+                126c comp[90] = 126c struct {
+                        126c compId     = UChar(176 [b0])
+                        126d AC         = UChar(3 [03]):4
+                        126e DC         = UChar(2 [02]):4
+                    }
+                126e comp[91] = 126e struct {
+                        126e compId     = UChar(97 [61])
+                        126f AC         = UChar(0 [00]):4
+                        1270 DC         = UChar(2 [02]):4
+                    }
+                1270 comp[92] = 1270 struct {
+                        1270 compId     = UChar(203 [cb])
+                        1271 AC         = UChar(1 [01]):4
+                        1272 DC         = UChar(10 [0a]):4
+                    }
+                1272 comp[93] = 1272 struct {
+                        1272 compId     = UChar(65 [41])
+                        1273 AC         = UChar(6 [06]):4
+                        1274 DC         = UChar(6 [06]):4
+                    }
+                1274 comp[94] = 1274 struct {
+                        1274 compId     = UChar(193 [c1])
+                        1275 AC         = UChar(9 [09]):4
+                        1276 DC         = UChar(2 [02]):4
+                    }
+                1276 comp[95] = 1276 struct {
+                        1276 compId     = UChar(57 [39])
+                        1277 AC         = UChar(5 [05]):4
+                        1278 DC         = UChar(4 [04]):4
+                    }
+                1278 comp[96] = 1278 struct {
+                        1278 compId     = UChar(88 [58])
+                        1279 AC         = UChar(13 [0d]):4
+                        127a DC         = UChar(7 [07]):4
+                    }
+                127a comp[97] = 127a struct {
+                        127a compId     = UChar(184 [b8])
+                        127b AC         = UChar(2 [02]):4
+                        127c DC         = UChar(14 [0e]):4
+                    }
+                127c comp[98] = 127c struct {
+                        127c compId     = UChar(67 [43])
+                        127d AC         = UChar(3 [03]):4
+                        127e DC         = UChar(0 [00]):4
+                    }
+                127e comp[99] = 127e struct {
+                        127e compId     = UChar(74 [4a])
+                        127f AC         = UChar(0 [00]):4
+                        1280 DC         = UChar(11 [0b]):4
+                    }
+                1280 comp[100] = 1280 struct {
+                        1280 compId     = UChar(96 [60])
+                        1281 AC         = UChar(0 [00]):4
+                        1282 DC         = UChar(1 [01]):4
+                    }
+                1282 comp[101] = 1282 struct {
+                        1282 compId     = UChar(60 [3c])
+                        1283 AC         = UChar(3 [03]):4
+                        1284 DC         = UChar(8 [08]):4
+                    }
+                1284 comp[102] = 1284 struct {
+                        1284 compId     = UChar(23 [17])
+                        1285 AC         = UChar(8 [08]):4
+                        1286 DC         = UChar(8 [08]):4
+                    }
+                1286 comp[103] = 1286 struct {
+                        1286 compId     = UChar(249 [f9])
+                        1287 AC         = UChar(1 [01]):4
+                        1288 DC         = UChar(3 [03]):4
+                    }
+                1288 comp[104] = 1288 struct {
+                        1288 compId     = UChar(68 [44])
+                        1289 AC         = UChar(12 [0c]):4
+                        128a DC         = UChar(10 [0a]):4
+                    }
+            128a Ss         = UChar(0 [00])
+            128b Se         = UChar(134 [86])
+            128c Ah         = UChar(9 [09]):4
+            128d Al         = UChar(10 [0a]):4
+        }
+    }
+}

@@ -1,0 +1,134 @@
+0000 struct {
+    0000 contents   = 0000 struct {
+        0000 dict_identifier = Char(100 [64])
+        0001 key_0      = 0001 struct {
+            0001 length     = Char[1] ('8')
+            0002 string_identifier = Char(58 [3a])
+            0003 str        = Char[8] ('announce')
+        }
+        000b value_0    = 000b struct {
+            000b length     = Char[1] ('9')
+            000c string_identifier = Char(58 [3a])
+            000d str        = Char[9] ('http://a/')
+        }
+        0016 key_1      = 0016 struct {
+            0016 length     = Char[2] ('10')
+            0018 string_identifier = Char(58 [3a])
+            0019 str        = Char[10] ('created by')
+        }
+        0023 value_1    = 0023 struct {
+            0023 length     = Char[2] ('25')
+            0025 string_identifier = Char(58 [3a])
+            0026 str        = Char[25] ('Transmission/2.84 (1')
+        }
+        003f key_2      = 003f struct {
+            003f length     = Char[2] ('13')
+            0041 string_identifier = Char(58 [3a])
+            0042 str        = Char[13] ('creation date')
+        }
+        004f value_2    = 004f struct {
+            004f int_identifier = Char(105 [69])
+            0050 integer    = Char[10] ('1446418684')
+            005a terminator = Char(101 [65])
+        }
+        005b key_3      = 005b struct {
+            005b length     = Char[1] ('8')
+            005c string_identifier = Char(58 [3a])
+            005d str        = Char[8] ('encoding')
+        }
+        0065 value_3    = 0065 struct {
+            0065 length     = Char[1] ('5')
+            0066 string_identifier = Char(58 [3a])
+            0067 str        = Char[5] ('UTF-8')
+        }
+        006c key_4      = 006c struct {
+            006c length     = Char[1] ('4')
+            006d string_identifier = Char(58 [3a])
+            006e str        = Char[4] ('info')
+        }
+        0072 value_4    = 0072 struct {
+            0072 dict_identifier = Char(100 [64])
+            0073 key_0      = 0073 struct {
+                0073 length     = Char[1] ('5')
+                0074 string_identifier = Char(58 [3a])
+                0075 str        = Char[5] ('files')
+            }
+            007a value_0    = 007a struct {
+                007a list_identifier = Char(108 [6c])
+                007b item       = 007b struct {
+                    007b dict_identifier = Char(100 [64])
+                    007c key_0      = 007c struct {
+                        007c length     = Char[1] ('6')
+                        007d string_identifier = Char(58 [3a])
+                        007e str        = Char[6] ('length')
+                    }
+                    0084 value_0    = 0084 struct {
+                        0084 int_identifier = Char(105 [69])
+                        0085 integer    = Char[1] ('6')
+                        0086 terminator = Char(101 [65])
+                    }
+                    0087 key_1      = 0087 struct {
+                        0087 length     = Char[1] ('4')
+                        0088 string_identifier = Char(58 [3a])
+                        0089 str        = Char[4] ('path')
+                    }
+                    008d value_1    = 008d struct {
+                        008d list_identifier = Char(108 [6c])
+                        008e item       = 008e struct {
+                            008e length     = Char[1] ('5')
+                            008f string_identifier = Char(58 [3a])
+                            0090 str        = Char[5] ('a.txt')
+                        }
+                        0095 terminator = Char(101 [65])
+                    }
+                    0096 terminator = Char(101 [65])
+                }
+                0097 terminator = Char(101 [65])
+            }
+            0098 key_1      = 0098 struct {
+                0098 length     = Char[1] ('4')
+                0099 string_identifier = Char(58 [3a])
+                009a str        = Char[4] ('name')
+            }
+            009e value_1    = 009e struct {
+                009e length     = Char[1] ('4')
+                009f string_identifier = Char(58 [3a])
+                00a0 str        = Char[4] ('test')
+            }
+            00a4 key_2      = 00a4 struct {
+                00a4 length     = Char[2] ('12')
+                00a6 string_identifier = Char(58 [3a])
+                00a7 str        = Char[12] ('piece length')
+            }
+            00b3 value_2    = 00b3 struct {
+                00b3 int_identifier = Char(105 [69])
+                00b4 integer    = Char[5] ('32768')
+                00b9 terminator = Char(101 [65])
+            }
+            00ba key_3      = 00ba struct {
+                00ba length     = Char[1] ('6')
+                00bb string_identifier = Char(58 [3a])
+                00bc str        = Char[6] ('pieces')
+            }
+            00c2 value_3    = 00c2 struct {
+                00c2 length     = Char[2] ('20')
+                00c4 string_identifier = Char(58 [3a])
+                00c5 data       = 00c5 struct {
+                    00c5 data       = UInt[5]
+                }
+            }
+            00d9 key_4      = 00d9 struct {
+                00d9 length     = Char[1] ('7')
+                00da string_identifier = Char(58 [3a])
+                00db str        = Char[7] ('private')
+            }
+            00e2 value_4    = 00e2 struct {
+                00e2 int_identifier = Char(105 [69])
+                00e3 integer    = Char[1] ('0')
+                00e4 terminator = Char(101 [65])
+            }
+            00e5 terminator = Char(101 [65])
+        }
+        00e6 terminator = Char(101 [65])
+    }
+}

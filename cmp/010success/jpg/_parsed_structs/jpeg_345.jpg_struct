@@ -1,0 +1,125 @@
+0000 struct {
+    0000 jpgfile    = 0000 struct {
+        0000 SOIMarker  = Enum<UShort>(65496 [ffd8])(M_SOI)
+        0002 app0       = 0002 struct {
+            0002 marker     = Enum<UShort>(65504 [ffe0])(M_APP0)
+            0004 szSection  = UShort(16 [0010])
+            0006 App0Type   = Char[5] ('JFIF\x00')
+            000b versionHigh = Short(1 [0001]):8
+            000d versionLow = Short(1 [0001]):8
+            000d units      = UChar(2 [02])
+            000e Xdensity   = UShort(28 [001c])
+            0010 Ydensity   = UShort(28 [001c])
+            0012 xThumbnail = UChar(0 [00])
+            0013 yThumbnail = UChar(0 [00])
+        }
+        0014 dqt        = DQT[2]
+            0014 dqt[0] = 0014 struct {
+                    0014 marker     = Enum<UShort>(65499 [ffdb])(M_DQT)
+                    0016 szSection  = UShort(67 [0043])
+                    0018 qtable     = 0018 struct {
+                        0018 Pq         = UChar(0 [00]):4
+                        0019 Tq         = UChar(0 [00]):4
+                        0019 qTable     = Char[64] ('\x03\x02\x02\x02\x02\x02\x03\x02\x02\x02\x03\x03\x03\x03\x04\x06\x04\x04\x04\x04')
+                    }
+                }
+            0059 dqt[1] = 0059 struct {
+                    0059 marker     = Enum<UShort>(65499 [ffdb])(M_DQT)
+                    005b szSection  = UShort(67 [0043])
+                    005d qtable     = 005d struct {
+                        005d Pq         = UChar(0 [00]):4
+                        005e Tq         = UChar(1 [01]):4
+                        005e qTable     = Char[64] ('\x03\x03\x03\x04\x03\x04\x08\x04\x04\x08\x10\x0b\t\x0b\x10\x10\x10\x10\x10\x10')
+                    }
+                }
+        009e sof0       = 009e struct {
+            009e marker     = Enum<UShort>(65472 [ffc0])(M_SOF0)
+            00a0 szSection  = UShort(17 [0011])
+            00a2 precision  = UChar(8 [08])
+            00a3 Y_image    = UShort(2 [0002])
+            00a5 X_image    = UShort(2 [0002])
+            00a7 nr_comp    = UChar(3 [03])
+            00a8 comp       = struct[3]
+                00a8 comp[0] = 00a8 struct {
+                        00a8 compId     = UChar(1 [01])
+                        00a9 Horz       = UChar(2 [02]):4
+                        00aa Vert       = UChar(2 [02]):4
+                        00aa compNr     = UChar(0 [00])
+                    }
+                00ab comp[1] = 00ab struct {
+                        00ab compId     = UChar(2 [02])
+                        00ac Horz       = UChar(1 [01]):4
+                        00ad Vert       = UChar(1 [01]):4
+                        00ad compNr     = UChar(1 [01])
+                    }
+                00ae comp[2] = 00ae struct {
+                        00ae compId     = UChar(3 [03])
+                        00af Horz       = UChar(1 [01]):4
+                        00b0 Vert       = UChar(1 [01]):4
+                        00b0 compNr     = UChar(1 [01])
+                    }
+        }
+        00b1 dht        = DHT[4]
+            00b1 dht[0] = 00b1 struct {
+                    00b1 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    00b3 szSection  = UShort(21 [0015])
+                    00b5 huff_table = 00b5 struct {
+                        00b5 htInfo     = UChar(0 [00])
+                        00b6 length     = UChar[16] ('\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+                        00c6 HTV        = UChar[2] ('\x00\t')
+                    }
+                }
+            00c8 dht[1] = 00c8 struct {
+                    00c8 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    00ca szSection  = UShort(28 [001c])
+                    00cc huff_table = 00cc struct {
+                        00cc htInfo     = UChar(16 [10])
+                        00cd length     = UChar[16] ('\x00\x02\x02\x03\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+                        00dd HTV        = UChar[9] ('\x01\x03\x02\x04\x00\x05\x07\x06\x11')
+                    }
+                }
+            00e6 dht[2] = 00e6 struct {
+                    00e6 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    00e8 szSection  = UShort(20 [0014])
+                    00ea huff_table = 00ea struct {
+                        00ea htInfo     = UChar(1 [01])
+                        00eb length     = UChar[16] ('\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+                        00fb HTV        = UChar[1] ('\x07')
+                    }
+                }
+            00fc dht[3] = 00fc struct {
+                    00fc marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    00fe szSection  = UShort(27 [001b])
+                    0100 huff_table = 0100 struct {
+                        0100 htInfo     = UChar(17 [11])
+                        0101 length     = UChar[16] ('\x00\x00\x07\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+                        0111 HTV        = UChar[8] ('\x00\x01\x03\x044r\xb1\x02')
+                    }
+                }
+        0119 scanStart  = 0119 struct {
+            0119 marker     = Enum<UShort>(65498 [ffda])(M_SOS)
+            011b szSection  = UShort(12 [000c])
+            011d nr_comp    = UChar(3 [03])
+            011e comp       = struct[3]
+                011e comp[0] = 011e struct {
+                        011e compId     = UChar(1 [01])
+                        011f AC         = UChar(0 [00]):4
+                        0120 DC         = UChar(0 [00]):4
+                    }
+                0120 comp[1] = 0120 struct {
+                        0120 compId     = UChar(2 [02])
+                        0121 AC         = UChar(1 [01]):4
+                        0122 DC         = UChar(1 [01]):4
+                    }
+                0122 comp[2] = 0122 struct {
+                        0122 compId     = UChar(3 [03])
+                        0123 AC         = UChar(1 [01]):4
+                        0124 DC         = UChar(1 [01]):4
+                    }
+            0124 Ss         = UChar(0 [00])
+            0125 Se         = UChar(63 [3f])
+            0126 Ah         = UChar(0 [00]):4
+            0127 Al         = UChar(0 [00]):4
+        }
+    }
+}

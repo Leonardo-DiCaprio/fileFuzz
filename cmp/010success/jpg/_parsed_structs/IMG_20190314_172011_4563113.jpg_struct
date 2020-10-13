@@ -1,0 +1,718 @@
+0000 struct {
+    0000 jpgfile    = 0000 struct {
+        0000 SOIMarker  = Enum<UShort>(65496 [ffd8])(M_SOI)
+        0002 app1       = 0002 struct {
+            0002 marker     = Enum<UShort>(65505 [ffe1])(M_APP1)
+            0004 szSection  = UShort(1029 [0405])
+            0006 EXIF       = Char[6] ('Exif\x00\x00')
+            000c align      = Char[2] ('MM')
+            000e tagMark    = UShort(42 [002a])
+            0010 offsetFirstIFD = UInt(8 [00000008])
+            0014 ifdMainImage = 0014 struct {
+                0014 nDirEntry  = UShort(12 [000c])
+                0016 dirEntry   = DIRENTRY[12]
+                    0016 dirEntry[0] = 0016 struct {
+                            0016 tagNumber  = Enum<UShort>(256 [0100])(ImageWidth)
+                            0018 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                            001a nComponent = UInt(1 [00000001])
+                            001e usValue    = UShort(4032 [0fc0])
+                            0020 padding    = UChar[2] ('\x00\x00')
+                        }
+                    0022 dirEntry[1] = 0022 struct {
+                            0022 tagNumber  = Enum<UShort>(272 [0110])(Model)
+                            0024 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                            0026 nComponent = UInt(5 [00000005])
+                            002a offsetData = UInt(158 [0000009e])
+                        }
+                    002e dirEntry[2] = 002e struct {
+                            002e tagNumber  = Enum<UShort>(257 [0101])(ImageHeight)
+                            0030 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                            0032 nComponent = UInt(1 [00000001])
+                            0036 usValue    = UShort(3024 [0bd0])
+                            0038 padding    = UChar[2] ('\x00\x00')
+                        }
+                    003a dirEntry[3] = 003a struct {
+                            003a tagNumber  = Enum<UShort>(274 [0112])(Orientation)
+                            003c dataFormat = Enum<UShort>(3 [0003])(uShort)
+                            003e nComponent = UInt(1 [00000001])
+                            0042 usValue    = UShort(1 [0001])
+                            0044 padding    = UChar[2] ('\x00\x00')
+                        }
+                    0046 dirEntry[4] = 0046 struct {
+                            0046 tagNumber  = Enum<UShort>(306 [0132])(ModifyDate)
+                            0048 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                            004a nComponent = UInt(20 [00000014])
+                            004e offsetData = UInt(163 [000000a3])
+                        }
+                    0052 dirEntry[5] = 0052 struct {
+                            0052 tagNumber  = Enum<UShort>(531 [0213])(YCbCrPositioning)
+                            0054 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                            0056 nComponent = UInt(1 [00000001])
+                            005a usValue    = UShort(1 [0001])
+                            005c padding    = UChar[2] ('\x00\x00')
+                        }
+                    005e dirEntry[6] = 005e struct {
+                            005e tagNumber  = Enum<UShort>(34665 [8769])(ExifOffset)
+                            0060 dataFormat = Enum<UShort>(4 [0004])(uLong)
+                            0062 nComponent = UInt(1 [00000001])
+                            0066 ulValue    = UInt(206 [000000ce])
+                        }
+                    006a dirEntry[7] = 006a struct {
+                            006a tagNumber  = Enum<UShort>(296 [0128])(ResolutionUnit)
+                            006c dataFormat = Enum<UShort>(3 [0003])(uShort)
+                            006e nComponent = UInt(1 [00000001])
+                            0072 usValue    = UShort(2 [0002])
+                            0074 padding    = UChar[2] ('\x00\x00')
+                        }
+                    0076 dirEntry[8] = 0076 struct {
+                            0076 tagNumber  = Enum<UShort>(34853 [8825])(GPSInfo)
+                            0078 dataFormat = Enum<UShort>(4 [0004])(uLong)
+                            007a nComponent = UInt(1 [00000001])
+                            007e ulValue    = UInt(801 [00000321])
+                        }
+                    0082 dirEntry[9] = 0082 struct {
+                            0082 tagNumber  = Enum<UShort>(282 [011a])(XResolution)
+                            0084 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                            0086 nComponent = UInt(1 [00000001])
+                            008a offsetData = UInt(183 [000000b7])
+                        }
+                    008e dirEntry[10] = 008e struct {
+                            008e tagNumber  = Enum<UShort>(283 [011b])(YResolution)
+                            0090 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                            0092 nComponent = UInt(1 [00000001])
+                            0096 offsetData = UInt(191 [000000bf])
+                        }
+                    009a dirEntry[11] = 009a struct {
+                            009a tagNumber  = Enum<UShort>(271 [010f])(Make)
+                            009c dataFormat = Enum<UShort>(2 [0002])(ascString)
+                            009e nComponent = UInt(7 [00000007])
+                            00a2 offsetData = UInt(199 [000000c7])
+                        }
+                00a6 nextIFDoffset = UInt(0 [00000000])
+                0000 _skipped_0 = Char[0] ('')
+                00aa strAscii_0 = 00aa struct {
+                    00aa oneByteData = Char[5] ('MI 8\x00')
+                }
+                0000 _skipped_1 = Char[0] ('')
+                00af strAscii_1 = 00af struct {
+                    00af oneByteData = Char[20] ('2019:03:14 17:20:11\x00')
+                }
+                0000 _skipped_2 = Char[0] ('')
+                00c3 strURatio_0 = 00c3 struct {
+                    00c3 uRValue    = struct[1]
+                        00c3 uRValue[0] = 00c3 struct {
+                                00c3 num        = UInt(72 [00000048])
+                                00c7 den        = UInt(1 [00000001])
+                            }
+                }
+                0000 _skipped_3 = Char[0] ('')
+                00cb strURatio_1 = 00cb struct {
+                    00cb uRValue    = struct[1]
+                        00cb uRValue[0] = 00cb struct {
+                                00cb num        = UInt(72 [00000048])
+                                00cf den        = UInt(1 [00000001])
+                            }
+                }
+                0000 _skipped_4 = Char[0] ('')
+                00d3 strAscii_2 = 00d3 struct {
+                    00d3 oneByteData = Char[7] ('Xiaomi\x00')
+                }
+                0000 _skipped_5 = Char[0] ('')
+                00da subDir_0   = 00da struct {
+                    00da nDirEntry  = UShort(33 [0021])
+                    00dc dirEntry   = DIRENTRY[33]
+                        00dc dirEntry[0] = 00dc struct {
+                                00dc tagNumber  = Enum<UShort>(34855 [8827])(ISO)
+                                00de dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                00e0 nComponent = UInt(1 [00000001])
+                                00e4 usValue    = UShort(100 [0064])
+                                00e6 padding    = UChar[2] ('\x00\x00')
+                            }
+                        00e8 dirEntry[1] = 00e8 struct {
+                                00e8 tagNumber  = Enum<UShort>(34850 [8822])(ExposureProgram)
+                                00ea dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                00ec nComponent = UInt(1 [00000001])
+                                00f0 ExposureProgram = Enum<Short>(2 [0002])(EP_Normal_program)
+                                00f2 padding    = UChar[2] ('\x00\x00')
+                            }
+                        00f4 dirEntry[2] = 00f4 struct {
+                                00f4 tagNumber  = Enum<UShort>(33437 [829d])(FNumber)
+                                00f6 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                00f8 nComponent = UInt(1 [00000001])
+                                00fc offsetData = UInt(608 [00000260])
+                            }
+                        0100 dirEntry[3] = 0100 struct {
+                                0100 tagNumber  = Enum<UShort>(33434 [829a])(ExposureTime)
+                                0102 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                0104 nComponent = UInt(1 [00000001])
+                                0108 offsetData = UInt(616 [00000268])
+                            }
+                        010c dirEntry[4] = 010c struct {
+                                010c tagNumber  = Enum<UShort>(39321 [9999])(?? UNK_ENUM ??)
+                                010e dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                0110 nComponent = UInt(38 [00000026])
+                                0114 offsetData = UInt(624 [00000270])
+                            }
+                        0118 dirEntry[5] = 0118 struct {
+                                0118 tagNumber  = Enum<UShort>(41495 [a217])(SensingMethod2)
+                                011a dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                011c nComponent = UInt(1 [00000001])
+                                0120 usValue    = UShort(1 [0001])
+                                0122 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0124 dirEntry[6] = 0124 struct {
+                                0124 tagNumber  = Enum<UShort>(34965 [8895])(?? UNK_ENUM ??)
+                                0126 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                0128 nComponent = UInt(1 [00000001])
+                                012c usValue    = UShort(0 [0000])
+                                012e padding    = UChar[2] ('\x00\x00')
+                            }
+                        0130 dirEntry[7] = 0130 struct {
+                                0130 tagNumber  = Enum<UShort>(37522 [9292])(SubSecTimeDigitized)
+                                0132 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                0134 nComponent = UInt(7 [00000007])
+                                0138 offsetData = UInt(662 [00000296])
+                            }
+                        013c dirEntry[8] = 013c struct {
+                                013c tagNumber  = Enum<UShort>(37521 [9291])(SubSecTimeOriginal)
+                                013e dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                0140 nComponent = UInt(7 [00000007])
+                                0144 offsetData = UInt(669 [0000029d])
+                            }
+                        0148 dirEntry[9] = 0148 struct {
+                                0148 tagNumber  = Enum<UShort>(37520 [9290])(SubSecTime)
+                                014a dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                014c nComponent = UInt(7 [00000007])
+                                0150 offsetData = UInt(676 [000002a4])
+                            }
+                        0154 dirEntry[10] = 0154 struct {
+                                0154 tagNumber  = Enum<UShort>(37386 [920a])(FocalLength)
+                                0156 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                0158 nComponent = UInt(1 [00000001])
+                                015c offsetData = UInt(683 [000002ab])
+                            }
+                        0160 dirEntry[11] = 0160 struct {
+                                0160 tagNumber  = Enum<UShort>(37385 [9209])(Flash)
+                                0162 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                0164 nComponent = UInt(1 [00000001])
+                                0168 unused     = Short(0 [0000]):9
+                                016a red_eye_mode = Short(0 [0000]):1
+                                016a flash_function = Short(0 [0000]):1
+                                016a flash_mode = Short(3 [0003]):2
+                                016a flash_return = Short(0 [0000]):2
+                                016a flash_fired = Short(0 [0000]):1
+                                016a padding    = UChar[2] ('\x00\x00')
+                            }
+                        016c dirEntry[12] = 016c struct {
+                                016c tagNumber  = Enum<UShort>(37384 [9208])(LightSource)
+                                016e dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                0170 nComponent = UInt(1 [00000001])
+                                0174 LightSource = Enum<Short>(0 [0000])(LS_unknown)
+                                0176 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0178 dirEntry[13] = 0178 struct {
+                                0178 tagNumber  = Enum<UShort>(37383 [9207])(MeteringMode)
+                                017a dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                017c nComponent = UInt(1 [00000001])
+                                0180 MeteringMode = Enum<Short>(3 [0003])(MM_Spot)
+                                0182 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0184 dirEntry[14] = 0184 struct {
+                                0184 tagNumber  = Enum<UShort>(41990 [a406])(SceneCaptureType)
+                                0186 dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                0188 nComponent = UInt(1 [00000001])
+                                018c SceneCaptureType = Enum<Short>(0 [0000])(SCT_Standard)
+                                018e padding    = UChar[2] ('\x00\x00')
+                            }
+                        0190 dirEntry[15] = 0190 struct {
+                                0190 tagNumber  = Enum<UShort>(40965 [a005])(InteropOffset)
+                                0192 dataFormat = Enum<UShort>(4 [0004])(uLong)
+                                0194 nComponent = UInt(1 [00000001])
+                                0198 ulValue    = UInt(771 [00000303])
+                            }
+                        019c dirEntry[16] = 019c struct {
+                                019c tagNumber  = Enum<UShort>(41989 [a405])(FocalLengthIn35mmFormat)
+                                019e dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                01a0 nComponent = UInt(1 [00000001])
+                                01a4 usValue    = UShort(21 [0015])
+                                01a6 padding    = UChar[2] ('\x00\x00')
+                            }
+                        01a8 dirEntry[17] = 01a8 struct {
+                                01a8 tagNumber  = Enum<UShort>(37381 [9205])(MaxApertureValue)
+                                01aa dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                01ac nComponent = UInt(1 [00000001])
+                                01b0 offsetData = UInt(691 [000002b3])
+                            }
+                        01b4 dirEntry[18] = 01b4 struct {
+                                01b4 tagNumber  = Enum<UShort>(36868 [9004])(CreateDate)
+                                01b6 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                01b8 nComponent = UInt(20 [00000014])
+                                01bc offsetData = UInt(699 [000002bb])
+                            }
+                        01c0 dirEntry[19] = 01c0 struct {
+                                01c0 tagNumber  = Enum<UShort>(37380 [9204])(ExposureCompensation)
+                                01c2 dataFormat = Enum<UShort>(10 [000a])(sRatio)
+                                01c4 nComponent = UInt(1 [00000001])
+                                01c8 offsetData = UInt(719 [000002cf])
+                            }
+                        01cc dirEntry[20] = 01cc struct {
+                                01cc tagNumber  = Enum<UShort>(40963 [a003])(ExifImageLength)
+                                01ce dataFormat = Enum<UShort>(4 [0004])(uLong)
+                                01d0 nComponent = UInt(1 [00000001])
+                                01d4 ulValue    = UInt(3024 [00000bd0])
+                            }
+                        01d8 dirEntry[21] = 01d8 struct {
+                                01d8 tagNumber  = Enum<UShort>(41987 [a403])(WhiteBalance)
+                                01da dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                01dc nComponent = UInt(1 [00000001])
+                                01e0 WhiteBalance = Enum<Short>(0 [0000])(WB_Auto_white_balance)
+                                01e2 padding    = UChar[2] ('\x00\x00')
+                            }
+                        01e4 dirEntry[22] = 01e4 struct {
+                                01e4 tagNumber  = Enum<UShort>(36867 [9003])(DateTimeOriginal)
+                                01e6 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                01e8 nComponent = UInt(20 [00000014])
+                                01ec offsetData = UInt(727 [000002d7])
+                            }
+                        01f0 dirEntry[23] = 01f0 struct {
+                                01f0 tagNumber  = Enum<UShort>(37379 [9203])(BrightnessValue)
+                                01f2 dataFormat = Enum<UShort>(10 [000a])(sRatio)
+                                01f4 nComponent = UInt(1 [00000001])
+                                01f8 offsetData = UInt(747 [000002eb])
+                            }
+                        01fc dirEntry[24] = 01fc struct {
+                                01fc tagNumber  = Enum<UShort>(40962 [a002])(ExifImageWidth)
+                                01fe dataFormat = Enum<UShort>(4 [0004])(uLong)
+                                0200 nComponent = UInt(1 [00000001])
+                                0204 ulValue    = UInt(4032 [00000fc0])
+                            }
+                        0208 dirEntry[25] = 0208 struct {
+                                0208 tagNumber  = Enum<UShort>(41986 [a402])(ExposureMode)
+                                020a dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                020c nComponent = UInt(1 [00000001])
+                                0210 ExposureMode = Enum<Short>(0 [0000])(EM_Auto_exposure)
+                                0212 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0214 dirEntry[26] = 0214 struct {
+                                0214 tagNumber  = Enum<UShort>(37378 [9202])(ApertureValue)
+                                0216 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                0218 nComponent = UInt(1 [00000001])
+                                021c offsetData = UInt(755 [000002f3])
+                            }
+                        0220 dirEntry[27] = 0220 struct {
+                                0220 tagNumber  = Enum<UShort>(37121 [9101])(ComponentsConfiguration)
+                                0222 dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                0224 nComponent = UInt(4 [00000004])
+                                0228 strAscii   = 0228 struct {
+                                    0228 oneByteData = UChar[4] ('\x01\x02\x03\x00')
+                                }
+                            }
+                        022c dirEntry[28] = 022c struct {
+                                022c tagNumber  = Enum<UShort>(40961 [a001])(ColorSpace)
+                                022e dataFormat = Enum<UShort>(3 [0003])(uShort)
+                                0230 nComponent = UInt(1 [00000001])
+                                0234 usValue    = UShort(1 [0001])
+                                0236 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0238 dirEntry[29] = 0238 struct {
+                                0238 tagNumber  = Enum<UShort>(41729 [a301])(SceneType)
+                                023a dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                023c nComponent = UInt(1 [00000001])
+                                0240 strAscii   = 0240 struct {
+                                    0240 oneByteData = UChar[1] ('\x01')
+                                }
+                                0241 padding    = UChar[3] ('\x00\x00\x00')
+                            }
+                        0244 dirEntry[30] = 0244 struct {
+                                0244 tagNumber  = Enum<UShort>(37377 [9201])(ShutterSpeedValue)
+                                0246 dataFormat = Enum<UShort>(10 [000a])(sRatio)
+                                0248 nComponent = UInt(1 [00000001])
+                                024c offsetData = UInt(763 [000002fb])
+                            }
+                        0250 dirEntry[31] = 0250 struct {
+                                0250 tagNumber  = Enum<UShort>(36864 [9000])(ExifVersion)
+                                0252 dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                0254 nComponent = UInt(4 [00000004])
+                                0258 strAscii   = 0258 struct {
+                                    0258 oneByteData = UChar[4] ('0220')
+                                }
+                            }
+                        025c dirEntry[32] = 025c struct {
+                                025c tagNumber  = Enum<UShort>(40960 [a000])(FlashpixVersion)
+                                025e dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                0260 nComponent = UInt(4 [00000004])
+                                0264 strAscii   = 0264 struct {
+                                    0264 oneByteData = UChar[4] ('0100')
+                                }
+                            }
+                    0268 nextIFDoffset = UInt(0 [00000000])
+                    0000 _skipped_0 = Char[0] ('')
+                    026c strURatio_0 = 026c struct {
+                        026c uRValue    = struct[1]
+                            026c uRValue[0] = 026c struct {
+                                    026c num        = UInt(180 [000000b4])
+                                    0270 den        = UInt(100 [00000064])
+                                }
+                    }
+                    0000 _skipped_1 = Char[0] ('')
+                    0274 strURatio_1 = 0274 struct {
+                        0274 uRValue    = struct[1]
+                            0274 uRValue[0] = 0274 struct {
+                                    0274 num        = UInt(1 [00000001])
+                                    0278 den        = UInt(1797 [00000705])
+                                }
+                    }
+                    0000 _skipped_2 = Char[0] ('')
+                    027c strAscii_0 = 027c struct {
+                        027c oneByteData = Char[38] ('{"mirror":false,"sen')
+                    }
+                    0000 _skipped_3 = Char[0] ('')
+                    02a2 strAscii_1 = 02a2 struct {
+                        02a2 oneByteData = Char[7] ('828501\x00')
+                    }
+                    0000 _skipped_4 = Char[0] ('')
+                    02a9 strAscii_2 = 02a9 struct {
+                        02a9 oneByteData = Char[7] ('828501\x00')
+                    }
+                    0000 _skipped_5 = Char[0] ('')
+                    02b0 strAscii_3 = 02b0 struct {
+                        02b0 oneByteData = Char[7] ('828501\x00')
+                    }
+                    0000 _skipped_6 = Char[0] ('')
+                    02b7 strURatio_2 = 02b7 struct {
+                        02b7 uRValue    = struct[1]
+                            02b7 uRValue[0] = 02b7 struct {
+                                    02b7 num        = UInt(4216 [00001078])
+                                    02bb den        = UInt(1000 [000003e8])
+                                }
+                    }
+                    0000 _skipped_7 = Char[0] ('')
+                    02bf strURatio_3 = 02bf struct {
+                        02bf uRValue    = struct[1]
+                            02bf uRValue[0] = 02bf struct {
+                                    02bf num        = UInt(169 [000000a9])
+                                    02c3 den        = UInt(100 [00000064])
+                                }
+                    }
+                    0000 _skipped_8 = Char[0] ('')
+                    02c7 strAscii_4 = 02c7 struct {
+                        02c7 oneByteData = Char[20] ('2019:03:14 17:20:11\x00')
+                    }
+                    0000 _skipped_9 = Char[0] ('')
+                    02db strSRatio_0 = 02db struct {
+                        02db siRValue   = struct[1]
+                            02db siRValue[0] = 02db struct {
+                                    02db num        = Int(0 [00000000])
+                                    02df den        = Int(6 [00000006])
+                                }
+                    }
+                    0000 _skipped_10 = Char[0] ('')
+                    02e3 strAscii_5 = 02e3 struct {
+                        02e3 oneByteData = Char[20] ('2019:03:14 17:20:11\x00')
+                    }
+                    0000 _skipped_11 = Char[0] ('')
+                    02f7 strSRatio_1 = 02f7 struct {
+                        02f7 siRValue   = struct[1]
+                            02f7 siRValue[0] = 02f7 struct {
+                                    02f7 num        = Int(586 [0000024a])
+                                    02fb den        = Int(100 [00000064])
+                                }
+                    }
+                    0000 _skipped_12 = Char[0] ('')
+                    02ff strURatio_4 = 02ff struct {
+                        02ff uRValue    = struct[1]
+                            02ff uRValue[0] = 02ff struct {
+                                    02ff num        = UInt(169 [000000a9])
+                                    0303 den        = UInt(100 [00000064])
+                                }
+                    }
+                    0000 _skipped_13 = Char[0] ('')
+                    0307 strSRatio_2 = 0307 struct {
+                        0307 siRValue   = struct[1]
+                            0307 siRValue[0] = 0307 struct {
+                                    0307 num        = Int(10811 [00002a3b])
+                                    030b den        = Int(1000 [000003e8])
+                                }
+                    }
+                    0000 _skipped_14 = Char[0] ('')
+                    030f subDir     = 030f struct {
+                        030f nDirEntry  = UShort(2 [0002])
+                        0311 dirEntry   = DIRENTRY[2]
+                            0311 dirEntry[0] = 0311 struct {
+                                    0311 tagNumber  = Enum<UShort>(1 [0001])(InteropIndex)
+                                    0313 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                    0315 nComponent = UInt(4 [00000004])
+                                    0319 strAscii   = 0319 struct {
+                                        0319 oneByteData = Char[4] ('R98\x00')
+                                    }
+                                }
+                            031d dirEntry[1] = 031d struct {
+                                    031d tagNumber  = Enum<UShort>(2 [0002])(InteropVersion)
+                                    031f dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                    0321 nComponent = UInt(4 [00000004])
+                                    0325 strAscii   = 0325 struct {
+                                        0325 oneByteData = UChar[4] ('0100')
+                                    }
+                                }
+                        0329 nextIFDoffset = UInt(0 [00000000])
+                        0000 _skipped   = Char[0] ('')
+                    }
+                }
+                0000 _skipped_6 = Char[193] ('\x00\x00\x00\xb4\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x07\x05{"mi')
+                032d subDir_1   = 032d struct {
+                    032d nDirEntry  = UShort(9 [0009])
+                    032f dirEntry   = DIRENTRY[9]
+                        032f dirEntry[0] = 032f struct {
+                                032f tagNumber  = Enum<UShort>(1 [0001])(GPSLatitudeRef)
+                                0331 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                0333 nComponent = UInt(2 [00000002])
+                                0337 strAscii   = 0337 struct {
+                                    0337 oneByteData = Char[2] ('N\x00')
+                                }
+                                0339 padding    = UChar[2] ('\x00\x00')
+                            }
+                        033b dirEntry[1] = 033b struct {
+                                033b tagNumber  = Enum<UShort>(2 [0002])(GPSLatitude)
+                                033d dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                033f nComponent = UInt(3 [00000003])
+                                0343 offsetData = UInt(915 [00000393])
+                            }
+                        0347 dirEntry[2] = 0347 struct {
+                                0347 tagNumber  = Enum<UShort>(3 [0003])(GPSLongitudeRef)
+                                0349 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                034b nComponent = UInt(2 [00000002])
+                                034f strAscii   = 034f struct {
+                                    034f oneByteData = Char[2] ('E\x00')
+                                }
+                                0351 padding    = UChar[2] ('\x00\x00')
+                            }
+                        0353 dirEntry[3] = 0353 struct {
+                                0353 tagNumber  = Enum<UShort>(4 [0004])(GPSLongitude)
+                                0355 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                0357 nComponent = UInt(3 [00000003])
+                                035b offsetData = UInt(939 [000003ab])
+                            }
+                        035f dirEntry[4] = 035f struct {
+                                035f tagNumber  = Enum<UShort>(5 [0005])(GPSAltitudeRef)
+                                0361 dataFormat = Enum<UShort>(1 [0001])(uByte)
+                                0363 nComponent = UInt(1 [00000001])
+                                0367 strAscii   = 0367 struct {
+                                    0367 oneByteData = UChar[1] ('\x00')
+                                }
+                                0368 padding    = UChar[3] ('\x00\x00\x00')
+                            }
+                        036b dirEntry[5] = 036b struct {
+                                036b tagNumber  = Enum<UShort>(6 [0006])(GPSAltitude)
+                                036d dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                036f nComponent = UInt(1 [00000001])
+                                0373 offsetData = UInt(963 [000003c3])
+                            }
+                        0377 dirEntry[6] = 0377 struct {
+                                0377 tagNumber  = Enum<UShort>(7 [0007])(GPSTimeStamp)
+                                0379 dataFormat = Enum<UShort>(5 [0005])(uRatio)
+                                037b nComponent = UInt(3 [00000003])
+                                037f offsetData = UInt(971 [000003cb])
+                            }
+                        0383 dirEntry[7] = 0383 struct {
+                                0383 tagNumber  = Enum<UShort>(27 [001b])(GPSProcessingMehotd)
+                                0385 dataFormat = Enum<UShort>(7 [0007])(undefined)
+                                0387 nComponent = UInt(15 [0000000f])
+                                038b offsetData = UInt(995 [000003e3])
+                            }
+                        038f dirEntry[8] = 038f struct {
+                                038f tagNumber  = Enum<UShort>(29 [001d])(GPSDateStamp)
+                                0391 dataFormat = Enum<UShort>(2 [0002])(ascString)
+                                0393 nComponent = UInt(11 [0000000b])
+                                0397 offsetData = UInt(1010 [000003f2])
+                            }
+                    039b nextIFDoffset = UInt(0 [00000000])
+                    0000 _skipped_0 = Char[0] ('')
+                    039f strURatio_0 = 039f struct {
+                        039f uRValue    = struct[3]
+                            039f uRValue[0] = 039f struct {
+                                    039f num        = UInt(40 [00000028])
+                                    03a3 den        = UInt(1 [00000001])
+                                }
+                            03a7 uRValue[1] = 03a7 struct {
+                                    03a7 num        = UInt(25 [00000019])
+                                    03ab den        = UInt(1 [00000001])
+                                }
+                            03af uRValue[2] = 03af struct {
+                                    03af num        = UInt(72372 [00011ab4])
+                                    03b3 den        = UInt(10000 [00002710])
+                                }
+                    }
+                    0000 _skipped_1 = Char[0] ('')
+                    03b7 strURatio_1 = 03b7 struct {
+                        03b7 uRValue    = struct[3]
+                            03b7 uRValue[0] = 03b7 struct {
+                                    03b7 num        = UInt(116 [00000074])
+                                    03bb den        = UInt(1 [00000001])
+                                }
+                            03bf uRValue[1] = 03bf struct {
+                                    03bf num        = UInt(40 [00000028])
+                                    03c3 den        = UInt(1 [00000001])
+                                }
+                            03c7 uRValue[2] = 03c7 struct {
+                                    03c7 num        = UInt(177059 [0002b3a3])
+                                    03cb den        = UInt(10000 [00002710])
+                                }
+                    }
+                    0000 _skipped_2 = Char[0] ('')
+                    03cf strURatio_2 = 03cf struct {
+                        03cf uRValue    = struct[1]
+                            03cf uRValue[0] = 03cf struct {
+                                    03cf num        = UInt(0 [00000000])
+                                    03d3 den        = UInt(1000 [000003e8])
+                                }
+                    }
+                    0000 _skipped_3 = Char[0] ('')
+                    03d7 strURatio_3 = 03d7 struct {
+                        03d7 uRValue    = struct[3]
+                            03d7 uRValue[0] = 03d7 struct {
+                                    03d7 num        = UInt(9 [00000009])
+                                    03db den        = UInt(1 [00000001])
+                                }
+                            03df uRValue[1] = 03df struct {
+                                    03df num        = UInt(20 [00000014])
+                                    03e3 den        = UInt(1 [00000001])
+                                }
+                            03e7 uRValue[2] = 03e7 struct {
+                                    03e7 num        = UInt(8 [00000008])
+                                    03eb den        = UInt(1 [00000001])
+                                }
+                    }
+                    0000 _skipped_4 = Char[0] ('')
+                    03ef strAscii_0 = 03ef struct {
+                        03ef oneByteData = UChar[15] ('ASCII\x00\x00\x00CELLID\x00')
+                    }
+                    0000 _skipped_5 = Char[0] ('')
+                    03fe strAscii_1 = 03fe struct {
+                        03fe oneByteData = Char[11] ('2019:03:14\x00')
+                    }
+                }
+            }
+            0000 _skipped   = Char[863] ('MI 8\x002019:03:14 17:2')
+        }
+        0409 app0       = 0409 struct {
+            0409 marker     = Enum<UShort>(65504 [ffe0])(M_APP0)
+            040b szSection  = UShort(16 [0010])
+            040d App0Type   = Char[5] ('JFIF\x00')
+            0412 versionHigh = Short(1 [0001]):8
+            0414 versionLow = Short(1 [0001]):8
+            0414 units      = UChar(0 [00])
+            0415 Xdensity   = UShort(1 [0001])
+            0417 Ydensity   = UShort(1 [0001])
+            0419 xThumbnail = UChar(0 [00])
+            041a yThumbnail = UChar(0 [00])
+        }
+        041b dqt        = DQT[2]
+            041b dqt[0] = 041b struct {
+                    041b marker     = Enum<UShort>(65499 [ffdb])(M_DQT)
+                    041d szSection  = UShort(67 [0043])
+                    041f qtable     = 041f struct {
+                        041f Pq         = UChar(0 [00]):4
+                        0420 Tq         = UChar(0 [00]):4
+                        0420 qTable     = Char[64] ('\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x02\x02\x01\x01\x01')
+                    }
+                }
+            0460 dqt[1] = 0460 struct {
+                    0460 marker     = Enum<UShort>(65499 [ffdb])(M_DQT)
+                    0462 szSection  = UShort(67 [0043])
+                    0464 qtable     = 0464 struct {
+                        0464 Pq         = UChar(0 [00]):4
+                        0465 Tq         = UChar(1 [01]):4
+                        0465 qTable     = Char[64] ('\x01\x01\x01\x01\x01\x01\x03\x02\x02\x03\x06\x04\x03\x04\x06\x06\x06\x06\x06\x06')
+                    }
+                }
+        04a5 sof0       = 04a5 struct {
+            04a5 marker     = Enum<UShort>(65472 [ffc0])(M_SOF0)
+            04a7 szSection  = UShort(17 [0011])
+            04a9 precision  = UChar(8 [08])
+            04aa Y_image    = UShort(3024 [0bd0])
+            04ac X_image    = UShort(4032 [0fc0])
+            04ae nr_comp    = UChar(3 [03])
+            04af comp       = struct[3]
+                04af comp[0] = 04af struct {
+                        04af compId     = UChar(1 [01])
+                        04b0 Horz       = UChar(2 [02]):4
+                        04b1 Vert       = UChar(2 [02]):4
+                        04b1 compNr     = UChar(0 [00])
+                    }
+                04b2 comp[1] = 04b2 struct {
+                        04b2 compId     = UChar(2 [02])
+                        04b3 Horz       = UChar(1 [01]):4
+                        04b4 Vert       = UChar(1 [01]):4
+                        04b4 compNr     = UChar(1 [01])
+                    }
+                04b5 comp[2] = 04b5 struct {
+                        04b5 compId     = UChar(3 [03])
+                        04b6 Horz       = UChar(1 [01]):4
+                        04b7 Vert       = UChar(1 [01]):4
+                        04b7 compNr     = UChar(1 [01])
+                    }
+        }
+        04b8 dht        = DHT[4]
+            04b8 dht[0] = 04b8 struct {
+                    04b8 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    04ba szSection  = UShort(31 [001f])
+                    04bc huff_table = 04bc struct {
+                        04bc htInfo     = UChar(0 [00])
+                        04bd length     = UChar[16] ('\x00\x01\x05\x01\x01\x01\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00')
+                        04cd HTV        = UChar[12] ('\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b')
+                    }
+                }
+            04d9 dht[1] = 04d9 struct {
+                    04d9 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    04db szSection  = UShort(181 [00b5])
+                    04dd huff_table = 04dd struct {
+                        04dd htInfo     = UChar(16 [10])
+                        04de length     = UChar[16] ('\x00\x02\x01\x03\x03\x02\x04\x03\x05\x05\x04\x04\x00\x00\x01}')
+                        04ee HTV        = UChar[162] ('\x01\x02\x03\x00\x04\x11\x05\x12!1A\x06\x13Qa\x07"q\x142')
+                    }
+                }
+            0590 dht[2] = 0590 struct {
+                    0590 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    0592 szSection  = UShort(31 [001f])
+                    0594 huff_table = 0594 struct {
+                        0594 htInfo     = UChar(1 [01])
+                        0595 length     = UChar[16] ('\x00\x03\x01\x01\x01\x01\x01\x01\x01\x01\x01\x00\x00\x00\x00\x00')
+                        05a5 HTV        = UChar[12] ('\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b')
+                    }
+                }
+            05b1 dht[3] = 05b1 struct {
+                    05b1 marker     = Enum<UShort>(65476 [ffc4])(M_DHT)
+                    05b3 szSection  = UShort(181 [00b5])
+                    05b5 huff_table = 05b5 struct {
+                        05b5 htInfo     = UChar(17 [11])
+                        05b6 length     = UChar[16] ('\x00\x02\x01\x02\x04\x04\x03\x04\x07\x05\x04\x04\x00\x01\x02w')
+                        05c6 HTV        = UChar[162] ('\x00\x01\x02\x03\x11\x04\x05!1\x06\x12AQ\x07aq\x13"2\x81')
+                    }
+                }
+        0668 scanStart  = 0668 struct {
+            0668 marker     = Enum<UShort>(65498 [ffda])(M_SOS)
+            066a szSection  = UShort(12 [000c])
+            066c nr_comp    = UChar(3 [03])
+            066d comp       = struct[3]
+                066d comp[0] = 066d struct {
+                        066d compId     = UChar(1 [01])
+                        066e AC         = UChar(0 [00]):4
+                        066f DC         = UChar(0 [00]):4
+                    }
+                066f comp[1] = 066f struct {
+                        066f compId     = UChar(2 [02])
+                        0670 AC         = UChar(1 [01]):4
+                        0671 DC         = UChar(1 [01]):4
+                    }
+                0671 comp[2] = 0671 struct {
+                        0671 compId     = UChar(3 [03])
+                        0672 AC         = UChar(1 [01]):4
+                        0673 DC         = UChar(1 [01]):4
+                    }
+            0673 Ss         = UChar(0 [00])
+            0674 Se         = UChar(63 [3f])
+            0675 Ah         = UChar(0 [00]):4
+            0676 Al         = UChar(0 [00]):4
+        }
+    }
+}

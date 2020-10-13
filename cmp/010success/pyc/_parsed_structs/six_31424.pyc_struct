@@ -1,0 +1,8 @@
+0000 struct {
+    0000 file       = 0000 struct {
+        0000 magic      = 0000 struct {
+            0000 magic1     = Enum<UShort>(62211 [f303])(?? UNK_ENUM ??)
+            0002 magic2     = Char[2] ('\r\n')
+        }
+    }
+}

@@ -1,0 +1,22 @@
+0000 struct {
+    0000 header     = 0000 struct {
+        0000 groupID    = Char[4] ('RIFF')
+        0004 size       = Int(37 [00000025])
+        0008 riffType   = Char[4] ('WAVE')
+    }
+    000c format     = 000c struct {
+        000c chunkID    = Char[4] ('fmt ')
+        0010 chunkSize  = Int(16 [00000010])
+        0014 wFormatTag = Short(1 [0001])
+        0016 wChannels  = UShort(1 [0001])
+        0018 dwSamplesPerSec = UInt(8000 [00001f40])
+        001c dwAvgBytesPerSec = UInt(8000 [00001f40])
+        0020 wBlockAlign = UShort(1 [0001])
+        0022 wBitsPerSample = UShort(8 [0008])
+    }
+    0024 data       = 0024 struct {
+        0024 chunkID    = Char[4] ('data')
+        0028 chunkSize  = Int(1 [00000001])
+        002c samples    = UChar[1] ('\x00')
+    }
+}

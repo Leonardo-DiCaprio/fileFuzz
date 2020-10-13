@@ -1,0 +1,92 @@
+0000 struct {
+    0000 _skipped   = Char[0] ('')
+    0000 Marker     = 0000 struct {
+        0000 HEAD_CRC   = UShort(24914 [6152])
+        0002 HeadType   = Enum<Char>(114 [72])(MARKER)
+        0003 HEAD_FLAGS = 0003 struct {
+            0003 _reserved  = UShort(6689 [1a21]):14
+            0005 OLD_VERSION_IGNORE = UShort(0 [0000]):1
+            0005 ADD_SIZE_PRESENT = UShort(0 [0000]):1
+        }
+        0005 HeaderSize = UShort(7 [0007])
+    }
+    0007 ArcHeader  = 0007 struct {
+        0007 HEAD_CRC   = UShort(37071 [90cf])
+        0009 HeadType   = Enum<Char>(115 [73])(ARCHIVE)
+        000a HEAD_FLAGS = 000a struct {
+            000a ARCHIVE_VOLUME = UChar(0 [00]):1
+            000b ARCHIVE_COMMENT_PRESENT = UChar(0 [00]):1
+            000b ARCHIVE_LOCKED = UChar(0 [00]):1
+            000b ARCHIVE_SOLID = UChar(0 [00]):1
+            000b NEW_VOLUME_NAMING = UChar(0 [00]):1
+            000b AV_PRESENT = UChar(0 [00]):1
+            000b RECOVERY_PRESENT = UChar(0 [00]):1
+            000b BLOCK_HEADERS_ENCRYPTED = UChar(0 [00]):1
+            000b IS_FIRST_VOLUME = UChar(0 [00]):1
+            000c _reserved  = UChar(0 [00]):5
+            000c OLD_VERSION_IGNORE = UChar(0 [00]):1
+            000c ADD_SIZE_PRESENT = UChar(0 [00]):1
+        }
+        000c HeaderSize = UShort(13 [000d])
+        000e _reserved1 = UShort(0 [0000])
+        0010 _reserved2 = UInt(0 [00000000])
+    }
+    0014 block      = 0014 struct {
+        0014 HEAD_CRC   = UShort(27906 [6d02])
+        0016 HeadType   = Enum<Char>(116 [74])(FILE_OR_DIR)
+        0017 HEAD_FLAGS = 0017 struct {
+            0017 from_PREV_VOLUME = UChar(0 [00]):1
+            0018 to_NEXT_VOLUME = UChar(0 [00]):1
+            0018 PASSWORD_ENCRYPTED = UChar(0 [00]):1
+            0018 FILE_COMMENT_PRESENT = UChar(0 [00]):1
+            0018 SOLID      = UChar(0 [00]):1
+            0018 DICTIONARY = Enum<Char>(1 [01]):3(_128K)
+            0018 HIGH_SIZE  = UChar(0 [00]):1
+            0019 has_UNICODE_FILENAME = UChar(0 [00]):1
+            0019 ENCRYPTION_SALT = UChar(0 [00]):1
+            0019 IS_OLD_FILE_VERSION = UChar(0 [00]):1
+            0019 EXTENDED_TIME_INFO = UChar(1 [01]):1
+            0019 _reserved  = UChar(0 [00]):1
+            0019 OLD_VERSION_IGNORE = UChar(0 [00]):1
+            0019 ADD_SIZE_PRESENT = UChar(1 [01]):1
+        }
+        0019 HeaderSize = UShort(42 [002a])
+        001b RawDataSize = UInt(161 [000000a1])
+        001f file       = 001f struct {
+            001f UnpackedSize = UInt(191 [000000bf])
+            0023 Host_OS    = Enum<UChar>(3 [03])(_Unix)
+            0024 FileCRC32  = UInt(4039200569L [f0c14f39])
+            0028 FileTime   = 0028 struct {
+                0028 second     = UShort(2 [0002]):5
+                002a minute     = UShort(38 [0026]):6
+                002a hour       = UShort(11 [000b]):5
+            }
+            002a FileDate   = 002a struct {
+                002a day        = UShort(27 [001b]):5
+                002c month      = UShort(12 [000c]):4
+                002c year       = UShort(34 [0022]):7
+            }
+            002c VersionToUnpack = UChar(29 [1d])
+            002d Method     = Enum<Char>(51 [33])(Normal)
+            002e NameSize   = UShort(8 [0008])
+            0030 Attributes = 0030 struct {
+                0030 owner_may_eXecute = UInt(0 [00000000]):1
+                0034 owner_may_Write = UInt(0 [00000000]):1
+                0034 owner_may_Read = UInt(1 [00000001]):1
+                0034 group_may_eXecute = UInt(0 [00000000]):1
+                0034 gorup_may_Write = UInt(0 [00000000]):1
+                0034 group_may_Read = UInt(1 [00000001]):1
+                0034 everybody_may_eXecute = UInt(0 [00000000]):1
+                0034 everybody_may_Write = UInt(1 [00000001]):1
+                0034 everybody_may_Read = UInt(1 [00000001]):1
+                0034 _s         = UInt[2]
+                    0034 _s[0] = UInt(0 [00000000]):1
+                    0034 _s[1] = UInt(0 [00000000]):1
+                0034 _unused    = UInt(878956 [000d696c]):21
+            }
+            0038 FileName   = Char[8] ('rick\x00\xc0\rP')
+        }
+        0040 _reserved  = UChar[65534] ('\xd0\xcc\xd7\xdc\xd2\xf5\xc2\xb4:\x7fL\x13\x87G.\x80K\x93M~')
+        00e6 _raw       = UChar[161] ('')
+    }
+}

@@ -1,0 +1,71 @@
+SOIMarker -> ffd8
+app0:marker -> ffe0
+app1:marker -> ffe1
+app2:marker -> ffe2
+app3:marker -> ffe3
+app4:marker -> ffe4
+app5:marker -> ffe5
+app6:marker -> ffe6
+app7:marker -> ffe7
+app8:marker -> ffe8
+app9:marker -> ffe9
+appa:marker -> ffea
+appb:marker -> ffeb
+appc:marker -> ffec
+appd:marker -> ffed
+appe:marker -> ffee
+appf:marker -> ffef
+dqt:marker -> ffdb
+sof0:marker -> ffc0
+sof1:marker -> ffc1
+sof2:marker -> ffc2
+sof3:marker -> ffc3
+sof4:marker -> ffc4
+sof5:marker -> ffc5
+sof6:marker -> ffc6
+sof7:marker -> ffc7
+sof8:marker -> ffc8
+sof9:marker -> ffc9
+sofa:marker -> ffca
+sofb:marker -> ffcb
+sofc:marker -> ffcc
+sofd:marker -> ffcd
+sofe:marker -> ffce
+soff:marker -> ffcf
+dht:marker -> ffc4
+scanStart -> ffda
+EOIMarker -> ffd9
+
+app0:szSection
+app0:App0Type
+app0:versionHigh
+app0:versionLow
+app0:units
+app0:Xdensity
+app0:Ydensity
+app0:xThumbnail
+app0:yThumbnail
+dqt:szSection
+dqt:qtable:Pq
+dqt:qtable:Tq
+sof0:szSection
+sof0:precision
+sof0:Y_image
+sof0:X_image
+sof0:nr_comp
+sof0:comp:nr_comp
+sof0:comp:Horz
+sof0:comp:Vert
+sof0:comp:compNr
+dht:szSection
+dht:huff_table:htInfo
+dht:huff_table:length
+scanStart:szSection
+scanStart:nr_comp
+scanStart:comp:compId
+scanStart:comp:AC
+scanStart:comp:DC
+scanStart:Ss
+scanStart:Se
+scanStart:Ah
+scanStart:Al
