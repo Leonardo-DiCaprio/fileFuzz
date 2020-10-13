@@ -1,0 +1,2 @@
+/usr/bin/ar qc libovtmain.a  CMakeFiles/ovtmain.dir/audioConverter.cpp.o CMakeFiles/ovtmain.dir/audioHook.cpp.o CMakeFiles/ovtmain.dir/hookHandler.cpp.o CMakeFiles/ovtmain.dir/videoHook.cpp.o CMakeFiles/ovtmain.dir/oggBOSExtractorFactory.cpp.o CMakeFiles/ovtmain.dir/streamMux.cpp.o CMakeFiles/ovtmain.dir/streamSerializer.cpp.o CMakeFiles/ovtmain.dir/cmdlineextractor.cpp.o
+/usr/bin/ranlib libovtmain.a

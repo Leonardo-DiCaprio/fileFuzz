@@ -1,0 +1,64 @@
+.TH OGGCUT 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggCut \- extracts parts of an ogg file (.ogv, .ogg and .oga)  
+.SH SYNOPSIS
+.B oggCut [options] inputfile outputfile
+.SH DESCRIPTION
+.B oggCut
+creates a new ogg file named 
+.B outputfile
+as a subpart of the original file named 
+.B inputfile
+.
+
+oggCut is able to cut video (theora) only files, audio (vorbis) only files or files with both video and audio streams.
+
+The start and end time for the cut area must be given in milliseconds with the options \-s and \-e.  
+
+As a video stream consists of I\(hyframes (which are full pictures) and P\(hyframes (which are delta pictures to the leading I\(hyframe) the oggCut algorithm searches for the first I\(hyframe. If a video file would start with a p\(hyframe, the player is not able to interpret this picture, as the leading I\(hyframe (on where it is based) is not available. 
+oggCut starts the I\(hyframe search at the start time given by the \-s option. So expect a shorter video time than the calculated seconds for the new file.
+
+oggCut does not do any reencoding, therefore the output quality is completely the same as from the input file.
+
+For those involved into the ogg container format: The file is cut on packet basis, not on page basis.
+
+There is another tool called oggCut out in the internet with a different synopis. This one has not been written by the author of this tool you are actually using.
+
+.SH OPTIONS
+.IP \-s
+Cut start position in ms. If the input file is a video file, the cut area starts with the next keyframe found. Default: 0
+
+.I Example: \-s 5000 
+
+.IP \-l
+Length of the cut area in ms. If \-e is also given, the length is ignored.
+
+.I Example: \-l 10000
+
+.IP \-e
+Cut end position in ms. If \-l is also used, the end position is prefered. If the end position is set to \-1, the end of the stream is assumed.
+
+Default: \-1
+
+.I Example: \-e 20000
+
+.IP \-i \-o
+Input file and output file set (alternative). 
+These parameters can be used alternatively. They are overwritten by the arguments after the options. If there is one argument given, it is used as the input file (and overwrites a file given with -i). If there are two arguments, the input and output files from the -i and -o option values are overwritten.  
+
+.SH EXAMPLE
+.I oggCut \-s 1000 \-e 21000 myVideo.ogv myOutput.ogv
+
+Creates a new video called myOutput.ogv from the video myVideo.ogv starting after 1 second ending after 21 seconds
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCat (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

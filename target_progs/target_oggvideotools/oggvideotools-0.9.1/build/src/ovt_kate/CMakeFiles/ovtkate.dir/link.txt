@@ -1,0 +1,2 @@
+/usr/bin/ar qc libovtkate.a  CMakeFiles/ovtkate.dir/katePosInterpreter.cpp.o CMakeFiles/ovtkate.dir/kateStreamParameter.cpp.o CMakeFiles/ovtkate.dir/kateExtractor.cpp.o
+/usr/bin/ranlib libovtkate.a

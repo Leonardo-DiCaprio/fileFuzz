@@ -1,0 +1,36 @@
+ -h, -u, --usage   Display this usage
+ --help            Display extensive help
+ -V, --version     Display version
+ -i, --inlittle    Input data is little endian (LSB, MSB)
+ -I, --inbig       Input data is big endian (MSB, LSB)
+ -o, --outlittle   Output data in little endian (LSB, MSB)
+ -O, --outbig      Output data in big endian (MSB, LSB)
+ --monostereo      Convert both channels to mono, then back to stereo
+ --inwav           Input is in wav format (default)
+ --incdr           Input is in cdr format
+ --inraw           Input is in raw format
+ --tocdr           Convert to cdr format (default)
+ --towav           Convert to wav format
+ --toraw           Convert to raw format
+ --iscale NUM      Scale data to NUM percent (100 does nothing)
+ --fscale FLOAT    Scale data by FLOAT / multiply by FLOAT (1.0 does nothing)
+ --startsilence, --ss VAL   Add VAL silence to the start of each output file
+ --endsilence, --es VAL     Add VAL silence to the end of each output file
+ --swapchannels,   Swap channels (consecutive 16 bit values with each other)
+ --noswapchannels, Don't swap channels / words
+ --fadein LEN      Fade in at the start for a duration of LEN
+ --fadeout LEN     Fade out at the end
+ -r, --infile NAME   Input filename (default stdin)       ['-' = stdin/stdout]
+ -w, --outfile NAME  Output name (track number appended to name) (dflt stdout)
+ --cut VAL ...     All remaining arguments are cut numbers
+ --silencecuts     Generate cut numbers to cut out intervals of silence
+ --silencethresh   Threshold for silence detection (default 10)
+ --silencedelay    Delay for silence detection (default 30C)
+ --silenceinfo     As --silencecuts, shows info about silent/non-silent parts
+ --verbose         More output
+ --quiet           Suppress progress output
+ --                Stop option scanning, remaining are filenames or cut numbers
+
+ Options are processed left-to-right. Parameters to options must be separated
+ by a space from the option. VAL units: b (bytes), C (CD sectors), s (seconds)
+

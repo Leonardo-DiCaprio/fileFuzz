@@ -1,0 +1,118 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGCUT</TITLE>
+</HEAD><BODY>
+<H1>OGGCUT</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggCut - extracts parts of an ogg file (.ogv, .ogg and .oga)  
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggCut [options] inputfile outputfile</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>oggCut</B>
+
+creates a new ogg file named 
+<B>outputfile</B>
+
+as a subpart of the original file named 
+<B>inputfile</B>
+
+<P>
+oggCut is able to cut video (theora) only files, audio (vorbis) only files or files with both video and audio streams.
+<P>
+The start and end time for the cut area must be given in milliseconds with the options -s and -e.  
+<P>
+As a video stream consists of I-frames (which are full pictures) and P-frames (which are delta pictures to the leading I-frame) the oggCut algorithm searches for the first I-frame. If a video file would start with a p-frame, the player is not able to interpret this picture, as the leading I-frame (on where it is based) is not available. 
+oggCut starts the I-frame search at the start time given by the -s option. So expect a shorter video time than the calculated seconds for the new file.
+<P>
+oggCut does not do any reencoding, therefore the output quality is completely the same as from the input file.
+<P>
+For those involved into the ogg container format: The file is cut on packet basis, not on page basis.
+<P>
+There is another tool called oggCut out in the internet with a different synopis. This one has not been written by the author of this tool you are actually using.
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>-s<DD>
+Cut start position in ms. If the input file is a video file, the cut area starts with the next keyframe found. Default: 0
+<P>
+<I>Example: -s 5000 </I>
+
+<P>
+<DT>-l<DD>
+Length of the cut area in ms. If -e is also given, the length is ignored.
+<P>
+<I>Example: -l 10000</I>
+
+<P>
+<DT>-e<DD>
+Cut end position in ms. If -l is also used, the end position is prefered. If the end position is set to -1, the end of the stream is assumed.
+<P>
+Default: -1
+<P>
+<I>Example: -e 20000</I>
+
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLE</H2>
+
+<I>oggCut -s 1000 -e 21000 myVideo.ogv myOutput.ogv</I>
+
+<P>
+Creates a new video called myOutput.ogv from the video myVideo.ogv starting after 1 second ending after 21 seconds
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<P>
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCat">oggCat</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSplit">oggSplit</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggTranscode">oggTranscode</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggThumb">oggThumb</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSilence">oggSilence</A></B>(1)
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLE</A><DD>
+<DT><A HREF="#lbAG">AUTHOR</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

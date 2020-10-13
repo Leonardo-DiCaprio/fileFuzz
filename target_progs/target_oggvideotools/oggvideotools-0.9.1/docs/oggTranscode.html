@@ -1,0 +1,238 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGTRANSCODE</TITLE>
+</HEAD><BODY>
+<H1>OGGTRANSCODE</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggTranscode - transcodes ogg files in multiple ways 
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggTranscode [options] inputfile.ogv outputfile.ogv </B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>oggTranscode </B>
+
+can resize an ogg file (ogg, oga or ogv) in multiple ways: 
+It can change the video frame size, change datarate for the video and/or audio streams 
+contained in the ogg file and it can also change the video frame rate or audio sample rate.
+<P>
+Additionally, since version 0.8 
+<B>oggTranscode </B>
+
+can add any ogg comment and png-pictures with an alpha channel can be rendered into the 
+video at any time period before and after the resizing process.
+<P>
+<B>oggTranscode</B>
+
+was previously called 
+<B>oggResize.</B>
+
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>-s<DD>
+Sets the size of the video frame. The size is given as 
+<B>&lt;width&gt;x&lt;height&gt;.</B>
+
+At default, the video frame size keeps the same.
+<P>
+<I>Example: -s 320x240</I>
+
+<P>
+<DT>-d<DD>
+Sets the datarate in byte per seconds for the video encoder (theora). This meant 
+to be a upper threshold. So the file may be smaller than assumed. If not set, 
+the datarate of the original stream is used.
+<P>
+<I>Example: -d 1024000</I>
+
+<P>
+<DT>-D<DD>
+Sets the datarate in byte per seconds for the audio encoder (vorbis). 
+If not set, the datarate of the original stream is used.
+<P>
+<I>Example: -D 64000</I>
+
+<P>
+<DT>-f<DD>
+Sets the frame rate of the video with numinator and demoninator and is the
+pictures per second. If only one number is given, the denominator is set to
+1. If not set, the framerate of the original video is used.
+<P>
+<I>Example: -f 25:2</I>
+
+<P>
+<DT>-F<DD>
+Sets the sample frequency (sample rate) of the audio data in Hertz. If the 
+sample frequency does not match the one with the original file, resamling is invoked. 
+<P>
+<I>Example: -F 32000</I>
+
+<P>
+<DT>-c<DD>
+<P>
+Adds comments to the video (theora) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+<P>
+<I>Example: -c 'AUTHOR=yorn;DATE=03.07.09'</I>
+
+<P>
+<DT>-C<DD>
+Adds comments to the audio (vorbis) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+<P>
+<I>Example: -C 'AUTHOR=yorn;DATE=03.07.09'</I>
+
+<P>
+<DT>-q<DD>
+Specifies the quality for the resizing process. Values can be chosen between 1 (best
+quality, with slight bluring) and 6 (worst quality). The default value is 2.
+<P>
+<I>Example: -q1</I>
+
+<P>
+<DT>-p<DD>
+This option is meant to help creating a preview of a film. The number
+given with this option defines the number of frames, that are omitted. E.g.
+if a film has 24 frames per second and -p24 is given, the newly created
+video shows the video 24 times faster as only every 24th frame is used. 
+This option can be combined with the option -f to control the framerate.
+With both options nice video previews can be created. If -p is used, the 
+audio stream is ignored.
+<P>
+<I>Example: -p 24</I>
+
+<P>
+<DT>-a<DD>
+Adds a picture to the video frame before it is resized. 
+The expression for the picture appearances:
+<P>
+<B>&lt;picture1.png&gt;[,&lt;startTime&gt;[,&lt;endTime&gt;[,s]]]</B>
+
+<P>
+default 
+<B>startTime </B>
+
+is 0
+<P>
+default 
+<B>endTime</B>
+
+is -1, which is the end of the stream duration
+<P>
+default 
+<B>s </B>
+
+ist not set. If 
+<B>s </B>
+
+is set, the picture slides in smoothly.
+<P>
+More than one picture can be included. 
+To concatenate the expressions use the colon. 
+If the appearance time overlap, the pictures are placed on one another, 
+so the last picture is the uppest layer.
+<P>
+<I>Example: -a etwas.png,2,7,s:etwasneues.png,5,10</I>
+
+<P>
+<DT>-A<DD>
+Adds a picture to the video frame after it is resized.
+<P>
+The syntax follows the same expression as with option -a.
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLE</H2>
+
+<P>
+<I>oggTranscode -s320x240 -d512000 orig.ogv new.ogv</I>
+
+<P>
+Converts a the video 
+<B>orig.ogv </B>
+
+to the video 
+<B>new.ogv </B>
+
+with the new frame size 320x240. If
+there was an audio stream within the orig.ogv file, it is copied into the new
+file.
+<P>
+<I>oggTranscode -D64000 -F16000 -N1 orig.ogv new.ogv</I>
+
+<P>
+Converts only the audio stream of file 
+<B>orig.ogv </B>
+
+to a sample rate of 16kHz, a datarate of 64 kBit/s and a mono channel. 
+The video stream is copied as is.  
+<P>
+<I>oggTranscode -s300x200 -D32000 -d1024000 -A etwas.png,2,7,s:etwasneues.png,5,10 orig.ogv new.ogv</I>
+
+<P>
+Converts the audio and video stream and adds the alpha channel picture 
+<B>etwas.png </B>
+
+to the video from second 2 to second 7 with a smooth fade in and fade out.
+Additionally the alpha channel picture
+<B>etwasneues.png</B>
+
+is placed on top of the video frame from second 5 to second 10 without any
+fading.
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCut">oggCut</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCat">oggCat</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSplit">oggSplit</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggThumb">oggThumb</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSilence">oggSilence</A></B>(1)
+
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLE</A><DD>
+<DT><A HREF="#lbAG">AUTHOR</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

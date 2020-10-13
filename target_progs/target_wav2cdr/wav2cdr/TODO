@@ -1,0 +1,41 @@
+TODO:
+====
+
+*) tidy up getopt issues - distribute GNU getopt with wav2cdr and make it
+   default; give option for mygetopt
+
+*) For
+      wav2cdr -r Krebspolka.wav -w Krebspolka.cdr 
+   the output filename should be Krebspolka.cdr, not Krebspolka.cdr.%02d
+   (i.e. when no cutting is active)
+   To get a filename with %0d, use "--cut 0 0"
+   However, to get a filename without %02d now, use output redirection.
+
+*) When data is read from file and cutting is active, seek operations should be
+used for cutting because, depending on how much is cut out, it will be
+considerably faster.
+
+*) Output total bytes read.
+
+*) Operate on more than 1 file, if given on command line. This does not work
+with all operations (--cut) but does with others (--silenceinfo). All
+initialised static variables need to be abolished - the result has to look
+pretty similar to a shared library.
+This could afterall make sense with --cut anyway. Resulting filenames to be
+decided upon - overwrite existing file (by creating new, then renaming)?
+
+
+Ideas:
+=====
+
+Store raw data in files which have an extension denoting the endianness. For
+example, extensions .rawbig and .rawlittle (or .rwb, .rwl on less capable
+systems). The extension can then be used as information on the byte order in
+the file when reading it again - this would make errors less likely.
+
+When cutting, specify a cut to be discarded. This would avoid storing silent
+intervals between actual tracks.
+What syntax to use for this??
+
+Display seconds in --silenceinfo rounded instead of truncated.
+MANUAL: ARE SECONDS NOW DISPLAYED ROUNDED ELSEWHERE???

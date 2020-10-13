@@ -1,0 +1,134 @@
+
+    wav2cdr - convert wav sound files to CD-ROM format and/or do some editing
+    Copyright (C) 1997, 1998, 1999, 2000, 2006 Volker Kuhlmann
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA
+
+
+wav2cdr converts sound data into a format which can be recorded on a CD
+(compact disc). The wav and a few raw formats can be handled (both read and
+write). Input can be chopped into pieces, which can then be recorded as
+separate tracks on CD. Some other transformations are also offered, e.g. volume
+change.
+
+Most of the functionality is also offered by sox, but when I tried it I only
+got stupid messages about missing effects or some such (sox-11gamma-cb3,
+command "sox -t raw -r 44100 -s -w -c 2 -V -x test.raw t"). Swapping the
+argument order or reading the manual didn't help. Funnily enough, it didn't
+complain on Solaris, but nevertheless I didn't want to trust it any more. (It
+turned out not to work at all with GNU getopt() ). After a lot of tries with
+different options and orders of options I gave up and decided it was faster to
+make a quick thing myself. Hence wav2cdr, which by now is no longer a quick
+thing.
+
+
+SUPPORTED PLATFORMS
+-------------------
+
+All which have an ANSI C compiler, and some understanding of command lines. The
+program adapts to both big and little endian machines automatically. Unless I
+made a mistake, the source code is strictly ANSI conformant.
+
+wav2cdr works on at least: Linux, Solaris, Dec Alpha Unix (was this Linux?),
+MSDos.
+
+If your system is neither Unix nor MSDOS/Borland C, check the name of your bit
+bucket file in open_message_file(). If necessary, enter another conditional and
+the correct name, *and* let me know about it so that I can incorporate it.
+
+There is a Makefile for Unix and MSDos (the latter slightly restricted because
+of limitations of Borland make).
+
+
+INSTALLATION
+------------
+
+1)
+    Some version of GNU getopt() is needed, or the (inferior) mygetopt()
+    shipped with wav2cdr can be used instead. The former is now the default. To
+    use GNU getopt, get the following files:
+
+            28711 Jan 25  1997 getopt.c
+             4691 Jan 25  1997 getopt.h
+             4651 Jan 25  1997 getopt1.c
+
+    from somwhere, e.g. tar-1.12.tar.gz, and copy them into the wav2cdr
+    directory (or rather the directory specified in the Makefile). These files
+    should also be part of many other GNU programs (not to say all?).
+
+    
+2)
+    Edit the Makefile for your system, compiler, and getopt() version used.
+    There are examples at the beginning of the file.
+
+    The provided Makefile should work for most Unix systems with gcc. To some
+    extent it might also work for MSDos. It works with GNU make and Sun/Solaris
+    make. (Use the file Makefile.bc for MSDos instead.)
+
+    The settings to check are mainly where the executable and man page is
+    installed.
+
+    If you do make any changes, please send them back to me.
+
+3)
+    Compile with:
+        make depend
+        make
+
+4)
+    Install with (not MSDos):
+        make install
+        
+    Or copy the executable and man page into place by hand.
+
+5)
+    If you get sick ot it (hey!), wav2cdr can be uninstalled with (not msdos):
+        make uninstall
+
+The files
+
+    usage.-c, help.-c, version.-c, wav2cdr.txt
+
+are automatically generated using the programs awk/nawk/gawk, nroff, troff, cx.
+These programs are typically found on a Unix system. cx is self-baked and
+strips BS characters together with the following character (this gets rid of
+the underline effect in output produced by man).
+If you don't have these programs or some equivalent, don't delete these files.
+
+
+DOCUMENTATION
+-------------
+
+The file help.txt, or running wav2cdr with option --help.
+
+The Unix style man page (roff format), or its plain text equivalent
+wav2cdr.txt.
+
+
+
+LICENSE + WARRANTY
+------------------
+
+See the file COPYING for details.
+To those still not with it: my liability is restricted to what you paid me.
+
+
+Volker Kuhlmann
+c/o University of Canterbury
+EEE Dept
+Christchurch
+New Zealand
+<v.kuhlmann@elec.canterbury.ac.nz>  [very old]
+<VolkerKuhlmann@gmx.de>

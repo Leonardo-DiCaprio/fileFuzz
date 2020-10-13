@@ -1,0 +1,31 @@
+.TH OGGLENGTH 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggLength \- gives the length of an ogg video/audio file 
+.SH SYNOPSIS
+.B oggLength [options] inputfile.ogv 
+.SH DESCRIPTION
+.B oggLength
+analyses an ogg audio/video file and gives the duration of a file. If there is more than one stream available, the end time position of the longest stream is printed. The return value is given by milliseconds. 
+
+.B oggLength 
+does not care for skeleton information. 
+
+.SH OPTIONS
+.IP \-v 
+prints out the length of the vorbis stream.
+
+.IP \-t
+prints out the length of the theora stream.
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)
+

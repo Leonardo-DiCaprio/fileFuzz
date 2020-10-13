@@ -1,0 +1,26 @@
+#!/bin/sh
+# This script creates a series of thumbnails from an Ogg/Theora file
+# usage:
+# ./mkThumbs file.ogv <numberOfThumbs> <optional infos for oggThumb (e.g. resizing)>
+#
+# typical:
+# ./mkThumbs myfile.ogv 10 -s0x200
+# This call creates a thumbnail series of 10 pictures with the a height of 200 pixels
+#
+
+if [ $# -lt 2 ] 
+then
+  echo "usage $0 <video file> <number of pictures> <size (e.g. -s0x200)>"
+  exit
+fi
+
+length=`oggLength $1`
+timestring="0"
+div=$(($2*1000))
+end=`expr $2 - 1`
+for i in `seq 1 $end`
+do
+  value=$(echo "scale=3; $i*$length/$div" | bc -q 2>/dev/null)
+  timestring="$timestring,$value"
+done
+oggThumb $3 $4 $5 $6 -t$timestring $1

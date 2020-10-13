@@ -1,0 +1,3 @@
+unpack_x86.lo: unpack_x86.S /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

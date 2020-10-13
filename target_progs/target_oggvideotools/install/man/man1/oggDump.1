@@ -1,0 +1,42 @@
+.TH OGGDUMP 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggDump \- prints out information of ogg video files (.ogv, .ogg or oga)
+.SH SYNOPSIS
+.B oggDump [options] file.ogv
+.SH DESCRIPTION
+.B OggDump 
+gives detailed information about an ogg video file and prints these information with a given detail level.
+
+Ogg files consist of a number of streams (video and audio). From the Ogg-container perspective, the streams are devided into pages. These pages usually have nearly the same size. The pages can be printed out with the -g option.
+
+From the stream perspective, every stream consists of packets. These packets carry a bunch of compressed audio samples in case of a vorbis stream or one video frame in case of a theora video stream. These packets could be of variable length and are places into the ogg pages. To toString the packets, use the -p option.
+
+.SH OPTIONS
+.IP \-g
+Dumps the stream pages of the file. 
+
+.IP \-p
+Dumps the stream packets.
+
+.IP \-l
+.B <level>.
+Set the dump level (1-5). Default is 5, which means all information are printed.
+
+.IP \-s
+Prompt for the stream that should be dumped. All other streams are ignored and will not be printed.
+
+.IP \-o
+.B <file>
+Write the dump information to a file.
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode^ (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

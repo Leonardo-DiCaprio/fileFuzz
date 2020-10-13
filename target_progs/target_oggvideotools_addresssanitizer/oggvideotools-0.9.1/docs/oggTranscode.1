@@ -1,0 +1,163 @@
+.TH OGGTRANSCODE 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggTranscode \- transcodes ogg files in multiple ways 
+.SH SYNOPSIS
+.B oggTranscode [options] inputfile.ogv outputfile.ogv 
+.SH DESCRIPTION
+.B oggTranscode 
+can resize an ogg file (ogg, oga or ogv) in multiple ways: 
+It can change the video frame size, change datarate for the video and/or audio streams 
+contained in the ogg file and it can also change the video frame rate or audio sample rate.
+
+Additionally, since version 0.8 
+.B oggTranscode 
+can add any ogg comment and png\(hypictures with an alpha channel can be rendered into the 
+video at any time period before and after the resizing process.
+
+.B oggTranscode
+was previously called 
+.B oggResize.
+
+.SH OPTIONS
+.IP \-s
+Sets the size of the video frame. The size is given as 
+.B <width>x<height>.
+At default, the video frame size keeps the same.
+
+.I Example: \-s 320x240
+
+.IP \-d
+Sets the datarate in byte per seconds for the video encoder (theora). This meant 
+to be a upper threshold. So the file may be smaller than assumed. If not set, 
+the datarate of the original stream is used.
+
+.I Example: \-d 1024000
+
+.IP \-D
+Sets the datarate in byte per seconds for the audio encoder (vorbis). 
+If not set, the datarate of the original stream is used.
+
+.I Example: -D 64000
+
+.IP \-f
+Sets the frame rate of the video with numinator and demoninator and is the
+pictures per second. If only one number is given, the denominator is set to
+1. If not set, the framerate of the original video is used.
+
+.I Example: \-f 25:2
+
+.IP \-F
+Sets the sample frequency (sample rate) of the audio data in Hertz. If the 
+sample frequency does not match the one with the original file, resamling is invoked. 
+
+.I Example: \-F 32000
+
+.IP \-c
+
+Adds comments to the video (theora) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+
+.I Example: \-c 'AUTHOR=yorn;DATE=03.07.09'
+
+.IP \-C
+Adds comments to the audio (vorbis) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+
+.I Example: \-C 'AUTHOR=yorn;DATE=03.07.09'
+
+.IP \-q
+Specifies the quality for the resizing process. Values can be chosen between 1 (best
+quality, with slight bluring) and 6 (worst quality). The default value is 2.
+
+.I Example: \-q1
+
+.IP \-p
+This option is meant to help creating a preview of a film. The number
+given with this option defines the number of frames, that are omitted. E.g.
+if a film has 24 frames per second and \-p24 is given, the newly created
+video shows the video 24 times faster as only every 24th frame is used. 
+This option can be combined with the option \-f to control the framerate.
+With both options nice video previews can be created. If \-p is used, the 
+audio stream is ignored.
+
+.I Example: \-p 24
+
+.IP \-a
+Adds a picture to the video frame before it is resized. 
+The expression for the picture appearances:
+
+.B <picture1.png>[,<startTime>[,<endTime>[,s]]]
+
+.B startTime
+in seconds - value can be a floating point.
+Default 
+.B startTime 
+is 0
+
+.B endTime
+in seconds - value can be a floating point.
+default 
+.B endTime
+is \-1, which is the end of the stream duration 
+
+default 
+.B s 
+ist not set. If 
+.B s 
+is set, the picture slides in smoothly.
+
+More than one picture can be included. 
+To concatenate the expressions use the colon. 
+If the appearance time overlap, the pictures are placed on one another, 
+so the last picture is the uppest layer.
+
+.I Example: \-a etwas.png,2,7,s:etwasneues.png,5,10
+
+.IP \-A
+Adds a picture to the video frame after it is resized.
+
+The syntax follows the same expression as with option \-a.
+
+.SH EXAMPLE
+
+.I oggTranscode \-s320x240 \-d512000 orig.ogv new.ogv
+
+Converts a the video 
+.B orig.ogv 
+to the video 
+.B new.ogv 
+with the new frame size 320x240. If
+there was an audio stream within the orig.ogv file, it is copied into the new
+file.
+
+.I oggTranscode \-D64000 \-F16000 \-N1 orig.ogv new.ogv
+
+Converts only the audio stream of file 
+.B orig.ogv 
+to a sample rate of 16kHz, a datarate of 64 kBit/s and a mono channel. 
+The video stream is copied as is.  
+
+.I oggTranscode \-s300x200 \-D32000 \-d1024000 \-A etwas.png,2,7,s:etwasneues.png,5,10 orig.ogv new.ogv
+
+Converts the audio and video stream and adds the alpha channel picture 
+.B etwas.png 
+to the video from second 2 to second 7 with a smooth fade in and fade out.
+Additionally the alpha channel picture
+.B etwasneues.png
+is placed on top of the video frame from second 5 to second 10 without any
+fading.
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggCat (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

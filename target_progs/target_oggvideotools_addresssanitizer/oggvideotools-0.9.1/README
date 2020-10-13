@@ -1,0 +1,32 @@
+You can find more detailed information (in pdf and manpages) in the docs/ directory
+
+This release (0.9) consists of the following tools:
+
+oggJoin, oggSplit, oggCut, oggCat, oggTranscode, oggSlideshow, oggThumb, oggLength,
+oggScroll, oggDump, oggSilence
+
+Required Software
+-----------------
+
+you globally need c++11 + boost (at least lexical_cast and circular_buffer,
+which are both header only) so if built, no boost libraries are needed.
+Version is tested against boost 1.54, however earlier version may work as
+well. 
+
+for oggCat oggCut oggDump oggSplit oggJoin oggLength:
+(No you do not need any ogg/theora/vorbis library for that)
+
+for oggSlideshow, oggThumb, oggResize, oggSilence:
+libogg
+libtheora (>= 1.0)
+libvorbis (>= 1.2.3)
+ -> can both be found here: http://www.xiph.org/downloads/
+libgd -> can be found here: http://www.libgd.org/Downloads/
+
+If you have questions regarding the ogg video tools, write a mail
+(yorn_at_gmx_dot_net) or join the developers mailing list at
+
+https://lists.sourceforge.net/lists/listinfo/oggvideotools-users
+
+Have fun
+Yorn

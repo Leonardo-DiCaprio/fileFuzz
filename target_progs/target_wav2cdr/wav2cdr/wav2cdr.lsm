@@ -1,0 +1,21 @@
+Begin3
+Title:          wav2cdr
+Version:        2.3.4
+Entered-date:   2006Jan18
+Description:    This program converts wav sound files into a format suitable
+		for CD-ROMs, and can perform several editing functions like
+		cutting or volume change. It is rather rudimentary, the wav
+		file must have the same sampling parameters as CD audio. Runs
+		on big and little endian machines.
+		Unix/Linux/Solaris, MSDos, ...
+Keywords:       sound, audio, wav, cdr, cdrom
+Author:         v.kuhlmann@elec.canterbury.ac.nz (Volker Kuhlmann)
+Maintained-by:  VolkerKuhlmann@gmx.de (Volker Kuhlmann)
+Primary-site:   sunsite.unc.edu /pub/Linux/apps/sound/convert
+		55k wav2cdr-2.3.4.tar.bz2
+		1k  wav2cdr-2.3.4.lsm
+Alternate-site: 
+Original-site:  
+Platforms:      
+Copying-policy: GPL
+End

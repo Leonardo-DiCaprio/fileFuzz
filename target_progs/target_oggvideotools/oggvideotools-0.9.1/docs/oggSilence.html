@@ -1,0 +1,99 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGSILENCE</TITLE>
+</HEAD><BODY>
+<H1>OGGSILENCE</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggSilence - creates a silence period in vorbis format 
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggSilence [options] outfile.ogg</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>oggSilence</B>
+
+creates a vorbis file with a silence duration which length is specified by the -l
+option.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>-l<DD>
+Duration of the silence in ms. Default: 60000
+<P>
+<I>Example: -l 5000 </I>
+
+<P>
+<DT>-r<DD>
+Sample rate of the output file in Hz. Default: 44100
+<P>
+<I>Example: -r 16000</I>
+
+<P>
+<DT>-d<DD>
+Data rate of the silence file in bit/s. Default: 64000
+<P>
+<I>Example: -d 64000</I>
+
+<P>
+<DT>-n<DD>
+Number of output channels. Default: 2
+<P>
+<I>Example: -n 2</I>
+
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLE</H2>
+
+<I>oggSilence -d 32000 -r 16000 -n 2 -l 10000 silence.ogg</I>
+
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCut">oggCut</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCat">oggCat</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSplit">oggSplit</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggTranscode">oggTranscode</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggThumb">oggThumb</A></B>(1)
+
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLE</A><DD>
+<DT><A HREF="#lbAG">AUTHOR</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

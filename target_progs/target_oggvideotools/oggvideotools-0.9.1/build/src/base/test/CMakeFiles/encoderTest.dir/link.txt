@@ -1,0 +1,1 @@
+/usr/local/bin/afl-g++   -O3 -DNDEBUG   CMakeFiles/encoderTest.dir/encoderTest.cpp.o  -o encoderTest -rdynamic ../libovtbase.a ../../misc/libovtmisc.a 

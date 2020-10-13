@@ -1,0 +1,29 @@
+.TH MKTHUMBS 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+mkThumbs \- script to create thumbnails from an ogg video file 
+.SH SYNOPSIS
+.B mkThumbs file.ogv <number of thumbs> <additional options>
+.SH DESCRIPTION
+.B mkThumbs
+creates a series of thumbnails over a video file with regards to the video length.
+
+.SH EXAMPLE
+.I mkThumb myvideo.ogv 10
+
+creates 10 thumbnails across the video file.
+
+.I mkThumb myvideo.ogv 10 -s0x200 -opng
+
+creates 10 thumbnails across the video file with a height of 200 pixel and in PNG format.
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggResize (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

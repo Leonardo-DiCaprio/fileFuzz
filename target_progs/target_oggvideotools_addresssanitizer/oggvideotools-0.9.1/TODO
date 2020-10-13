@@ -1,0 +1,29 @@
+
+To do for version 1.0
+
+- creation of a library, that is used by all command line tools
+- Version 0.8 is the last version, that adds new command line tools
+  ( this is the plan ;-) ), so the rest until version 1.0 were
+  enhancements:
+  - offset addition for streams in oggCut. This is not supported by
+    many players, but may be important in future e.g. for kate streams
+  - enhancements for several computations in videoFormats.cpp
+    for a faster picture resize, import etc.   --- DONE ---
+- reencoding of vorbis streams with oggResize --- DONE ---
+
+Specialy for version 0.9
+- correct handling of the aspect ratio in the theora header
+  (oggResize and oggThumb) 
+- identical comment handling for all tools
+- vorbis end marker with correct sample number
+- handling corrupt stream (resyncing on start or after gaps)
+
+Plans beyond 1.0:
+- Ogg Skeleton support
+
+... many more to do! If you have any ideas, or want to help, please
+contact me at yorn_at_gmx_dot_net!
+
+0.8:
+- new stream ID for vorbis in oggResize
+ 

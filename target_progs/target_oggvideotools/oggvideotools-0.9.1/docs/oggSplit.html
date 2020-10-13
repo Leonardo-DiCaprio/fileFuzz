@@ -1,0 +1,82 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGSPLIT</TITLE>
+</HEAD><BODY>
+<H1>OGGSPLIT</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggSplit - demultiplexes ogv files 
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggSplit outfile.ogv </B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>oggSplit</B>
+
+demultiplexes a multiplexed ogg file into several files with one stream each. 
+<BR>&nbsp;
+An ogg video file (with extension .ogv) usually consist of an audio and a video stream. The command line tool oggSplit disjoins these streams into seperate files. This is also often called demultiplexing.
+<P>
+After that you have all embedded files of this input file with the following naming:
+<P>
+<I>theora_&lt;ID&gt;.ogv:</I>
+
+This is the video stream encoded with the theora codec. The &lt;ID&gt; is the stream ID that is created by the encoder to uniquely identify this stream.
+<P>
+<I>vorbis_&lt;ID&gt;.oga:</I>
+
+This is the audio stream encoded with the vorbis codec. The &lt;ID&gt; is the stream ID that is created by the encoder to uniquely identify this stream.
+<P>
+<I>unknown_&lt;ID&gt;.ogv:</I>
+
+This is an unknown stream, that could not be interpreted.The &lt;ID&gt; is the stream ID that is created by the encoder to uniquely identify this stream.
+<P>
+All files are fully playable with your favoured video or audio player (except the streams, that are uninterpreted). 
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<P>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCut">oggCut</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCat">oggCat</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggTranscode">oggTranscode</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggThumb">oggThumb</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSilence">oggSilence</A></B>(1)
+
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">AUTHOR</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

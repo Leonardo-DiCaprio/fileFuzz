@@ -1,0 +1,7 @@
+"wav2cdr [OPTIONS] [INPUTFILE [OUTPUTFILE]]\n"
+"wav2cdr [OPTIONS] --cut -- CUTNUMBER CUTNUMBER [CUTNUMBER...]\n"
+"%-65s(%s)\n"
+"\n"
+"Convert a wav file to one or more cdr files which can be written on CD.\n"
+"Reads stdin, writes stdout. See --help for more information.\n"
+"\n"

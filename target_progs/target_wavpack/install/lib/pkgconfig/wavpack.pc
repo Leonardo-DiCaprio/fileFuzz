@@ -1,0 +1,13 @@
+prefix=/home/wangws/wws_home/Fuzz_oggvideotools/target_progs/target_wavpack/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: wavpack
+Description: wavpack library
+Version: 5.1.0
+Requires:
+Conflicts:
+Libs: -L${libdir} -lwavpack
+Libs.private: -lm
+Cflags: -I${includedir}

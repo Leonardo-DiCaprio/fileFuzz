@@ -1,0 +1,2 @@
+/usr/bin/ar qc libovtmisc.a  CMakeFiles/ovtmisc.dir/ringbuffer.cpp.o CMakeFiles/ovtmisc.dir/log.cpp.o CMakeFiles/ovtmisc.dir/helper.cpp.o CMakeFiles/ovtmisc.dir/crc.cpp.o
+/usr/bin/ranlib libovtmisc.a

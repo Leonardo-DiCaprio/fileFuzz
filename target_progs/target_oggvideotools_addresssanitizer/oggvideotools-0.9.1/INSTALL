@@ -1,0 +1,14 @@
+Installation has changed to cmake, so the installation process is much easier than before:
+
+create a build directory:
+
+> mkdir build
+> cd build
+
+and execute cmake and make:
+ 
+> cmake ..
+> make
+> sudo make install
+
+and you are done!

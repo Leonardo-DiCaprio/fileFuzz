@@ -1,0 +1,4 @@
+SET ( SCRIPT_SRC mkThumbs )
+
+INSTALL ( FILES ${SCRIPT_SRC} DESTINATION sbin )
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libovtvorbis.a  CMakeFiles/ovtvorbis.dir/vorbisDecoder.cpp.o CMakeFiles/ovtvorbis.dir/vorbisEncoder.cpp.o CMakeFiles/ovtvorbis.dir/vorbisExtractor.cpp.o CMakeFiles/ovtvorbis.dir/vorbisPosInterpreter.cpp.o CMakeFiles/ovtvorbis.dir/vorbisStreamParameter.cpp.o CMakeFiles/ovtvorbis.dir/audioPacket.cpp.o
+/usr/bin/ranlib libovtvorbis.a

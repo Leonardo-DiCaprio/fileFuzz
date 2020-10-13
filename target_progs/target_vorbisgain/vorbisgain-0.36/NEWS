@@ -1,0 +1,110 @@
+VorbisGain 0.36
+
+- added --no-progress option (Felix Berger)
+
+VorbisGain 0.35
+
+- no longer removes invalid tags
+- now updates the progress bar once per second (but 0% and 100% are 
+  always shown)
+- truncates the filename in the progress bar so that it fits within the
+  console width (try the configure option --disable-winsize if you have
+  problem compiling on your OS)
+- misc configure script fixes (e.g., use any Ogg Vorbis prefixes when
+  checking for the ov_read_float() function)
+
+VorbisGain 0.34
+
+- fix automake bug
+- update to new vcedit to solve various problems
+  such as memory leaks
+
+VorbisGain 0.33
+
+- fixed a bug in the ReplayGain analysis reference code that could
+  cause random crashes on 48kHz files
+
+VorbisGain 0.31
+
+- more changes to the pattern matcher. Should work fine now
+- when using --album-gain, --fast wasn't handled properly
+- more cleanups
+- note: Winamp plugin in_vorbis.dll dated June 22, 2002 is known to support
+  the new tag format
+
+VorbisGain 0.30
+
+- now tries to retain file mode and date when writing the tags
+- added a simple, per-file progress meter
+- more code cleanups
+- better code page support on Win32
+- updated to newer version of vcedit.c
+- due to vocal complaints, the --recursive option is only included if
+  DO_RECURSIVE is defined. It's recommended to define it on Win32 and not on
+  any other platform. But in the end, it's up to whoever compiles VorbisGain :)
+- new pattern matcher that accepts '\' as escape character (not needed on
+  Win32)
+- writes "new style tags" (and removes old style tags)
+- --convert option to convert old style tags to new. The tags are changed
+  as follows:
+
+  Tag:                  Renamed to:
+  RG_RADIO_GAIN         REPLAYGAIN_TRACK_GAIN
+  RG_RADIO_PEAK         REPLAYGAIN_TRACK_PEAK
+  RG_AUDIOPHILE_GAIN    REPLAYGAIN_ALBUM_GAIN
+                        REPLAYGAIN_ALBUM_PEAK
+
+  REPLAYGAIN_ALBUM_PEAK is new and contains the highest REPLAYGAIN_TRACK_PEAK
+  within an album.
+
+VorbisGain 0.20
+
+- changed name of temporary file
+- added -t option (target gain level)
+- better handling of chained streams: detects changes in format
+  (sample rate or number of channels)
+- updated manpage
+- changed to version 1.1 of the gain analysis code
+- fixed bug in pattern matching
+
+ReplayGain 0.10
+
+- more options
+- manual specification of replaygain
+- can recurse directory trees
+- moved to autoconf/automake
+
+ReplayGain 0.9
+
+- major cleanups
+
+Replaygain 0.8
+
+- bugfixed -q mode
+
+ReplayGain 0.7
+
+- added quick mode
+
+ReplayGain 0.6
+
+- Win32 support
+- nicer output
+- includes command line help
+
+ReplayGain 0.5
+
+- some more error checks
+
+ReplayGain 0.4
+
+- warn about buggy RC3 read_float in source
+
+ReplayGain 0.3
+
+- stricter parsing
+- tags are case insensitive
+- changed wording in a few places
+- should compile on Windows too now
+- detects and displays error on nonstandard
+  samplerates

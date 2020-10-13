@@ -1,0 +1,105 @@
+.TH OGGCAT 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggCat \- concatenates two or more ogg files 
+.SH SYNOPSIS
+.B oggCat [options] outfile.ogv file1.ogv file2.ogv [ file3.ogv [...] ]
+.SH DESCRIPTION
+.B oggCat
+concatenates two or more ogg files (.ogv, .ogg or oga), that contain theora and/or vorbis streams.
+
+The parameters of the resulting ogg file is defined by the first file in the concatenation list. The parameters can be changed by the options, explained below. 
+
+All subsequent files that does not match these file parameters are automatically transcoded.
+
+A concatenation will fail in case that there are not enought streams available. This could happen e.g. if the first file consists of one audio and one video stream and the second file only carries a video stream. 
+
+If there is more than one video or audio stream within the file, the first stream is used.  
+
+.SH OPTIONS
+.IP \-s
+Sets the size of the video frame. The size is given as 
+.B <width>x<height>.
+At default, the video frame size is the size of the first video stream.
+
+.I Example: \-s 320x240
+
+.IP \-d
+Sets the datarate in byte per seconds for the video encoder (theora). This meant 
+to be a upper threshold. So the file may be smaller than assumed. If not set, 
+the datarate of the first file is used.
+
+.I Example: \-d 1024000
+
+.IP \-D
+Sets the datarate in byte per seconds for the audio encoder (vorbis). 
+If not set, the datarate of the first file is used.
+
+.I Example: -D 64000
+
+.IP \-f
+Sets the frame rate of the video with numinator and demoninator and is the
+pictures per second. If only one number is given, the denominator is set to
+1. If not set, the framerate of the first file is used.
+
+.I Example: \-f 25:2
+
+.IP \-F
+Sets the sample frequency (sample rate) of the audio data in Hertz. If the 
+sample frequency does not match the one with the original file, resamling is invoked. 
+
+.I Example: \-F 32000
+
+.IP \-c
+Adds comments to the video (theora) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+
+.I Example: \-c 'AUTHOR=yorn;DATE=03.07.09'
+
+.IP \-C
+Adds comments to the audio (vorbis) stream. Comments are given by a pair 
+of type and value in the form 'type=value'. More than one comment can be 
+concatenated with a semicolon. It is recommended to use apostrophes 
+as the command line may use the semicolon as a seperator.
+
+.I Example: \-C 'AUTHOR=yorn;DATE=03.07.09'
+
+.IP \-q
+Specifies the video quality for the newly created stream. Valid values can be chosen between 0 and 63 (best).
+
+.I Example: \-q 63
+
+.IP \-rv
+Force to reencode the video stream. This is sometimes neccessary, if the video stream match in video parameters, but not in the theora version. In that case, reencoding the video stream helps creating good results.
+
+.IP \-x
+Force to overwrite the output file, even if it exists. This is mainly helpful if the oggCat is server controlled.   
+
+.SH EXAMPLES
+
+.B oggCat concatFile.ogv myfile1.ogv myfile2.ogv myfile3.ogv
+
+or
+
+.B oggCat -o concatFile.ogv myfile1.ogv myfile2.ogv myfile3.ogv
+
+This command creates a cancatenated file 
+.I concatFile.ogv
+that consists of the three files myfile1.ogv, myfile2.ogv and myfile3.ogv
+
+.B oggCat -s320x240 -q63 concatFile.ogv myfile1.ogv myfile2.ogv myfile3.ogv
+
+This command connects the three files myfile[1-3].ogv to a file named concatFile.ogv with the video frame size of 320x240 and the best quality available.   
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

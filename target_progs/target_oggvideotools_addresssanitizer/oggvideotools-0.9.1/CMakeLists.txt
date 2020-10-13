@@ -1,0 +1,176 @@
+cmake_minimum_required(VERSION 2.8)
+
+PROJECT ( "OggVideoTools" )
+
+SET ( PACKAGE_NAME "oggvideotools" )
+SET ( PACKAGE_VERSION "0.9.1" )
+SET ( PACKAGE_BUGREPORT "yorn@gmx.net" )
+set (CMAKE_BUILD_TYPE Debug)
+set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address -fno-optimize-sibling-calls")
+set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address -fno-optimize-sibling-calls")
+
+
+INCLUDE (CheckIncludeFiles)
+CHECK_INCLUDE_FILES ( bzero.h HAVE_BZERO_H)
+CHECK_INCLUDE_FILES ( stdint.h HAVE_STDINT_H )
+
+IF ( $ENV{MAKE_PACKAGE} )
+  find_library ( GD_GD_LIBRARY NAMES bgd.dll )
+  find_library ( JPEG_GD_LIBRARY NAMES libjpeg.a libjpeg.lib jpeg.lib )
+  find_library ( PNG_GD_LIBRARY NAMES libpng.a libpng.lib )
+  find_library ( Z_GD_LIBRARY NAMES libz )
+  SET ( GD_LIBRARIES ${GD_GD_LIBRARY} ${JPEG_GD_LIBRARY} ${PNG_GD_LIBRARY}  ${Z_GD_LIBRARY} )
+  find_library ( GD_EXTERNAL NAMES bgd.dll )
+  find_library ( THEORADEC_LIBRARIES NAMES libtheoradec )
+  find_library ( THEORAENC_LIBRARIES NAMES libtheoraenc )
+  find_library ( VORBIS_LIBRARIES NAMES libvorbis.a )
+  find_library ( VORBISENC_LIBRARIES NAMES libvorbisenc.a )
+  find_library ( OGG_LIBRARIES NAMES libogg.a )
+  find_path ( OGG_INCLUDE_DIRS ogg/ogg.h )
+
+  SET ( HAVE_LIBTHEORAENC 1  CACHE INTERNAL "" )
+  SET ( HAVE_LIBTHEORADEC 1  CACHE INTERNAL "" )
+  SET ( HAVE_LIBVORBIS 1 CACHE INTERNAL "" )
+  SET ( HAVE_LIBVORBISENC 1 CACHE INTERNAL "")
+  SET ( HAVE_LIBOGG 1 CACHE INTERNAL "" )
+  SET ( HAVE_LIBGD 1 CACHE INTERNAL "" )
+
+  SET ( ALL_STATIC_LIBS ${GD_LIBRARIES} ${THEORADEC_LIBRARIES}
+${THEORAENC_LIBRARIES} ${VORBIS_LIBRARIES} ${VORBISENC_LIBRARIES}
+${OGG_LIBRARIES} )
+
+ELSE ( $ENV{MAKE_PACKAGE} )
+  FIND_PACKAGE ( PkgConfig )
+  pkg_check_modules ( THEORADEC theoradec>=1.1 )
+  pkg_check_modules ( THEORAENC theoraenc>=1.1 )
+  pkg_check_modules ( VORBIS    vorbis>=1.2.3 )
+  pkg_check_modules ( VORBISENC vorbisenc>=1.2.3 )
+  pkg_check_modules ( OGG       ogg>=1.1.0 )
+  find_library ( GD_LIBRARY NAMES gd )
+ENDIF ( $ENV{MAKE_PACKAGE} )
+
+find_path ( GD_INCLUDE gd.h )
+
+IF ( $ENV{MAKE_PACKAGE} )
+MESSAGE ( "Do creating package" )
+ELSE ( $ENV{MAKE_PACKAGE} )
+
+SET ( ALL_LIBS )
+SET ( STOP_CONFIGURATION )
+
+IF ( THEORAENC_FOUND )
+  MESSAGE ( STATUS "Theora encoder library found" )
+  SET ( HAVE_LIBTHEORAENC 1  CACHE INTERNAL "" )
+  SET ( ALL_LIBS ${ALL_LIBS} ${THEORAENC_LIBRARIES} )
+ELSE ( THEORAENC_FOUND )
+  MESSAGE ( STATUS "ERROR: Theora encoder library NOT found" )
+  SET ( STOP_CONFIGURATION true )
+ENDIF ( THEORAENC_FOUND )
+
+IF ( THEORADEC_FOUND )
+  MESSAGE ( STATUS "Theora decoder library found" )
+  SET ( HAVE_LIBTHEORADEC 1  CACHE INTERNAL "" )
+  SET ( ALL_LIBS ${ALL_LIBS} ${THEORADEC_LIBRARIES} )
+ELSE ( THEORADEC_FOUND )
+  MESSAGE ( STATUS "ERROR: Theora decoder library NOT found" )
+  SET ( STOP_CONFIGURATION true )
+ENDIF ( THEORADEC_FOUND )
+
+IF ( VORBIS_FOUND )
+  MESSAGE ( STATUS "Vorbis library found" )
+  SET ( HAVE_LIBVORBIS 1 CACHE INTERNAL "" )
+  SET ( ALL_LIBS ${ALL_LIBS} ${VORBIS_LIBRARIES} )
+ELSE ( VORBIS_FOUND )
+  MESSAGE ( STATUS "ERROR: Vorbis library NOT found" )
+  SET ( STOP_CONFIGURATION true )
+ENDIF ( VORBIS_FOUND )
+
+IF ( VORBISENC_FOUND )
+  MESSAGE ( STATUS "Vorbis encoder library found" )
+  SET ( HAVE_LIBVORBISENC 1 CACHE INTERNAL "")
+  SET ( ALL_LIBS ${ALL_LIBS} ${VORBISENC_LIBRARIES} )
+ELSE ( VORBISENC_FOUND )
+  MESSAGE ( STATUS "ERROR: Vorbis encoder library NOT found" )
+  SET ( STOP_CONFIGURATION true )
+ENDIF ( VORBISENC_FOUND )
+
+IF ( OGG_FOUND )
+  MESSAGE ( STATUS "ogg library found" )
+  SET ( HAVE_LIBOGG 1 CACHE INTERNAL "" )
+  SET ( ALL_LIBS ${ALL_LIBS} ${OGG_LIBRARIES} )
+ELSE ( OGG_FOUND )
+  MESSAGE ( STATUS "ERROR: ogg library NOT found" )
+  SET ( STOP_CONFIGURATION true )
+ENDIF ( OGG_FOUND )
+
+IF ( NOT ${GD_LIBRARY} MATCHES GD_LIBRARY-NOTFOUND )
+  MESSAGE ( STATUS "GD library and header found" )
+  SET ( HAVE_LIBGD 1 CACHE INTERNAL "" )
+  SET ( ALL_LIBS ${ALL_LIBS} ${GD_LIBRARY} )
+  INCLUDE_DIRECTORIES ( ${GD_INCLUDE} )
+ELSE ( NOT ${GD_LIBRARY} MATCHES GD_LIBRARY-NOTFOUND )
+  MESSAGE ( STATUS "GD library and/or header NOT found" )
+#  SET ( STOP_CONFIGURATION true )
+ENDIF ( NOT ${GD_LIBRARY} MATCHES GD_LIBRARY-NOTFOUND )
+
+IF ( STOP_CONFIGURATION )
+  MESSAGE ( FATAL_ERROR "Some libraries are missing - stopping configuration" )
+ENDIF ( STOP_CONFIGURATION )
+
+ENDIF ( $ENV{MAKE_PACKAGE} )
+
+MESSAGE ( "Creating config.h" )
+
+CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+
+ADD_DEFINITIONS ( -DHAVE_CONFIG_H )
+ADD_DEFINITIONS ( "-DPACKAGE_STRING=\"${PACKAGE_NAME}-${PACKAGE_VERSION}\"" )
+ADD_DEFINITIONS ( -D_FILE_OFFSET_BITS=64 -Wno-write-strings )
+#ADD_DEFINITIONS ( -DDEBUG )
+ADD_DEFINITIONS ( -O0 -g --std=c++0x -fPIC )
+IF ( HAVE_LIBGD )
+  ADD_DEFINITIONS ( -DWITH_GD2LIB )
+ENDIF (HAVE_LIBGD )
+
+INCLUDE_DIRECTORIES ( ${CMAKE_BINARY_DIR} )
+
+# HAVE_STDINT_H
+# HAVE_BZERO_H
+
+ADD_SUBDIRECTORY ( src )
+ADD_SUBDIRECTORY ( docs )
+
+IF ( NOT WIN32 )
+  ADD_SUBDIRECTORY ( scripts )
+ENDIF ( NOT WIN32 )
+
+# information for packaging
+
+INCLUDE ( InstallRequiredSystemLibraries )
+
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Ogg Video Tools for video editing")
+SET(CPACK_PACKAGE_VENDOR "Yorn")
+SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/README")
+SET(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/cpackInfo/ReadMe.rtf")
+SET(CPACK_RESOURCE_FILE_WELCOME "${CMAKE_SOURCE_DIR}/cpackInfo/Welcome.rtf")
+SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/cpackInfo/COPYING.rtf")
+SET(CPACK_PACKAGE_VERSION_MAJOR "0")
+SET(CPACK_PACKAGE_VERSION_MINOR "9")
+SET(CPACK_PACKAGE_VERSION_PATCH "")
+SET(CPACK_PACKAGE_INSTALL_DIRECTORY "OggVideoTools")
+IF(WIN32 AND NOT UNIX)
+  # There is a bug in NSI that does not handle full unix paths properly. Make
+  # sure there is at least one set of four (4) backlasshes.
+#  SET(CPACK_PACKAGE_ICON "${CMake_SOURCE_DIR}/Utilities/Release\\\\InstallIcon.bmp")
+#  SET(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\MyExecutable.exe")
+  SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} Ogg Video Tools")
+  SET(CPACK_NSIS_HELP_LINK "http:\\\\\\\\dev.streamnik.de")
+  SET(CPACK_NSIS_URL_INFO_ABOUT "http:\\\\\\\\dev.streamnik.de")
+  SET(CPACK_NSIS_CONTACT "yorn@gmx.net")
+  SET(CPACK_NSIS_MODIFY_PATH ON)
+ELSE(WIN32 AND NOT UNIX)
+  SET(CPACK_STRIP_FILES ${EXECUTABLES})
+  SET(CPACK_SOURCE_STRIP_FILES ${EXECUTABLES} )
+ENDIF(WIN32 AND NOT UNIX)
+SET(CPACK_PACKAGE_EXECUTABLES ${EXECUTABLES} )
+INCLUDE(CPack)

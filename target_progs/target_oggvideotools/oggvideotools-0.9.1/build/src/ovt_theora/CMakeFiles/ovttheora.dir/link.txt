@@ -1,0 +1,2 @@
+/usr/bin/ar qc libovttheora.a  CMakeFiles/ovttheora.dir/theoraEncoder.cpp.o CMakeFiles/ovttheora.dir/theoraDecoder.cpp.o CMakeFiles/ovttheora.dir/theoraExtractor.cpp.o CMakeFiles/ovttheora.dir/theoraPosInterpreter.cpp.o CMakeFiles/ovttheora.dir/theoraStreamParameter.cpp.o
+/usr/bin/ranlib libovttheora.a

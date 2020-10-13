@@ -1,0 +1,99 @@
+2.3.4	18 Jan 2006
+
+*)	Fixed some compiler warnings with gcc 4.0.2.
+*)	Fixed type size problem on AMD64.
+*)	Changed default Makefile from Makefile.orig to Makefile.gmake.
+*)	Minor Makefile.gmake changes (not user visible).
+*)	Compiling with -D_FORTIFY_SOURCE=2 fails because the mechanism barfs too
+	much on legal C constructions. Reduce to -D_FORTIFY_SOURCE=1.
+*)	New .spec file.
+*)	Changed email address to @gmx.de.
+
+2.3.3	27 Oct 2000
+
+*)	Fixed error with the display of times in some places.
+*)	The default is now to compile with GNU getopt() in the C library.
+
+2.3.2	22 Aug 1999
+
+*)	get_num_unit() now also accepts fractions for unit s. For all units, the
+	result is rounded to the nearest CD sector boundary.
+
+2.3.1, 18 Aug 1999
+
+*)	Fixed error msg about --fadeout wenn there is no fading out.
+
+2.3, 19 Jul 1999
+
+*)	Added --fadein, --fadeout.
+	Improved documentation in some places.
+
+2.2.2, 7 Jun 1999
+
+*)	Removed the heaps of silence values which were always printed with
+	--silencecuts, rendering that option useless. Now they are only printed
+	with --verbose. Documentation updated accordingly.
+*)	Added 00:00.00 display to "Add silence" in the command argument output.
+*)	For --silencethreshold = 0, the sector is considered to be silent if all
+	samples are silent.
+
+2.2.1, 3 May 1999
+
+*)	For a last cut number of 0, the file size is displayed if available.
+	Before the maximum possible file size (about 405 min) was always
+	displayed.
+*)	A few minor additions to the man page (and --help).
+*)	Updated output of --help.
+*)	Fixed bug in Makefile that version.-c wasn't packed up.
+
+2.2, 04 + 21 Feb 1999
+
+*)	Added __alpha in chelp.h to ensure proper definition for UINTxx and
+	SINTxx when compiling on alphas.
+*)	Added --version, -V.
+*)	Added --verbose. With --silenceinfo it outputs the silence values of
+	each CD sector.
+
+2.1.2, 03 Feb 1999
+
+*)	Fixed bug in display of times (the fraction of the second was
+	incorrectly calculated).
+*)	Added --inwav, --tocdr
+
+2.1, 03 May 1998
+
+*)	Removed long options --if, --of to make better use of GNU getopt()'s
+	abbreviation capabilities. Added -r, -w instead.
+*)	Added a few more values to be shown in some places. timeprintf().
+*)	Warning message when a scale factor is negative.
+*)	Fixed --silencecuts not working in some cases. process_silencecuts() is
+	rewritten and (hopefully) is less spaghetti-like. Conditional
+	HARDON_CUTS makes the delay-period (--silencedelay) be counted into the
+	silent interval. I might make that a cmd line switch, but am not sure
+	whether it is useful.
+*)	Various methods of deciding whether a sector is silent were tried; I
+	have a suspicion that there may be cases where none of them work. The
+	most likely candidate is in use at the moment.
+*)	Added function --silenceinfo.
+*)	Added option --quiet.
+
+2.0, 27 Mar 1998
+
+*)	Added silence detection.
+*)	Corrected byte ordering problem for operations other than scaling,
+	when the byte order of the local machine was not the same as the byte
+	order of the output format.
+*)	Corrected example in man page.
+*)	Added an indication to the usage showing whether wav2cdr was compiled
+	with mygetopt() or GNU getopt().
+*)	Took out long options --swch and --noswch to make things friendlier for
+	GNU getopt().
+*)	Fixed all places where a 32 bit is required not to use int or size_t.
+*)	Needed to pull a few tricks for stupid Borland C. Use -DMSDOS_BC!
+
+
+1.9, 20 Jan 1998	
+
+*)	Fixed endian problem in write_wav_header().
+	Thanks to [rick@dgii.com (Rick Richardson)] for noting this.
+

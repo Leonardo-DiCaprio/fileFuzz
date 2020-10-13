@@ -1,0 +1,8 @@
+easyflac.o: easyflac.c /usr/include/stdc-predef.h ../config.h \
+ /usr/include/FLAC/export.h
+
+/usr/include/stdc-predef.h:
+
+../config.h:
+
+/usr/include/FLAC/export.h:

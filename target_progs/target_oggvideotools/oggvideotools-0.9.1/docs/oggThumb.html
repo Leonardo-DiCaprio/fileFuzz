@@ -1,0 +1,121 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGTHUMB</TITLE>
+</HEAD><BODY>
+<H1>OGGTHUMB</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggThumb - creates thumbnails from an ogg video file 
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggThumb [options] file1.ogv [ file2.ogv [ file3.ogv [...] ] ] </B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>oggThumb</B>
+
+creates Thumbnails from one or more ogg video files, at a given time position or a given frame number. It is also possible to create a series of thumbnails at different time or frame positions. The pictures can be created in JPG or PNG format and can be resized to any given size. 
+<P>
+The default naming of each thumbnail series follows the following rule:
+<P>
+<I>&lt;filename_without_extension&gt;_x.&lt;picture_extension&gt;</I>
+
+<P>
+Where x starts with 0 and is incremented with every created thumbnail. So the thumbnails are successivly numbered by the appearence order. This is even valid, if time positions and frame numbers are mixed.
+<BR>&nbsp;
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>-t<DD>
+Time at which a thumbnail should be created. More than one thumbnail time can be concatenated by komas. The times can be set by integer or floating point values in seconds. If the time is not exactly matching, the next frame is used. The times don't have to be sorted incrementally.
+<P>
+<I>Example: -t 12.4,14.157,13.23</I>
+
+<P>
+<DT>-f<DD>
+Number of a frame that should be created as a thumbnail. More than one thumbnail frame can be concatenated by komas. The frame numbers must be an integers. The frame numbers don't have to be sorted incrementally.
+<P>
+<I>Example: -f 12000,13000,11000</I>
+
+<P>
+<DT>-s<DD>
+Picture output size. The thumbnail is created in the size given as &lt;width&gt;x&lt;height&gt;.  If you want to include the thumbnails into your webpage and you need to have a fixed width but dynamic height, you can set the dynamic axis to 0. So the aspect ratio of the video frame is kept. This is the same for setting width or height to 0.
+<P>
+<I>Example: -s 0x100 </I>
+
+<P>
+<DT>-o<DD>
+Output format. This can be png or jpg. The default is jpg.
+<P>
+<I>Example: -o png</I>
+
+<P>
+<DT>-n<DD>
+Alternative thumbnail picture name. The % can be used within the name to indicate the counter placeholder.
+<P>
+In case of more than one video file, the counter continuous throughout the different videos, so that the pictures are not overwritten.
+<P>
+If the name has an extension. This extension is used to identify the output picture format. 
+<P>
+<I>Example: -n myNo_%_thumb</I>
+
+<BR>&nbsp;
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>EXAMPLE</H2>
+
+<I>oggThumb -t 10.3,22.4,31.9,43.4,59.4 -f 1200 -s 0x100 myFile.ogv</I>
+
+<P>
+<I>oggThumb -f 200,400,300,100 -t 3.54 -n %_thumb.png myfile.ogv mysecondfile.ogv</I>
+
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCut">oggCut</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCat">oggCat</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSplit">oggSplit</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggTranscode">oggTranscode</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSilence">oggSilence</A></B>(1)
+
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">EXAMPLE</A><DD>
+<DT><A HREF="#lbAG">AUTHOR</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

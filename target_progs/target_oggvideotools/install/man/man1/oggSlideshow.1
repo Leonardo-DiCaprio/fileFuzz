@@ -1,0 +1,83 @@
+.TH OGGSLIDESHOW 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggSlideshow \- creates slideshows from pictures 
+.SH SYNOPSIS
+.B oggSlideshow [options] picture1 [ picture2 [...] ] 
+.SH DESCRIPTION
+.B oggSlideshow 
+creates a theora video from a number of pictures in JPEG\(hy or PNG\(hyformat with different visual effects.
+.SH OPTIONS
+.IP \-s
+Sets the size of the video frame. The size is given as 
+.B <width>x<height>
+The default size is set to 480x320.
+
+.I Example: \-s 320x240
+
+.IP \-f
+Sets the frame rate of the video. This is given by the pictures per second. The default frame rate is 24 pictures per second.
+
+.I Example: \-f 16
+
+.IP \-o
+Sets the output file name of the created video. The default name is slideshow.ogv.
+
+.I Example: \-o myShow.ogv
+
+.IP \-l
+Sets the presentation time (length) of one picture. So if your have 10 pictures and specify a length of 10 seconds, then your overall video length is 1:40 (100 seconds).
+
+.I Example: \-l 10
+
+.IP \-d
+Sets the datarate in byte per seconds for the video encoder. This more meant to be a upper threshold. So the file may be smaller than assumed. 
+
+.I Example: \-d 1024000
+
+.IP \-t
+Sets the presentation type, as shown above. Actually types are:
+
+.B kb: 
+ Ken Burns effect (default)
+
+.B cf:
+ Picture crossfade for changeover
+
+.B p:
+ Plain picture presentation
+
+.B bl: 
+ Bluring at changeover
+ 
+.I Example: \-t p
+
+.IP \-e
+Enables the reframing. In case a picture does not match the aspect ratio of the video frame, it can be "reframed", which means black borders are inserted. This option is only usefull with the Ken Burns effect (option \-t kb). The pictures are automaticaly "reframed" with the other two slideshow types to match the aspect ratio.
+
+.I Example: \-e
+
+.IP \-x
+Overwrite an existing output file without warning.
+
+.IP \-r
+Enables the resampling to a certain value. This is really only for experts and may not be available with newer version of oggSlideshow.
+
+To understand this option you need some more internal information: The picture is loaded by the gd lib. So the transformation from png or jpeg to a plain RGBA is done here. The second reason for using gd is the great resizing facilities as pictures are often much bigger than the video frame. OggSlideshow can handle pictures from 0.5 to 2 times of the video frame width and height best, as it uses a linear pixel interpolation. With the resizing feature of gd, oggSlideshow reads pictures with a size "near" to the video output size and can then operate with that picture. This produces a very good quality output, as you can see above.
+
+The value given with this option is the factor the picture is read in in respect of the video frame size. When the video frame size is 320x240 and the resample factor is 1.2 than the picture that is read is resized to 384x288. Specially for the ken burns effect this is important as the sliding is done on a picture bigger than the video frame size.
+
+.SH EXAMPLE
+
+.I oggSlideshow \-l3 \-tp \-d1024000 \-s480x320 \-o demo\-plain.ogv <picture1.jpg> <picture2.jpg> ...
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggCat (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggThumb (1),
+.BR oggSilence (1)

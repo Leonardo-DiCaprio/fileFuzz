@@ -1,0 +1,42 @@
+.TH OGGSILENCE 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggSilence \- creates a silence period in vorbis format 
+.SH SYNOPSIS
+.B oggSilence [options] outfile.ogg
+.SH DESCRIPTION
+.B oggSilence
+creates a vorbis file with a silence duration which length is specified by the \-l
+option.
+.SH OPTIONS
+.IP \-l
+Duration of the silence in ms. Default: 60000
+
+.I Example: \-l 5000 
+
+.IP \-r
+Sample rate of the output file in Hz. Default: 44100
+
+.I Example: \-r 16000
+
+.IP \-d
+Data rate of the silence file in bit/s. Default: 64000
+
+.I Example: \-d 64000
+
+.IP \-n
+Number of output channels. Default: 2
+
+.I Example: \-n 2
+.SH EXAMPLE
+.I oggSilence \-d 32000 \-r 16000 \-n 2 \-l 10000 silence.ogg
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggCat (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggSlideshow (1),
+.BR oggThumb (1)

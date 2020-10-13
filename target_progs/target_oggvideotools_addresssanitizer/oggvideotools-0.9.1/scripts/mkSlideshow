@@ -1,0 +1,93 @@
+#!/bin/sh
+#
+# usage: ./mkSlideshow ~/mypicDir/ audiofile.oga outputFile.ogm
+#
+# Variables to be changed
+#
+# video frame size
+SIZE="800x450"
+#
+# data rate of the outgoing slideshow stream in bit/s
+DATARATE="2048000"
+#
+# presentation time of one picture in seconds
+PR_TIME="10"
+#
+# frame rate in pictures/s
+FRAMERATE="24"
+#
+# reframe picture
+# This adds black borders to picture to meet the aspect ratio
+# of the video frame size specified earlier.
+# With the Ken Burns effect, this is not strictly necessary,
+# but the sliding may be smoother
+#REFRAME="-e" or ""
+REFRAME="-e"
+#
+# resample
+# This option says, how the picture should be loaded (by gdlib)
+# As the resize mechanism of gdlib is really good, it is used to
+# bring it do a value "near" the video frame size (usually a bit
+# bigger). You usually do not see a big difference, if you change
+# this value :-), so keep it as it is (default = 1.2)
+RESAMPLE="1.2"
+#
+# slideshow type
+# kb - Ken Burns Effect (sliding and zooming)
+# p  - plain (picture display only, no crossfade between pictures)
+# cf - crossfade (picture display, crossfading between pictures)
+TYPE="kb"
+#
+#
+# Temporal file name
+TMP_VIDEOFILE="slideshow_tmp.ogv"
+TMP_AUDIOFILE="audio_tmp.oga"
+
+if [ $# -ne 3 ] 
+then
+  echo "usage $0 <picture directory> <audiofile>.oga <outputfile>.ogv"
+  exit
+fi
+
+echo 
+echo "Creating a slideshow with the following data"
+echo 
+echo "Audio file  : $2"
+echo "Created file: $3"
+echo "Pictures to be presented are:"
+ls "$1"/*.jpg
+echo
+echo "Command line for oggSlideshow is:"
+echo "oggSlideshow -s $SIZE -d $DATARATE -l $PR_TIME -f $FRAMERATE \ "
+echo " $REFRAME -r $RESAMPLE -t $TYPE -o $TMP_VIDEOFILE $1/*.jpg "
+
+# creating the slideshow
+oggSlideshow -s $SIZE -d $DATARATE -l $PR_TIME -f $FRAMERATE \
+ $REFRAME -r $RESAMPLE -t $TYPE -o $TMP_VIDEOFILE "$1"/*.jpg
+
+# what is the length of this
+LENGTHVIDEO=`oggLength $TMP_VIDEOFILE`
+
+#
+# cut the audio file
+LENGTHAUDIO=`oggLength $2`
+
+#
+# is the audio file to short?
+last="newfile"
+if [ $LENGTHVIDEO -gt $LENGTHAUDIO ]
+then
+  echo "warning slideshow ($LENGTHVIDEO) is longer than your audio file ($LENGTHAUDIO)"
+  exit -1
+fi
+
+# cutting the audiofile
+oggCut -l$LENGTHVIDEO -i$2 -o$TMP_AUDIOFILE
+
+#
+# Join audio and video file
+oggJoin $3 $TMP_VIDEOFILE $TMP_AUDIOFILE
+
+#
+# remove
+rm -f $TMP_VIDEOFILE $TMP_AUDIOFILE

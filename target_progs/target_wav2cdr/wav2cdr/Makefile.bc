@@ -1,0 +1,129 @@
+#
+# Makefile for wav2cdr  (MS-DOS)
+#
+# Platforms / compilers supported:
+#	MSDOS 6.2, Borland Turbo C 3.1, make/maker 3.6 or 4.0
+#		Note: make 4.0 seems to crash. Use maker 4.0, or make/maker 3.6.
+#
+# Volker Kuhlmann
+#
+
+
+## where executable and man page is installed
+
+
+## where to find chelp.h, vkclib.h
+INCLUDEDIR = ../include
+INCLUDEDIR = .
+
+## which getopt to use and where to find it
+#
+# uncomment this for GNU getopt in the C library:
+#GETOPTFLAGS = -DHAS_GNUGETOPT
+#GETOPTSRCS =
+#
+# uncomment this for GNU getopt, this needs getopt.c, getopt1.c, getopt.h
+# which can be taken from e.g. GNU tar 1.12:
+#GETOPTDIR = .
+#GETOPTDIR = getopt
+#GETOPTFLAGS = -DHAS_GNUGETOPT -I$(GETOPTDIR)
+#GETOPTSRCS = $(GETOPTDIR)/getopt.c $(GETOPTDIR)/getopt1.c
+#
+# uncomment this for the quick and dirty getopt which comes with wav2cdr:
+GETOPTSRCS = mygetopt.c
+
+MYNAME = wav2cdr
+
+
+## CC
+CC	= bcc
+CDEFS	= -DMSDOS_BC
+#CDEFS	= -DMSDOS_BC -DDEBUG
+#CDEFS	= -DMSDOS_BC -DNO_ASSERTMANY
+#CDEFS	= -DMSDOS_BC -DDEBUG -DNO_ASSERTMANY
+CINC	= -I$(INCLUDEDIR)
+CFLAGS	= $(CDEFS) $(CINC) \
+	-3 -a -A -ff- -Ff=32767 -G -k -ml -N -p- -r -u -v -vi- -w -Y- -y
+#CFLAGS	= -DMSDOS_BC -DDEBUG -I$(INCLUDEDIR) -ml -N
+CFLAGS	= $(CDEFS) $(CINC)\
+		-ml -3 -a -f287 -ff- -Ff -A -N -v -y -Oc -Ob -d -vi- -w
+
+## LD
+#LD	= tlink
+#LDFLAGS	= /c /d /l /P- /Tde /v
+#LDFLAGS	= /c /l /x
+#		running tlink manually: must give runtime libs, ...
+LD	= bcc
+LDFLAGS	= -a -ff- -k -mc -N -u -Y- -y
+LDFLAGS = $(CFLAGS)
+#		must at least give -mc - otherwise tlink doesn't hack it!
+
+
+
+HSRCS1 = $(INCLUDEDIR)/chelp.h mygetopt.h
+HSRCS2 = wav2cdr.h
+HSRCS = $(HSRCS1) $(HSRCS2)
+
+CSRCS = wav2cdr.c cmdarg.c data.c fileio.c process.c
+
+MADESRCS = usage.-c help.-c version.-c
+
+OBJS = $(CSRCS:.c=.obj) $(GETOPTSRCS:.c=.obj)
+
+
+
+
+# Implicit Rules
+
+#.c.obj:
+#	$(CC) $(CFLAGS) $(XCFLAGS) /c $&.c
+.c.obj:
+	$(CC) $(CFLAGS) $(XCFLAGS) -c {$< }
+.SUFFIXES: 
+.SUFFIXES: .exe .obj .asm .c .res .rc
+
+
+# Explicit Rules and Individual File Dependencies
+
+all: $(MYNAME).exe
+
+build: veryclean all
+
+$(MYNAME).exe: $(OBJS)
+#	$(LD) $(LDFLAGS) $(XLDFLAGS) $(OBJS)
+	echo $(LDFLAGS)+ >bcc.tmp
+!if d$(XLDFLAGS)
+	echo $(XLDFLAGS)+ >>bcc.tmp
+!endif
+	echo $(OBJS) >>bcc.tmp
+	@echo ***** If bcc can't run tlink, try running make with target link
+	$(CC) @bcc.tmp
+
+link:
+# make/maker 3.6 don't interpret $$ correctly, haha...
+	if exist turboc.$$ln tlink @turboc.$$ln
+	if exist turboc.$ln tlink @turboc.$ln
+
+showvar:
+	@echo "CC       =" $(CC)
+	@echo "CFLAGS   =" $(CFLAGS)
+	@echo "CCFLAGS  =" $(CCFLAGS)
+	@echo "XCFLAGS  =" $(XCFLAGS)
+	@echo "XCCFLAGS =" $(XCCFLAGS)
+	@echo "LD       =" $(LD)
+	@echo "LDFLAGS  =" $(LDFLAGS)
+	@echo "XLDFLAGS =" $(XLDFLAGS)
+	@echo "AR       =" $(AR)
+	@echo "ARFLAGS  =" $(ARFLAGS)
+
+clean:
+	del *.obj
+	del bcc.tmp
+
+veryclean vclean: clean
+	del $(MYNAME).exe
+	del $(MYNAME).sym
+	del $(MYNAME).map        
+	del tc0000.swp
+	del turboc.$$ln
+	del turboc.$ln

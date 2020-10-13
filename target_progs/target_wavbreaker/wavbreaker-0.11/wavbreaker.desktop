@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Wavbreaker File Splitter
+Name[de]=Wavbreaker Datei-Splitter
+GenericName=Audio File Splitter
+GenericName[de]=Audio-Datei Splitter
+Comment=Split wave files into multiple chunks
+Comment[de]=Teilen Sie Wave-Dateien in mehrere Teile
+Exec=wavbreaker
+Icon=wavbreaker
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;Audio;
+MimeType=audio/x-wav

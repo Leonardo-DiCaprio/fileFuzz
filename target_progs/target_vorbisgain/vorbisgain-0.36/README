@@ -1,0 +1,90 @@
+
+INTRODUCTION
+------------
+
+When listening to Ogg Vorbis (or MP3) files on your computer, you may have
+noticed that some songs are louder than others. To a degree, this can be
+what the artist or producer intended, at least when comparing songs from the
+same CD. However, when (randomly) listening to songs from different CDs, the
+sound level can vary quite much, so much that you need to adjust the volume
+every now and then, to get a comfortable sound level. Wouldn't it be nice if
+that could be handled automatically?
+
+This is where VorbisGain comes in. It calculates a percieved sound level of
+an Ogg Vorbis file using the ReplayGain algorithm. VorbisGain then stores in
+the comments (tags) in the file a suggestion on how the volume should be 
+changed during playback, to get a uniform sound level. However, this only 
+solves half the problem; the player application needs to act on that
+suggestion for it to be any useful.
+
+PLAYER SUPPORT
+--------------
+
+As VorbisGain only stores suggested volume changes in the files, the player
+application need to read these suggestions and act upon them. As of this
+writing, the Vorbis plugin (in_vorbis) 1.2b22 for WinAmp supports this, and
+XMMS 1.2.8 will also support it (there is a patch available for earlier
+versions of XMMS available; however, it does not support the new format
+of the suggestions this version of VorbisGain implements).
+
+INSTALLATION
+------------
+
+Run './configure' followed by 'make' (use './configure --help' to see
+configuration options). Then use 'make install' to install it (or just copy
+the vorbisgain executable to a directory of your choice).
+
+For details on usage, please see the man page (or vorbisgain.txt, if you are
+on a Windows platform).
+
+ACKNOWLEDGEMENTS
+----------------
+
+VorbisGain uses the ReplayGain algorithm, which was created by David
+Robinson. The implementation of that algorithm was written by Glen Sawyer
+and Frank Klemm. Using some example code from Ogg Vorbis, the first versions
+of VorbisGain (then called ReplayGain) was written by Gian-Carlo Pascutto,
+who also wrote a patch for XMMS, adding support for the new tags. Better
+Windows support and various new features where then added by Magnus
+Holmgren, with help from Gian-Carlo Pascutto. Magnus Holmgren also updated
+the XMMS patch to include support for the new tags (this patch has been sent
+to the XMMS developers, but is otherwise not available).
+
+For more information about ReplayGain, see http://www.replaygain.org/
+(However, note that the ReplayGain web site might not be up to date when it
+comes to application support for ReplayGain.)
+
+NOTES
+-----
+
+Please note that as of VorbisGain 0.30, the volume change suggestions are
+stored in a new format. The following is an example on how it can look:
+
+    REPLAYGAIN_TRACK_GAIN=-7.03 dB
+    REPLAYGAIN_TRACK_PEAK=1.21822226
+    REPLAYGAIN_ALBUM_GAIN=-6.37 dB
+    REPLAYGAIN_ALBUM_PEAK=1.21822226
+
+Earlier versions stored the information like this:
+
+    RG_RADIO=-7.03 dB
+    RG_PEAK=1.21822226
+    RG_AUDIOPHILE=-6.37 dB
+
+(The lack of an album peak was one reason to change the format; it was also
+desirable to make the tag names easier to understand.)
+
+The implementation of ReplayGain support in a player is quite easy actually.
+At http://sjeng.org/ftp/vorbis/ you can find a patch for XMMS 1.2.6 that
+shows how it can be done. Adding support for the new format (the old format
+should be supported as well) is left as an excercise for the reader. :)
+
+TODO
+----
+
+Although a configure script is used, it has not been widely tested. As of
+this writing, it is only known to work on (a certain distribution of) Linux.
+Corrections to handle other platforms are welcomed. Please send them to
+Magnus Holmgren <lear@algonet.se> and/or Gian-Carlo Pascutto
+<gcp@sjeng.org>
+.

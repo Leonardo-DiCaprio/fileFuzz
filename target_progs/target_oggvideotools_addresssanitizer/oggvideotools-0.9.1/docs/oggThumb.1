@@ -1,0 +1,61 @@
+.TH OGGTHUMB 1 "JAN 2010" Linux "User Manuals"
+.SH NAME
+oggThumb \- creates thumbnails from an ogg video file 
+.SH SYNOPSIS
+.B oggThumb [options] file1.ogv [ file2.ogv [ file3.ogv [...] ] ] 
+.SH DESCRIPTION
+.B oggThumb
+creates Thumbnails from one or more ogg video files, at a given time position or a given frame number. It is also possible to create a series of thumbnails at different time or frame positions. The pictures can be created in JPG or PNG format and can be resized to any given size. 
+
+The default naming of each thumbnail series follows the following rule:
+
+.I <filename_without_extension>_x.<picture_extension>
+
+Where x starts with 0 and is incremented with every created thumbnail. So the thumbnails are successivly numbered by the appearence order. This is even valid, if time positions and frame numbers are mixed.
+ 
+.SH OPTIONS
+.IP -t
+Time at which a thumbnail should be created. More than one thumbnail time can be concatenated by komas. The times can be set by integer or floating point values in seconds. If the time is not exactly matching, the next frame is used. The times don't have to be sorted incrementally.
+
+.I Example: \-t 12.4,14.157,13.23
+
+.IP -f
+Number of a frame that should be created as a thumbnail. More than one thumbnail frame can be concatenated by komas. The frame numbers must be an integers. The frame numbers don't have to be sorted incrementally.
+
+.I Example: \-f 12000,13000,11000
+
+.IP -s
+Picture output size. The thumbnail is created in the size given as <width>x<height>.  If you want to include the thumbnails into your webpage and you need to have a fixed width but dynamic height, you can set the dynamic axis to 0. So the aspect ratio of the video frame is kept. This is the same for setting width or height to 0.
+
+.I Example: \-s 0x100 
+
+.IP -o
+Output format. This can be png or jpg. The default is jpg.
+
+.I Example: \-o png
+
+.IP -n
+Alternative thumbnail picture name. The % can be used within the name to indicate the counter placeholder.
+
+In case of more than one video file, the counter continuous throughout the different videos, so that the pictures are not overwritten.
+
+If the name has an extension. This extension is used to identify the output picture format. 
+
+.I Example: \-n myNo_%_thumb
+ 
+
+.SH EXAMPLE
+.I oggThumb \-t 10.3,22.4,31.9,43.4,59.4 \-f 1200 \-s 0x100 myFile.ogv
+
+.I oggThumb \-f 200,400,300,100 -t 3.54 -n %_thumb.png myfile.ogv mysecondfile.ogv
+
+.SH AUTHOR
+Joern Seger <yorn at gmx dot net>
+.SH "SEE ALSO"
+.BR oggCut (1),
+.BR oggCat (1),
+.BR oggJoin (1),
+.BR oggSplit (1),
+.BR oggTranscode (1),
+.BR oggSlideshow (1),
+.BR oggSilence (1)

@@ -1,0 +1,361 @@
+#
+# Makefile for wav2cdr  (mainly Unix / gcc)
+# THIS ONLY WORKS WITH GNU MAKE!!!
+#
+# Platforms / compilers supported:
+#	SunOS 4.1.3: no
+#	Solaris 2.5, gcc 2.7.2, ld SunOS/ELF (LK-2.0 (S/I)
+#		use target solarisgcc (or default)
+#	Solaris 2.5, cc SC4.0 18 Oct 1995 C 4.0, ld SunOS/ELF (LK-2.0 (S/I)
+#		use target solariscc
+#	Linux 2.0.30, gcc 2.7.2.1, GNU ld
+#		used by default
+#	Linux 2.6.13, gcc 4.0.2, GNU ld
+#		used by default
+#	MSDOS 6.2, Borland Turbo C 3.1
+#		use target msdos
+#		(doesn't really work, use Makefile.bc instead)
+#		Other targets (Unix): formsdos, tomsdos
+#		Other targets (MSDOS): msdosclean
+#		Note: make 4.0 seems to crash. Use maker 4.0, or 3.6.
+# Others may work too.
+#
+# Other targets (not supported by stupid makes/systems such as Borland's/M$):
+#	depend		auto-generate dependencies
+#	install		install the executable and man page
+#
+# Volker Kuhlmann
+#
+
+
+## where executable and man page is installed
+INSTALLBINDIR = $(HOME)/bin
+INSTALLMANDIR = $(HOME)/man
+MANSECT = 1
+
+
+## where to find chelp.h, vkclib.h
+INCLUDEDIR = ../include
+INCLUDEDIR = .
+#INCLUDEDIR = $(HOME)/include
+
+
+## which getopt to use and where to find it
+#
+# default is now GNUGETOPTC
+ifndef GNUGETOPT
+ifndef MYGETOPT
+ GNUGETOPTC=1
+endif
+endif
+#
+# uncomment this for GNU getopt in the C library:
+ifdef GNUGETOPTC
+ GETOPTFLAGS = -DHAS_GNUGETOPT
+ GETOPTSRCS =
+#
+# uncomment this for GNU getopt, this needs getopt.c, getopt1.c, getopt.h
+# which can be taken from e.g. GNU tar 1.12:
+else
+ifdef GNUGETOPT
+ GETOPTDIR = .
+ GETOPTDIR = gnugetopt
+ GETOPTFLAGS = -DHAS_GNUGETOPT -I$(GETOPTDIR)
+ GETOPTSRCS = $(GETOPTDIR)/getopt.c $(GETOPTDIR)/getopt1.c
+#
+# uncomment this for the quick and dirty getopt which comes with wav2cdr:
+else
+ifdef MYGETOPT
+ GETOPTSRCS = mygetopt.c
+endif
+endif
+endif
+
+
+## CC
+CC	= afl-gcc
+CDEFS	=
+ifdef DEBUG
+ CDEFS	+= -DDEBUG
+endif
+#CDEFS	+= -DDEBUG
+#CDEFS	+= -DNO_ASSERTMANY
+#CDEFS	+= -DBIG_ENDIAN
+#CDEFS	+= -DLITTLE_ENDIAN
+CWARN	= -Wall -Wshadow -Wlarger-than-32768 -Wpointer-arith -Wcast-align \
+		-Wwrite-strings -Wmissing-prototypes -Wmissing-declarations
+CWARN	+= -Wconversion -Wstrict-prototypes
+CWARN	+= -W
+CFL	= -ansi -pedantic
+ifndef NOOPT
+ CFL	+= -O2
+endif
+CFL	+= -g
+CFLAGS	= $(CFL) -I$(INCLUDEDIR) $(CDEFS) $(GETOPTFLAGS) $(CWARN)
+#
+# Solaris gcc:
+CDEFSsolgcc = 
+#CDEFSsolgcc += -DDEBUG
+#CDEFSsolgcc += -DNO_ASSERTMANY
+#CDEFSsolgcc += -DBIG_ENDIAN
+#
+# Solaris cc:
+# -misalign and not HANDLE_MISALIGNED will hang chartnet lib (incorrect values
+# by ...swap_endian...() ?)
+# HANDLE_MISALIGN will work with and without -misalign
+# Neither of the 2 will turn into bus errors
+CCsolcc = cc
+CDEFSsolcc = 
+#CDEFSsolcc += -DDEBUG
+#CDEFSsolcc += -DNO_ASSERTMANY
+#CDEFSsolcc += -DBIG_ENDIAN
+CFLAGSsolcc = -Xc -I$(INCLUDEDIR)
+#CFLAGSsolcc += -misalign
+CFLAGSsolcc += -xO4
+#CFLAGSsolcc += -g
+
+## LD
+#
+# $(CC):
+LD	= $(CC)
+LDFLAGS	= $(CFL) -I$(INCLUDEDIR) $(GETOPTFLAGS)
+#
+# Solaris cc/ld:
+LDsolcc	= cc
+LDFLAGSsolcc = -I$(INCLUDEDIR) $(GETOPTFLAGS)
+
+## AWK, SED
+AWK	= awk
+SED	= sed
+
+## Strip backspace + following char
+CX	= cx -q bs
+
+
+
+HSRCS1 = $(INCLUDEDIR)/chelp.h mygetopt.h
+HSRCS2 = wav2cdr.h
+HSRCS = $(HSRCS1) $(HSRCS2)
+
+CSRCS = wav2cdr.c cmdarg.c data.c fileio.c process.c
+
+MADESRCS = version.-c usage.-c help.-c
+
+OBJS = $(CSRCS:.c=.o) $(GETOPTSRCS:.c=.o)
+
+
+
+
+# Implicit Rules
+
+.1.txt:
+	#nroff -man $< | $(CX) >$*.txt
+	if [ `uname -s` = "Linux" ]; then\
+	  (echo -e ".ll 7.3i\n.pl 1100i"; cat $<; echo ".pl \n(nlu+10" )\
+	    | gtbl | groff -Tascii -mandoc | $(CX) >$*.txt;\
+	else\
+	   nroff -man $< | $(CX) >$*.txt;\
+	fi
+.txt.-c:
+	$(SED) < $< 's/"/\\x22""/g' | $(AWK) > $*.-c '{print "\""$$0"\\n\""}'
+	chmod a+r $*.-c
+.c.o:
+#	$(CC) -c $(CFLAGS) $(XCFLAGS) $<
+	$(CC) -c $(CFLAGS) $(XCFLAGS) -o $*.o $<
+.SUFFIXES:
+.SUFFIXES: .1 .txt .-c .c .o
+
+
+# Explicit Rules and Individual File Dependencies
+
+all: wav2cdr
+.PHONY: all build made delmadesources man depend showvar install uninstall
+
+build: veryclean all
+
+wav2cdr: $(OBJS)
+	$(LD) -o wav2cdr $(LDFLAGS) $(XLDFLAGS) \
+		$(OBJS)
+
+#$(GETOPTSRCS):
+#	$(CC) -c $(CFLAGS) $(GETOPTFLAGS) -o $*.o $(XCFLAGS) $<
+
+# this is unlikely to work for Mickey$oft - don't delete version/usage/help.-c!
+made: delmadesources $(MADESRCS)
+delmadesources:
+	rm -f $(MADESRCS)
+wav2cdr.o: $(MADESRCS)
+
+# text version of the man page (no ^H)
+man:
+	rm -f wav2cdr.txt
+	$(MAKE) $(MAKEFLAGS) wav2cdr.txt
+	chmod 644 wav2cdr.txt
+
+# help file compiled into the binary:
+# (this is just for the developer's convenience, and might not work reliably!)
+help.txt: wav2cdr.txt
+	sed <wav2cdr.txt \
+		-e 's:44100 Hz:%li Hz:'\
+		-e 's:size  of  2352:size  of  %i:'\
+		-e 's:size of 2352:size of %i:'\
+		-e 's:are 75 sec:are %i sec:' \
+	  | awk '!/^$$/ {print; el=0; next}; /^$$/ {if (!el) print; el=1}' \
+	  >help.txt
+	chmod 644 help.txt
+	#test `grep % help.txt | wc -l` = 3
+	test `tr ' ' '\n' < help.txt | grep % | wc -l` = 3
+
+# a) This will screw up BorCrap make (targets may only appear once).
+# b) The makedepend on our Solaris X11R5 has no -Y. (X11R6 has)
+depend: $(MADESRCS)
+	makedepend -f Makefile.gmake -- $(CFLAGS) $(XCCFLAGS) -- $(CSRCS)
+
+showvar:
+	@echo "CC       =" $(CC)
+	@echo "CFLAGS   =" $(CFLAGS)
+	@echo "CCFLAGS  =" $(CCFLAGS)
+	@echo "XCFLAGS  =" $(XCFLAGS)
+	@echo "XCCFLAGS =" $(XCCFLAGS)
+	@echo "LD       =" $(LD)
+	@echo "LDFLAGS  =" $(LDFLAGS)
+	@echo "XLDFLAGS =" $(XLDFLAGS)
+	@echo "AR       =" $(AR)
+	@echo "ARFLAGS  =" $(ARFLAGS)
+
+install: all uninstall
+	if [ ! -d $(INSTALLBINDIR) ]; then mkdir -p $(INSTALLBINDIR); fi
+	cp -p wav2cdr $(INSTALLBINDIR)
+	cd $(INSTALLBINDIR); chmod 755 wav2cdr
+	if [ ! -d $(INSTALLMANDIR)/man$(MANSECT) ]; then \
+		mkdir -p $(INSTALLMANDIR)/man$(MANSECT); fi
+	cp -p wav2cdr.1 $(INSTALLMANDIR)/man$(MANSECT)
+	cd $(INSTALLMANDIR)/man$(MANSECT); chmod 644 wav2cdr.1
+
+uninstall:
+	-cd $(INSTALLBINDIR); rm -f wav2cdr
+
+.PHONY: clean veryclean vclean veryveryclean vvclean
+clean:
+	rm -f *.o *% Makefile*.bak core
+	-if [ "$(GETOPTDIR)" != "" ]; then rm $(GETOPTDIR)/*.o; fi; exit 0
+
+veryclean vclean: clean
+	rm -f wav2cdr
+	-rm $(INCLUDEDIR)/*.[ch]%; exit 0
+
+veryveryclean vvclean: veryclean
+	makedepend -f Makefile.gmake --  -- 
+	rm -f Makefile.gmake.bak $(MADESRCS)
+	rm -f *.obj *.exe wav2cdr.sym wav2cdr.map
+	rm -f tc0000.swp turboc.\$$ln bcc.tmp
+
+
+# Support different platforms with one Makefile
+# default is Linux gcc / GNU ld
+# Target "solaris" switches variables to solaris, but this supports only
+# one target! (target all in this case)
+# Note this requires SUN make, not GNU make!
+
+.PHONY: solarisgcc solariscc linux warnsunmake
+
+# Solaris gcc
+solarisgcc := DEFS = $(CDEFSsolgcc)
+solarisgcc: warnsunmake all
+
+# Solaris cc
+solariscc := CC = $(CCsolcc)
+solariscc := DEFS = $(CDEFSsolcc)
+solariscc := CFLAGS = $(CFLAGSsolcc)
+solariscc := LD = $(LDsolcc)
+solariscc := LDFLAGS = $(LDFLAGSsolcc)
+solariscc: warnsunmake all
+
+linux: all
+
+warnsunmake:
+	@echo "Be sure to use SUN make or it won't work!"
+	@echo "-----------------------------------------"
+
+
+# these 2 targets for administration only
+.PHONY: pack sedver
+# pack it up
+pack:
+	@echo "================================================"
+	@echo "Making wav2cdr for version [$$""(VERSION)$$""(WV)]: $(VERSION)$(WV)"
+	@echo "================================================"
+#	$(MAKE) $(MAKEFLAGS) $(MADESRCS) wav2cdr.txt
+	$(MAKE) $(MADESRCS) wav2cdr.txt
+	chmod go+r $(MADESRCS) wav2cdr.txt
+	cd ..; tar -cvhf wav2cdr-$(VERSION)$(WV).tar --owner root --group root \
+		wav2cdr/README wav2cdr/BUGS wav2cdr/TODO wav2cdr/COPYING \
+		wav2cdr/ChangeLog \
+		wav2cdr/Make* \
+		wav2cdr/*.[ch1] \
+		wav2cdr/help* wav2cdr/usage* wav2cdr/version* \
+		wav2cdr/wav2cdr.txt \
+		wav2cdr/wav2cdr.lsm wav2cdr/wav2cdr*.spec
+	-rm ../wav2cdr-$(VERSION)$(WV).tar.bz2
+	bzip2 -9 ../wav2cdr-$(VERSION)$(WV).tar
+VO=wav2cdr .* Copyright (C) 19.* Volker Kuhlmann
+VN=wav2cdr $(VERSION)$(WV) Copyright (C) 1997, 1998, 1999, 2000, 2006 Volker Kuhlmann
+sedver:
+	for n in $(HSRCS2) $(CSRCS); do \
+	  sed <$$n >$$n.sed -e 's/$(VO)/$(VN)/'; \
+	  if diff $$n $$n.sed >/dev/null; \
+	  	then rm $$n.sed; \
+		else cat $$n.sed >$$n; rm $$n.sed; \
+	  fi; \
+	done
+
+
+# MSDOS
+# Borland C 3.1 make (Borland make 3.6 + 4.0) has no useful make utility,
+# therefore must use a different approach:
+#  NOT YET TESTED!
+
+CCmsdos = bcc
+CFLAGSmsdos = \
+	-I..\include \
+	-3 -A -k -mc -N -P-.C -r -y -Y- \
+	$(XCCFLAGS)
+#CFLAGSmsdos = \
+#	-I..\include \
+#	-3 -a -A -ff- -Ff=32767 -G -k -mc -N -P-.C -p- -r -u -vi- -y -Y- \
+#	$(XCCFLAGS)
+LDmsdos = $(CCmsdos) $(CFLAGSmsdos)
+#LDmsdos = bcc
+#LDFLAGSmsdos = -a -ff- -k -mc -N -u -Y- -y
+
+.c.obj:
+	$(CCmsdos) $(CFLAGSmsdos) -c {$< }
+.SUFFIXES: .obj
+
+.PHONY: msdos tomsdos msdosclean
+
+msdos: wav2cdr.exe
+
+wav2cdr.exe: $(OBJS:.o=.obj)
+	$(LDmsdos) $(LDFLAGSmsdos) $(OBJS:.o=.obj)
+#	tlink @turboc.lnk
+
+tomsdos:
+	if [ ! -d /D/prog/vkclib ]; then mkdir -p /D/prog/vkclib; fi
+	cp -p Makefile vkclib.[ch] /D/prog/vkclib
+	cp -p mf /D/prog/vkclib/makefile
+	rm -f mf
+
+msdosclean:
+	del *.obj
+	del wav2cdr.sym
+	del wav2cdr.map        
+	del tc0000.swp
+	del turboc.$$ln
+	del turboc.$ln
+
+# For BorCrap make <4.0 delete all these dependency lines after the last
+# comment (and a lot of other things...).
+
+# DO NOT DELETE - AUTOMATICALLY CREATED BY MAKEDEPEND!!!
+# DO NOT DELETE THIS LINE -- make depend depends on it.

@@ -1,0 +1,6 @@
+Welcome to the Ogg Video Tools installer
+This package version comes with a full
+featured binaries without any additional
+dependencies.
+
+Enjoy - Yorn

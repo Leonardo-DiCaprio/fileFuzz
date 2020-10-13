@@ -1,0 +1,94 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of OGGDUMP</TITLE>
+</HEAD><BODY>
+<H1>OGGDUMP</H1>
+Section: User Manuals (1)<BR>Updated: JAN 2010<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+oggDump - prints out information of ogg video files (.ogv, .ogg or oga)
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>oggDump [options] outfile.ogv</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>OggDump </B>
+
+gives detailed information about an ogg video file and prints these information with a given detail level.
+<P>
+Ogg files consist of a number of streams (video and audio). From the Ogg-container perspective, the streams are devided into pages. These pages usually have nearly the same size. The pages can be printed out with the -g option.
+<P>
+From the stream perspective, every stream consists of packets. These packets carry a bunch of compressed audio samples in case of a vorbis stream or one video frame in case of a theora video stream. These packets could be of variable length and are places into the ogg pages. To toString the packets, use the -p option.
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>-g<DD>
+Dumps the stream pages of the file. 
+<P>
+<DT>-p<DD>
+Dumps the stream packets.
+<P>
+<DT>-l<DD>
+<B>&lt;level&gt;.</B>
+
+Set the dump level (1-5). Default is 5, which means all information are printed.
+<P>
+<DT>-s<DD>
+Prompt for the stream that should be dumped. All other streams are ignored and will not be printed.
+<P>
+<DT>-o<DD>
+<B>&lt;file&gt;</B>
+
+Write the dump information to a file.
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Joern Seger &lt;yorn at gmx dot net&gt;
+<P>
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggCut">oggCut</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggJoin">oggJoin</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSplit">oggSplit</A></B>(1),
+
+<B>oggTranscode^</B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSlideshow">oggSlideshow</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggThumb">oggThumb</A></B>(1),
+
+<B><A HREF="/cgi-bin/man/man2html?1+oggSilence">oggSilence</A></B>(1)
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">AUTHOR</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 09:28:30 GMT, January 10, 2010
+</BODY>
+</HTML>

@@ -1,0 +1,95 @@
+Version 0.1:
+initial Version
+added oggDump
+added oggSplit
+
+Version 0.2:
+added oggJoin
+added oggCut
+
+Version 0.3:
+added oggCat
+added configure script (thanks to John Jolly at Novell)
+changed oggCut to be able to Cut audio only files
+
+Version 0.4:
+added oggLength
+added workaround for ogg-Skeleton
+added library classes to decode theora files
+added oggScroll to scroll through the video frames
+
+Version 0.5:
+updates for gcc 4.3 (done by Matt Domsch <mdomsch@fedoraproject.org>)
+configure script updates (done by Matt Domsch <mdomsch@fedoraproject.org>)
+started doxygen sourcecode documentation
+documentation pdf-File with detailed information about the tools
+
+Version 0.6:
+added oggSlideshow
+added oggThumb
+handling for huge files > 4GB implemented
+packet order with oggCut has been fixed and cleaned up
+ogg type in BOS packet is completely analysed
+added support for kate-streams (done by ogg.k.ogg.k)
+
+Version 0.7:
+added OggResize
+bugfix for wrong size in oggThumb, which causes a green border
+support for more recent gcc compilers
+
+Version 0.7a:
+minor bugfixes:
+  - random number generator is always initialized with a random seed
+  - command line options harmonized (e.g. -s is always size)
+handling for corrupt End-Of-Stream markers
+scripts for easy creation of thumbnails and slideshows with sound
+documentation update
+
+Version 0.7b:
+minor bugfixes:
+  - oggCut packet handling
+  - oggSlideshow helpscreen
+Added Additions for windows compilations
+
+Version 0.8:
+- man pages included
+- reworked rgb plane handling (e.g. video size != multiple of 16)
+- comment handling in oggResize and oggSlideshow 
+- oggSlideshow: bluring changeover effect
+- added oggSilence (silence vorbis stream generator)
+- oggResize:
+  - filters for better quality for resizing
+  - audio resizing (samplerate, datarate, channels)
+  - omitting frames for "fast" films and previews
+  - adding PNG logos with alpha channel
+- Bugfixes: flush-mechanism for ogg pages in ogg muxer corrected 
+- testing for memory leaks
+
+Version 0.8a:
+- Handling of zero size packets
+- correct compiling of small packets into pages (packaging exactly 255 segments per page)
+- renaming oggResize to oggTranscode
+- oggCat can handle different video and audio files (complete rewrite)
+- internal: video and audio hook for oggCat and oggTranscode
+- timing, stream No. and stream type in oggDump packet dump output
+- reworked manpages
+- switch to cmake
+- oggScroll is no longer supported (libSDL is not needed any more!) and will not be installed
+- mkSlideshow is not supported any more and will not be installed
+- cleanup mkThumb (bug #2925128) - thanks to jferlito
+- integrated fixes from Tim Starling (advanced exception handling, logging etc)
+- oggSlideshow returns with -1 if no picture was found
+- prefix walkthrough for KenBurns effect
+- Documentation pdf is outdated and therefir not shiped with the source package any more
+  google can help much better
+- release creation reworked
+- configure reworked and added to trunk
+
+Version 0.9:
+- Bug in oggRingbuffer fixed (Thanks to Bjarne) -> solved problems with ffmpeg ogg implementation 
+- Manpage cleanup
+- fix for gcc 4.7 (used in Fedora 17)
+
+Version 0.9.1
+- changed over to C++11 and boost (in some minor places).
+- Cleanup a lot of things to fit ogg/theora/vorbis API again.
